@@ -113,6 +113,14 @@ window.KBComponents = (function () {
   /* ---------- Version history block (current vs previous) ---------- */
   function versionBlock(versions) {
     if (!versions || !versions.length) return "";
+    const showTitle = versions.length > 1;
+    // Turn the raw body (which carries its own line breaks / numbered steps)
+    // into readable paragraphs instead of one wall of text.
+    const toParas = (body) => {
+      if (!body) return "";
+      return body.split(/\n{2,}/).map(blk => blk.trim()).filter(Boolean)
+        .map(blk => `<p>${esc(blk).replace(/\n/g, "<br>")}</p>`).join("");
+    };
     const rows = versions.map(v => `
       <div class="version-row version-row--${esc(v.status)}">
         <div class="version-row__label">
@@ -121,8 +129,8 @@ window.KBComponents = (function () {
           ${v.by ? `<span class="date">Cascaded by ${esc(v.by)}</span>` : ""}
         </div>
         <div class="version-row__body">
-          ${v.title && v.title !== v.body ? `<p><b>${esc(v.title)}</b></p>` : ""}
-          <p>${esc(v.body)}</p>
+          ${showTitle && v.title && v.title !== v.body ? `<p class="version-row__heading">${esc(v.title)}</p>` : ""}
+          ${toParas(v.body)}
         </div>
       </div>`).join("");
     return `<div class="version-block">${rows}</div>`;
