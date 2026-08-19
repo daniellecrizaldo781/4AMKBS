@@ -27,87 +27,83 @@ jobs:
           REFUND: ${{ secrets.REFUND_CASCADE_DOC }}
           TAGGING: ${{ secrets.TAGGING_CASCADE_DOC }}
 
-      - name: Parse both docs into cascades-data.js (grouped by handling)
+      - name: Parse both docs into cascades-data.js (one card per dated entry)
         run: |
           python3 - <<'PY'
-          import os, re, json
-          ROOT = os.getcwd()
-          DATE_RE = re.compile(r"^([A-Z][a-z]+ \d{1,2}, \d{4})\s*-\s*(.+?)\s*$", re.MULTILINE)
-          CAS_RE  = re.compile(r"Cascaded by:\s*([^\n]+)", re.I)
+          import os, re, json, datetime
+          DATE_RE = re.compile(r"^([A-Z][a-z]+ \d{1,2}, \d{4})\s*-\s*(.+?)\s*$", re.M)
+          CAS_RE  = re.compile(r"Cascaded by[:\s]+(.+?)(?:\n|$)", re.I)
           RULES = [
+            ("OHA / Hearing Aids", ["oricle hearing aid","oha ","audiologist","hearing aid",
+                                    "hearing specialist","hearing consultation","consultation booking",
+                                    "bte","hearing concern"]),
             ("Marketplace Escalations", ["amazon","walmart","ebay","marketplace"]),
-            ("Tagging & Tracking", ["tagging","tag ","zendesk","follower","marketing_ticket","multiple concern","marketing ticket","manual tagging"]),
-            ("OHA / Hearing Aids", ["oricle","hearing","truefit","audiologist","consultation","upgrade","specialist"]),
-            ("Returns & Refunds", ["return","refund","redo","warranty","reship","reshipment"]),
-            ("Shipping & Fulfillment", ["warehouse","shipping delay","b&j","fulfillment","shiphero","track"]),
-            ("Order Processing", ["order","sticky","campaign id","upsell","splash","manual creat"]),
-            ("Customer Records", ["customer details","customer record","update both systems","shopify customer"]),
-            ("Systems & Tools", ["page error","system issue","traffic","hold time","video guide","training portal"]),
-            ("Email & Comms", ["unsubscribe","email","messaging"]),
+            ("Returns & Refunds", ["refund","return","redo","warranty","reship","rts",
+                                    "return portal","return label","return to sender","return policy",
+                                    "return process","return completed","return handling"]),
+            ("Email & Comms", ["email","gorgias","zendesk","marketing","bbb","trust pilot",
+                                "nova","macro","ticket","unsubscribe","ivr","ghost call",
+                                "misrouted","social media"]),
+            ("Shipping & Fulfillment", ["shiphero","sticky","shipment","fulfillment","warehouse",
+                                         "dhl","ups","shipping","delivery","tracking",
+                                         "order cancellation","order hold","manual order",
+                                         "damaged","duplicate order","rts / undelivered",
+                                         "undelivered package"]),
+            ("Tagging & Tracking", ["tagging","tag "]),
+            ("Order Processing", ["order","sku","campaign","upsell"]),
           ]
           DEF = "General CSR Handling"
           def split(text):
             ms=list(DATE_RE.finditer(text)); out=[]
             for i,m in enumerate(ms):
               d=m.group(1); t=m.group(2).strip(); s=m.end(); e=ms[i+1].start() if i+1<len(ms) else len(text)
-              b=text[s:e].strip()
-              b=re.sub(r"\n*(Sample image|Sample Image \d+|Video guide[^\n]*|Cascaded by:[^\n]*)\s*$","",b).strip()
-              b=re.sub(r"^\s*(Sample image|Sample Image \d+|Video guide[^\n]*)\s*$","",b,flags=re.M).strip()
+              b=text[s:e].strip(); b=re.sub(r"\n{3,}","\n\n",b).strip()
               out.append({"date":d,"title":t,"body":b})
             return out
-          def concern_key(t):
-            tl=t.lower()
-            if "refund flow test" in tl: return "refund flow test oricle hearing"
-            if "sticky page error" in tl: return "sticky page error"
-            if "international return" in tl: return "international returns"
-            if "warranty replacement" in tl: return "warranty replacement"
-            if "customer details update" in tl: return "customer details update"
-            if "marketing email unsubscribe" in tl: return "marketing email unsubscribe"
-            t=re.sub(r"^(update|reminder|attention|workflow update|important|required action)\s*:\s*","",tl)
-            t=re.sub(r"\s*\([^)]*\)\s*$","",t); t=re.sub(r"\s*[-–]\s*(call handling|temporary workaround|manual tagging).*$","",t)
-            return re.sub(r"[^a-z0-9 ]","",t).strip()
           def cat(t,b):
-            blob=(t+" "+b[:400]).lower()
+            blob=(t+" "+b[:200]).lower()
             for c,kws in RULES:
               if any(k in blob for k in kws): return c
             return DEF
-          def parse(path,label):
-            if not os.path.exists(path): return []
-            txt=open(path,encoding="utf-8").read(); es=split(txt); g={}; order=[]
-            for e in es:
-              k=concern_key(e["title"]) or e["title"]
-              if k not in g: g[k]=[]; order.append(k)
-              g[k].append(e)
-            out=[]
-            for k in order:
-              grp=sorted(g[k],key=lambda x:x["date"],reverse=True)
-              vers=[]
-              for i,e in enumerate(grp):
-                st="current" if (len(grp)==1 or i==0) else ("previous" if i==len(grp)-1 else "updated")
-                by=CAS_RE.search(e["body"]); by=by.group(1).strip() if by else "CSR Leadership"
-                vers.append({"status":st,"label":st.upper(),"date":e["date"],"by":by,"title":e["title"],"body":e["body"]})
-              c=cat(grp[0]["title"],grp[0]["body"])
-              out.append({"id":re.sub(r"[^a-z0-9]+","-",k).strip("-")[:60],"title":grp[0]["title"],
-                "desc":grp[0]["body"][:160].replace("\n"," "),"category":c,"product":"","status":"current",
-                "date":grp[0]["date"],"cascadedBy":vers[0]["by"],"tags":[c.lower().replace(" / ","-").replace(" & ","-").replace(" ","-")],
-                "versions":vers,"_source":label})
-            return out
-          refund=parse("/tmp/refund.txt","refund"); tagging=parse("/tmp/tagging.txt","tagging")
-          allc=refund+tagging; allc.sort(key=lambda c:(c["category"],c["date"]))
-          # safeguard: dedupe by id (a concern must appear once)
-          seen=set(); ded=[]
-          for c in allc:
-            if c["id"] in seen: continue
-            seen.add(c["id"]); ded.append(c)
-          allc=ded
+          def slug(s): return re.sub(r"[^a-z0-9]+","-",s.lower()).strip("-")[:60]
+          def ts(d):
+            try: return datetime.datetime.strptime(d,"%B %d, %Y").timestamp()
+            except: return 0
+          all_e=[]
+          for path,src in (("/tmp/refund.txt","refund"),("/tmp/tagging.txt","tagging")):
+            if os.path.exists(path):
+              for e in split(open(path,encoding="utf-8").read()):
+                e["source"]=src; all_e.append(e)
+          # dedupe exact (date+title); keep longer body
+          seen={}
+          for e in all_e:
+            k=(e["date"],e["title"].lower())
+            if k in seen:
+              if len(e["body"])>len(seen[k]["body"]): seen[k]=e
+            else: seen[k]=e
+          uniq=list(seen.values())
+          uniq.sort(key=lambda e:ts(e["date"]),reverse=True)  # newest first
+          cascades=[]; used={}
+          for e in uniq:
+            c=cat(e["title"],e["body"])
+            by=CAS_RE.search(e["body"]); by=by.group(1).strip() if by else ""
+            base=slug(e["title"])+"-"+slug(e["date"])
+            base=base if base else "entry"
+            if base in used: used[base]+=1; cid=f"{base}-{used[base]}"
+            else: used[base]=0; cid=base
+            cascades.append({"id":cid,"title":e["title"],"category":c,"product":"",
+              "date":e["date"],"status":"current","desc":re.sub(r"\s+"," ",e["body"])[:160],
+              "tags":[],"relatedResources":[],"relatedProducts":[],
+              "versions":[{"status":"current","label":"CURRENT","date":e["date"],"by":by,
+                           "title":e["title"],"body":e["body"]}]})
           js="// AUTO-GENERATED by sync-to-site.yml — do not edit by hand.\n"
           js+="// Sources: REFUND_CASCADE_DOC + TAGGING_CASCADE_DOC (encrypted repo secrets).\n"
-          js+="window.KB_RAW_CASCADES = "+json.dumps(allc,indent=2,ensure_ascii=False)+";\n"
+          js+="// One cascade card per dated entry; newest first.\n"
+          js+="window.KB_RAW_CASCADES = "+json.dumps(cascades,indent=2,ensure_ascii=False)+";\n"
           with open("assets/js/cascades-data.js","w",encoding="utf-8") as f: f.write(js)
-          print("cascades:",len(allc),"| refund:",len(refund),"tagging:",len(tagging))
-          cats={}
-          for c in allc: cats[c["category"]]=cats.get(c["category"],0)+1
-          print("by handling:",cats)
+          print("cascades:",len(cascades),"| unique dated entries:",len(uniq))
+          from collections import Counter
+          print("by handling:",dict(Counter(c["category"] for c in cascades)))
           PY
 
       - name: Commit & push if changed
