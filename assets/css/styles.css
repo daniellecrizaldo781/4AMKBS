@@ -292,6 +292,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; color: var(--text); line-height: 1
 .pill--accent { background: var(--accent-tint); color: var(--accent-600); }
 .pill--brand { background: rgba(11,46,89,.08); color: var(--brand); }
 .pill--soft { background: rgba(255,255,255,.10); color: #cfe; }
+.pill--channel { background: rgba(11,46,89,.08); color: var(--brand); border: 1px solid rgba(11,46,89,.14); }
 
 .badge {
   display: inline-flex; align-items: center; gap: 4px;

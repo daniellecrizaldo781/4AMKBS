@@ -89,6 +89,7 @@ window.KBComponents = (function () {
   /* ---------- Cascade list item (shows full content) ---------- */
   function cascadeItem(c) {
     const tags = (c.tags || []).map(t => `<span class="pill pill--brand">${esc(t)}</span>`).join("");
+    const ch = c.channel ? `<span class="pill pill--channel">${esc(c.channelIcon || "")} ${esc(c.channel)}</span>` : "";
     // Show the full CURRENT handling body inline so the entire content is visible on the list.
     const current = (c.versions && c.versions[0]) ? c.versions[0] : null;
     const bodyHtml = current
@@ -102,6 +103,7 @@ window.KBComponents = (function () {
       ${bodyHtml}
       <div class="cascade-item__meta">
         <span><b>${esc(c.category)}</b></span>
+        ${ch}
         ${c.product ? `<span>${esc(c.product)}</span>` : ""}
         <span>Updated ${esc(c.date)}</span>
       </div>
