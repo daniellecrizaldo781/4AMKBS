@@ -20,27 +20,24 @@ window.KBPages = (function () {
       { icon: "◯", title: "Our Team", desc: "View the internal team directory and team information.", href: "#/team" }
     ];
 
-    const latest = D.latestUpdates.map(u => `
-      <a class="card card--link cascade-item" href="#/cascades" style="padding:14px 18px;">
+    // Latest Updates: newest real cascades (highest number = most recent)
+    const recent = D.cascades.slice().sort((a,b)=>(b.number||0)-(a.number||0)).slice(0,5);
+    const latest = recent.map(c => `
+      <a class="card card--link cascade-item" href="#/cascades/${esc(c.id)}" style="padding:14px 18px;">
         <div class="cascade-item__top">
-          <span class="cascade-item__title" style="font-size:15px;">${esc(u.title)}</span>
+          <span class="cascade-item__title" style="font-size:15px;">${esc(c.title)}</span>
+          ${C.statusBadge(c.status)}
         </div>
-        <div class="cascade-item__meta"><span>${esc(u.category)}</span><span>${esc(u.date)}</span></div>
+        <div class="cascade-item__meta"><span>${esc(c.category)}</span><span>Updated ${esc(c.date)}</span></div>
       </a>`).join("");
 
-    const freq = D.frequentlyUsed.map(f => `
-      <a class="chip" href="${esc(f.target)}" style="text-decoration:none;">${esc(f.title)}</a>`).join(" ");
+    const freq = D.frequentlyUsed.map(f =>
+      `<a class="chip" href="${esc(f.target)}" style="text-decoration:none;">${esc(f.title)}</a>`).join(" ");
 
     return `
-      ${C.pageHead("Knowledge Base", "One place where a CSR can go when they need an answer.")}
+      ${C.pageHead("Dashboard", "")}
 
-      <div class="grid grid--nav">
-        ${navCards.map(c => C.navCard(c.icon, c.title, c.desc, c.href)).join("")}
-      </div>
-
-      ${C.notice("Prototype preview — representative placeholder content. Real cascades, products, and policies will replace these once provided.")}
-
-      <section class="section">
+      <section class="section" style="margin-top:0;">
         <div class="section__head">
           <h2 class="section__title">Latest Updates</h2>
           <a class="section__link" href="#/cascades">View all cascades &rarr;</a>
@@ -52,10 +49,21 @@ window.KBPages = (function () {
 
       <section class="section">
         <div class="section__head">
+          <h2 class="section__title">Browse by Section</h2>
+        </div>
+        <div class="grid grid--nav">
+          ${navCards.map(c => C.navCard(c.icon, c.title, c.desc, c.href)).join("")}
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
           <h2 class="section__title">Frequently Used</h2>
         </div>
         <div class="chips-wrap">${freq}</div>
       </section>
+
+      ${C.notice("Knowledge Base — one place where a CSR can go when they need an answer. Cascades are imported from the live cascade document; products, resources, handbook, and team sections are placeholders pending the next phase.")}
     `;
   }
 
@@ -107,7 +115,7 @@ window.KBPages = (function () {
 
       <div class="grid" style="grid-template-columns:1fr; gap:14px;" id="cascade-list">${items}</div>
 
-      ${C.notice("Showing representative placeholder cascades. The future data model supports current / updated / previous / outdated handling versions — see an example (Refund Request Handling) for the version-history layout.")}
+      ${C.notice("Cascades are imported from the live cascade document (" + D.cascades.length + " entries). Each chained concern shows its full CURRENT → UPDATED → PREVIOUS handling history. Products, resources, handbook, and team remain placeholders for later phases.")}
     `;
   }
 
@@ -138,13 +146,14 @@ window.KBPages = (function () {
       <div class="row" style="margin-top:-8px;">
         ${C.statusBadge(c.status)}
         <span class="pill pill--brand">${esc(c.category)}</span>
-        <span class="pill pill--brand">${esc(c.product)}</span>
-        <span class="muted" style="font-size:13px;">Updated ${esc(c.date)}</span>
+        ${c.product ? `<span class="pill pill--brand">${esc(c.product)}</span>` : ""}
+        ${c.channelLabel ? `<span class="pill pill--brand">${esc(c.channelLabel)}</span>` : ""}
+        <span class="muted" style="font-size:13px;">${esc(c.cascadedBy ? "Cascaded by " + c.cascadedBy + " · " : "")}Updated ${esc(c.date)}</span>
       </div>
 
       <section class="section">
         <h2 class="section__title">Handling History</h2>
-        <p class="muted" style="font-size:13.5px;margin-top:-6px;">The newest handling is shown first and is always the one to follow.</p>
+        <p class="muted" style="font-size:13.5px;margin-top:-6px;">The newest handling is shown first and is always the one to follow. Older versions are kept for reference and are not to be applied.</p>
         ${C.versionBlock(c.versions)}
       </section>
 

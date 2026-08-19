@@ -298,8 +298,17 @@ window.KB = (function () {
     { title: "Sticky",               target: "#/resources" }
   ];
 
+  /* -------------------- REAL CASCADES (from source doc) --------------------
+     cascades-data.js sets window.KB_RAW_CASCADES = [121 real entries].
+     We prefer those over the placeholders, but keep the hand-built demo
+     entries (which include an OUTDATED layer) so the versioning showcase
+     still has an example with all four statuses. */
+  const realCascades = (typeof window.KB_RAW_CASCADES !== "undefined") ? window.KB_RAW_CASCADES : [];
+  const demoIds = new Set(cascades.map(c => c.id));
+  const mergedCascades = cascades.concat(realCascades.filter(c => !demoIds.has(c.id)));
+
   return {
-    products, cascades, cascadeCategories,
+    products, cascades: mergedCascades, cascadeCategories,
     resourceCategories, handbookCategories, team,
     latestUpdates, frequentlyUsed
   };

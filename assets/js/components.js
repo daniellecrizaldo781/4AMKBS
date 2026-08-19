@@ -10,21 +10,12 @@ window.KBComponents = (function () {
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 
-  /* ---------- Brand mark (inline SVG logo) ---------- */
-  function brandMark(size) {
-    size = size || 38;
-    return `<svg viewBox="0 0 64 64" width="${size}" height="${size}" role="img" aria-label="4AM Media">
-      <rect width="64" height="64" rx="14" fill="#0B2E59"/>
-      <circle cx="32" cy="40" r="13" fill="#F2A900"/>
-      <g stroke="#0B2E59" stroke-width="3.4" stroke-linecap="round">
-        <line x1="32" y1="9" x2="32" y2="17"/>
-        <line x1="13" y1="15" x2="18" y2="21"/>
-        <line x1="51" y1="15" x2="46" y2="21"/>
-        <line x1="7" y1="40" x2="15" y2="40"/>
-        <line x1="49" y1="40" x2="57" y2="40"/>
-      </g>
-      <path d="M19 40 a13 13 0 0 1 26 0 Z" fill="#FFE9C2" opacity="0.85"/>
-    </svg>`;
+  /* ---------- Brand mark (real 4AM Media logo) ----------
+     Uses assets/img/4am-logo-transparent.png (knocked-out transparent) so it
+     sits cleanly on both the navy sidebar and the white header. */
+  function brandMark(height) {
+    height = height || 38;
+    return `<img src="assets/img/4am-logo-transparent.png" alt="4AM Media" style="height:${height}px;width:auto;display:block;" />`;
   }
 
   /* ---------- Page header ---------- */
@@ -106,7 +97,7 @@ window.KBComponents = (function () {
       <div class="cascade-item__desc">${esc(c.desc)}</div>
       <div class="cascade-item__meta">
         <span><b>${esc(c.category)}</b></span>
-        <span>${esc(c.product)}</span>
+        ${c.product ? `<span>${esc(c.product)}</span>` : ""}
         <span>Updated ${esc(c.date)}</span>
       </div>
       ${tags ? `<div class="cascade-item__tags">${tags}</div>` : ""}
@@ -121,8 +112,12 @@ window.KBComponents = (function () {
         <div class="version-row__label">
           ${esc(v.label)}
           <span class="date">${esc(v.date)}</span>
+          ${v.by ? `<span class="date">Cascaded by ${esc(v.by)}</span>` : ""}
         </div>
-        <div class="version-row__body"><p>${esc(v.body)}</p></div>
+        <div class="version-row__body">
+          ${v.title && v.title !== v.body ? `<p><b>${esc(v.title)}</b></p>` : ""}
+          <p>${esc(v.body)}</p>
+        </div>
       </div>`).join("");
     return `<div class="version-block">${rows}</div>`;
   }
