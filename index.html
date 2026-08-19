@@ -10,25 +10,25 @@
 </head>
 <body>
   <div class="layout" id="layout">
-    <!-- ===== Sidebar ===== -->
-    <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
-      <div class="sidebar__brand">
-        <a href="#/dashboard" class="brand" aria-label="4AM Media Knowledge Base home">
-          <span class="brand__mark" id="brand-mark-sidebar" aria-hidden="true"></span>
-          <span class="brand__text">
-            <span class="brand__name">4AM MEDIA</span>
-            <span class="brand__sub">Knowledge Base</span>
-          </span>
-        </a>
-        <button class="sidebar__close" id="sidebar-close" aria-label="Close navigation">&times;</button>
-      </div>
+    <div class="overlay" id="overlay" hidden></div>
 
-      <nav class="nav" id="primary-nav" aria-label="Sections">
+    <!-- ===== Top bar (brand + primary nav + search) ===== -->
+    <header class="topbar" id="topbar">
+      <button class="topbar__hamburger" id="hamburger" aria-label="Open navigation">&#9776;</button>
+      <a href="#/dashboard" class="brand" aria-label="4AM Media Knowledge Base home">
+        <span class="brand__mark" id="brand-mark-header" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__name">4AM MEDIA</span>
+          <span class="brand__sub">Knowledge Base</span>
+        </span>
+      </a>
+
+      <nav class="topnav" id="primary-nav" aria-label="Sections">
         <a class="nav__item" href="#/dashboard" data-section="dashboard">
           <span class="nav__icon" aria-hidden="true">&#9632;</span> Dashboard
         </a>
         <a class="nav__item" href="#/cascades" data-section="cascades">
-          <span class="nav__icon" aria-hidden="true">&#9888;</span> Cascade &amp; Handling Updates
+          <span class="nav__icon" aria-hidden="true">&#9888;</span> Cascade &amp; Handling
         </a>
         <a class="nav__item" href="#/products" data-section="products">
           <span class="nav__icon" aria-hidden="true">&#9670;</span> Products
@@ -44,41 +44,25 @@
         </a>
       </nav>
 
-      <div class="sidebar__foot">
-        <span class="pill pill--soft">Phase 1 Prototype</span>
-        <p class="sidebar__note">Design &amp; architecture preview. Real content incoming.</p>
+      <div class="search" id="global-search">
+        <span class="search__icon" aria-hidden="true">&#9906;</span>
+        <input
+          type="search"
+          id="global-search-input"
+          class="search__input"
+          placeholder="Search cascades, products, policies, resources..."
+          aria-label="Global search"
+          autocomplete="off" />
+        <div class="search__dropdown" id="search-dropdown" hidden></div>
       </div>
-    </aside>
 
-    <div class="overlay" id="overlay" hidden></div>
+      <div class="topbar__util">
+        <span class="topbar__badge" title="Internal CSR tool">CSR</span>
+      </div>
+    </header>
 
-    <!-- ===== Main column ===== -->
-    <div class="main">
-      <header class="topbar" id="topbar">
-        <button class="topbar__hamburger" id="hamburger" aria-label="Open navigation">&#9776;</button>
-        <span class="topbar__logo" id="brand-mark-header" aria-hidden="true"></span>
-
-        <nav class="breadcrumbs" id="breadcrumbs" aria-label="Breadcrumb"></nav>
-
-        <div class="search" id="global-search">
-          <span class="search__icon" aria-hidden="true">&#9906;</span>
-          <input
-            type="search"
-            id="global-search-input"
-            class="search__input"
-            placeholder="Search cascades, products, policies, resources..."
-            aria-label="Global search"
-            autocomplete="off" />
-          <div class="search__dropdown" id="search-dropdown" hidden></div>
-        </div>
-
-        <div class="topbar__util">
-          <span class="topbar__badge" title="Internal CSR tool">CSR</span>
-        </div>
-      </header>
-
-      <main class="content" id="app-content" tabindex="-1"></main>
-    </div>
+    <!-- ===== Content ===== -->
+    <main class="content" id="app-content" tabindex="-1"></main>
   </div>
 
   <!-- Scripts: classic (non-module) order so the app opens directly from file:// -->

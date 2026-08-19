@@ -11,18 +11,15 @@
   const D = window.KB;
 
   const appContent = document.getElementById("app-content");
-  const sidebar = document.getElementById("sidebar");
   const overlay = document.getElementById("overlay");
-  const breadcrumbs = document.getElementById("breadcrumbs");
+  const breadcrumbs = document.getElementById("breadcrumbs"); // may be null (top-bar layout)
   const navItems = Array.from(document.querySelectorAll(".nav__item"));
-  const brandSidebar = document.getElementById("brand-mark-sidebar");
   const brandHeader = document.getElementById("brand-mark-header");
   const globalInput = document.getElementById("global-search-input");
   const searchDropdown = document.getElementById("search-dropdown");
 
-  /* ---- Inject brand marks ---- */
-  if (brandSidebar) brandSidebar.innerHTML = Comps.brandMark(38);
-  if (brandHeader) brandHeader.innerHTML = Comps.brandMark(26);
+  /* ---- Inject brand mark ---- */
+  if (brandHeader) brandHeader.innerHTML = Comps.brandMark(46);
 
   /* --------------------------- ROUTER --------------------------- */
   function parseHash() {
@@ -88,6 +85,7 @@
 
   /* --------------------------- BREADCRUMBS --------------------------- */
   function renderBreadcrumbs(segs, title) {
+    if (!breadcrumbs) return; // top-bar layout has no header breadcrumb
     const section = segs[0] || "dashboard";
     let parts = [`<a href="#/dashboard">Home</a>`];
     if (section !== "dashboard") {
@@ -96,7 +94,6 @@
     // Detail pages already render their own inline breadcrumbs; avoid duplication
     // by only showing the top-level trail in the header for list/section pages.
     if (segs.length > 1) {
-      // nothing extra — detail view shows full breadcrumb in content
       breadcrumbs.innerHTML = parts.join('<span class="sep">/</span>');
       return;
     }
@@ -150,9 +147,15 @@
   function openNav() { document.body.classList.add("nav-open"); overlay.hidden = false; }
   function closeNav() { document.body.classList.remove("nav-open"); overlay.hidden = true; }
 
-  document.getElementById("hamburger").addEventListener("click", openNav);
-  document.getElementById("sidebar-close").addEventListener("click", closeNav);
+  document.getElementById("hamburger").addEventListener("click", () => {
+    document.body.classList.toggle("nav-open");
+    overlay.hidden = !document.body.classList.contains("nav-open");
+  });
   overlay.addEventListener("click", closeNav);
+  // Close the mobile dropdown after tapping a nav link
+  document.getElementById("primary-nav").addEventListener("click", (e) => {
+    if (e.target.closest(".nav__item")) closeNav();
+  });
 
   /* --------------------------- GLOBAL SEARCH --------------------------- */
   let searchTimeout;

@@ -14,7 +14,7 @@ window.KBComponents = (function () {
      Uses assets/img/4am-logo-transparent.png (knocked-out transparent) so it
      sits cleanly on both the navy sidebar and the white header. */
   function brandMark(height) {
-    height = height || 38;
+    height = height || 46;
     return `<img src="assets/img/4am-logo-transparent.png" alt="4AM Media" style="height:${height}px;width:auto;display:block;" />`;
   }
 
@@ -86,21 +86,27 @@ window.KBComponents = (function () {
     </a>`;
   }
 
-  /* ---------- Cascade list item ---------- */
+  /* ---------- Cascade list item (shows full content) ---------- */
   function cascadeItem(c) {
     const tags = (c.tags || []).map(t => `<span class="pill pill--brand">${esc(t)}</span>`).join("");
+    // Show the full CURRENT handling body inline so the entire content is visible on the list.
+    const current = (c.versions && c.versions[0]) ? c.versions[0] : null;
+    const bodyHtml = current
+      ? `<div class="cascade-item__body">${esc(current.body).replace(/\n/g, "<br>")}</div>`
+      : `<div class="cascade-item__desc">${esc(c.desc)}</div>`;
     return `<a class="card card--link cascade-item" href="#/cascades/${esc(c.id)}">
       <div class="cascade-item__top">
         <span class="cascade-item__title">${esc(c.title)}</span>
         ${statusBadge(c.status)}
       </div>
-      <div class="cascade-item__desc">${esc(c.desc)}</div>
+      ${bodyHtml}
       <div class="cascade-item__meta">
         <span><b>${esc(c.category)}</b></span>
         ${c.product ? `<span>${esc(c.product)}</span>` : ""}
         <span>Updated ${esc(c.date)}</span>
       </div>
       ${tags ? `<div class="cascade-item__tags">${tags}</div>` : ""}
+      <div class="cascade-item__more">View full handling history &rarr;</div>
     </a>`;
   }
 
