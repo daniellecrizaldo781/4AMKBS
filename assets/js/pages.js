@@ -12,14 +12,6 @@ window.KBPages = (function () {
 
   /* =========================== DASHBOARD =========================== */
   function dashboard() {
-    const navCards = [
-      { icon: "⚠", title: "Cascade & Handling Updates", desc: "Find the latest customer concern handling, cascades, and process updates.", href: "#/cascades" },
-      { icon: "◆", title: "Products", desc: "Browse products, product information, troubleshooting, and related handling.", href: "#/products" },
-      { icon: "▢", title: "Resources", desc: "Access internal tools, links, forms, trackers, and useful resources.", href: "#/resources" },
-      { icon: "☰", title: "Handbook & Policies", desc: "Find team policies, procedures, expectations, and guidelines.", href: "#/handbook" },
-      { icon: "◯", title: "Our Team", desc: "View the internal team directory and team information.", href: "#/team" }
-    ];
-
     // Latest Updates: newest real cascades (highest number = most recent)
     const recent = D.cascades.slice().sort((a,b)=>(b.number||0)-(a.number||0)).slice(0,5);
     const latest = recent.map(c => `
@@ -37,7 +29,7 @@ window.KBPages = (function () {
     return `
       ${C.pageHead("Dashboard", "")}
 
-      <section class="welcome">
+      <section class="welcome welcome--wide">
         <div class="welcome__logo">
           <img src="assets/img/4am-logo-transparent.png" alt="4AM Media logo" />
         </div>
@@ -55,15 +47,6 @@ window.KBPages = (function () {
         </div>
         <div class="grid" style="grid-template-columns:1fr; gap:12px;">
           ${latest}
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="section__head">
-          <h2 class="section__title">Browse by Section</h2>
-        </div>
-        <div class="grid grid--nav">
-          ${navCards.map(c => C.navCard(c.icon, c.title, c.desc, c.href)).join("")}
         </div>
       </section>
 

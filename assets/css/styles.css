@@ -162,7 +162,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; color: var(--text); line-height: 1
 .search__section-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: var(--faint); padding: 8px 12px 4px; }
 
 /* ============================ CONTENT ============================ */
-.content { padding: 28px 32px 64px; max-width: 1280px; width: 100%; margin: 0 auto; }
+.content { --content-pad: 32px; padding: 28px 32px 64px; max-width: 1280px; width: 100%; margin: 0 auto; }
 
 .page-head { margin-bottom: 22px; }
 .page-title { font-size: 26px; font-weight: 800; letter-spacing: -.3px; }
@@ -182,6 +182,14 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; color: var(--text); line-height: 1
   overflow: hidden;
   position: relative;
 }
+/* Wider variant: break out of the content padding so it spans the full width */
+.welcome--wide {
+  margin-left: calc(-1 * var(--content-pad, 32px));
+  margin-right: calc(-1 * var(--content-pad, 32px));
+  border-radius: 0;
+  padding: 48px 56px;
+  gap: 40px;
+}
 .welcome::after {
   content: "";
   position: absolute;
@@ -198,6 +206,10 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; color: var(--text); line-height: 1
   border-radius: var(--r);
   box-shadow: 0 6px 18px rgba(0,0,0,.25);
   padding: 10px;
+}
+.welcome--wide .welcome__logo {
+  width: 110px; height: 110px;
+  padding: 14px;
 }
 .welcome__logo img { height: 100%; width: 100%; object-fit: contain; display: block; }
 .welcome__body { flex: 1 1 auto; min-width: 0; }
@@ -217,6 +229,7 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; color: var(--text); line-height: 1
   line-height: 1.2;
   margin: 0;
 }
+.welcome--wide .welcome__title { font-size: 34px; }
 .welcome__sub {
   margin-top: 10px;
   font-size: 15px;
@@ -226,7 +239,9 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; color: var(--text); line-height: 1
 }
 @media (max-width: 600px) {
   .welcome { flex-direction: column; align-items: flex-start; gap: 18px; padding: 24px; }
+  .welcome--wide { padding: 32px 24px; gap: 20px; }
   .welcome__title { font-size: 23px; }
+  .welcome--wide .welcome__title { font-size: 25px; }
 }
 
 .section { margin-top: 34px; }
