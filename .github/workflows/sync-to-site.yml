@@ -1,0 +1,118 @@
+name: Sync Cascades to Site
+
+# Rebuilds assets/js/cascades-data.js from the two encrypted cascade secrets
+# (REFUND_CASCADE_DOC, TAGGING_CASCADE_DOC) and pushes to the public site.
+on:
+  schedule:
+    - cron: '23 6 * * *'        # daily 06:23 UTC
+  workflow_dispatch:            # manual "Run" button
+  push:
+    paths:
+      - '.github/workflows/sync-to-site.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Write secrets to temp files (never logged)
+        run: |
+          printf '%s' "$REFUND" > /tmp/refund.txt
+          printf '%s' "$TAGGING" > /tmp/tagging.txt
+        env:
+          REFUND: ${{ secrets.REFUND_CASCADE_DOC }}
+          TAGGING: ${{ secrets.TAGGING_CASCADE_DOC }}
+
+      - name: Parse both docs into cascades-data.js (grouped by handling)
+        run: |
+          python3 - <<'PY'
+          import os, re, json
+          ROOT = os.getcwd()
+          DATE_RE = re.compile(r"^([A-Z][a-z]+ \d{1,2}, \d{4})\s*-\s*(.+?)\s*$", re.MULTILINE)
+          CAS_RE  = re.compile(r"Cascaded by:\s*([^\n]+)", re.I)
+          RULES = [
+            ("Marketplace Escalations", ["amazon","walmart","ebay","marketplace"]),
+            ("Tagging & Tracking", ["tagging","tag ","zendesk","follower","marketing_ticket","multiple concern","marketing ticket","manual tagging"]),
+            ("OHA / Hearing Aids", ["oricle","hearing","truefit","audiologist","consultation","upgrade","specialist"]),
+            ("Returns & Refunds", ["return","refund","redo","warranty","reship","reshipment"]),
+            ("Shipping & Fulfillment", ["warehouse","shipping delay","b&j","fulfillment","shiphero","track"]),
+            ("Order Processing", ["order","sticky","campaign id","upsell","splash","manual creat"]),
+            ("Customer Records", ["customer details","customer record","update both systems","shopify customer"]),
+            ("Systems & Tools", ["page error","system issue","traffic","hold time","video guide","training portal"]),
+            ("Email & Comms", ["unsubscribe","email","messaging"]),
+          ]
+          DEF = "General CSR Handling"
+          def split(text):
+            ms=list(DATE_RE.finditer(text)); out=[]
+            for i,m in enumerate(ms):
+              d=m.group(1); t=m.group(2).strip(); s=m.end(); e=ms[i+1].start() if i+1<len(ms) else len(text)
+              b=text[s:e].strip()
+              b=re.sub(r"\n*(Sample image|Sample Image \d+|Video guide[^\n]*|Cascaded by:[^\n]*)\s*$","",b).strip()
+              b=re.sub(r"^\s*(Sample image|Sample Image \d+|Video guide[^\n]*)\s*$","",b,flags=re.M).strip()
+              out.append({"date":d,"title":t,"body":b})
+            return out
+          def concern_key(t):
+            tl=t.lower()
+            if "refund flow test" in tl: return "refund flow test oricle hearing"
+            if "sticky page error" in tl: return "sticky page error"
+            if "international return" in tl: return "international returns"
+            if "warranty replacement" in tl: return "warranty replacement"
+            if "customer details update" in tl: return "customer details update"
+            if "marketing email unsubscribe" in tl: return "marketing email unsubscribe"
+            t=re.sub(r"^(update|reminder|attention|workflow update|important|required action)\s*:\s*","",tl)
+            t=re.sub(r"\s*\([^)]*\)\s*$","",t); t=re.sub(r"\s*[-–]\s*(call handling|temporary workaround|manual tagging).*$","",t)
+            return re.sub(r"[^a-z0-9 ]","",t).strip()
+          def cat(t,b):
+            blob=(t+" "+b[:400]).lower()
+            for c,kws in RULES:
+              if any(k in blob for k in kws): return c
+            return DEF
+          def parse(path,label):
+            if not os.path.exists(path): return []
+            txt=open(path,encoding="utf-8").read(); es=split(txt); g={}; order=[]
+            for e in es:
+              k=concern_key(e["title"]) or e["title"]
+              if k not in g: g[k]=[]; order.append(k)
+              g[k].append(e)
+            out=[]
+            for k in order:
+              grp=sorted(g[k],key=lambda x:x["date"],reverse=True)
+              vers=[]
+              for i,e in enumerate(grp):
+                st="current" if (len(grp)==1 or i==0) else ("previous" if i==len(grp)-1 else "updated")
+                by=CAS_RE.search(e["body"]); by=by.group(1).strip() if by else "CSR Leadership"
+                vers.append({"status":st,"label":st.upper(),"date":e["date"],"by":by,"title":e["title"],"body":e["body"]})
+              c=cat(grp[0]["title"],grp[0]["body"])
+              out.append({"id":re.sub(r"[^a-z0-9]+","-",k).strip("-")[:60],"title":grp[0]["title"],
+                "desc":grp[0]["body"][:160].replace("\n"," "),"category":c,"product":"","status":"current",
+                "date":grp[0]["date"],"cascadedBy":vers[0]["by"],"tags":[c.lower().replace(" / ","-").replace(" & ","-").replace(" ","-")],
+                "versions":vers,"_source":label})
+            return out
+          refund=parse("/tmp/refund.txt","refund"); tagging=parse("/tmp/tagging.txt","tagging")
+          allc=refund+tagging; allc.sort(key=lambda c:(c["category"],c["date"]))
+          js="// AUTO-GENERATED by sync-to-site.yml — do not edit by hand.\n"
+          js+="// Sources: REFUND_CASCADE_DOC + TAGGING_CASCADE_DOC (encrypted repo secrets).\n"
+          js+="window.KB_RAW_CASCADES = "+json.dumps(allc,indent=2,ensure_ascii=False)+";\n"
+          with open("assets/js/cascades-data.js","w",encoding="utf-8") as f: f.write(js)
+          print("cascades:",len(allc),"| refund:",len(refund),"tagging:",len(tagging))
+          cats={}
+          for c in allc: cats[c["category"]]=cats.get(c["category"],0)+1
+          print("by handling:",cats)
+          PY
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "cascade auto-sync"
+          git config user.email "auto-sync@users.noreply.github.com"
+          if ! git diff --quiet -- assets/js/cascades-data.js; then
+            git add assets/js/cascades-data.js
+            git commit -m "auto-sync: rebuild cascades-data.js from secrets $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push
+            echo "pushed"
+          else
+            echo "no change"
+          fi

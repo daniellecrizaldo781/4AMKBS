@@ -94,8 +94,32 @@ window.KBPages = (function () {
       ? list.map(C.cascadeItem).join("")
       : C.emptyState("🔍", "No cascades match", "Try a different category or search term.");
 
+    // When showing "All", arrange cascades per handling category (grouped sections).
+    let listHtml;
+    if (activeCat === "all" && !q) {
+      const groups = {};
+      const order = [];
+      list.forEach(c => {
+        const cat = c.category || "General CSR Handling";
+        if (!groups[cat]) { groups[cat] = []; order.push(cat); }
+        groups[cat].push(c);
+      });
+      order.sort();
+      listHtml = order.map(cat => `
+        <section class="cascade-group">
+          <div class="section__head">
+            <h2 class="section__title">${esc(cat)}</h2>
+            <span class="section__link">${groups[cat].length} update${groups[cat].length === 1 ? "" : "s"}</span>
+          </div>
+          <div class="grid" style="grid-template-columns:1fr; gap:14px;">${groups[cat].map(C.cascadeItem).join("")}</div>
+        </section>
+      `).join("");
+    } else {
+      listHtml = `<div class="grid" style="grid-template-columns:1fr; gap:14px;" id="cascade-list">${items}</div>`;
+    }
+
     return `
-      ${C.pageHead("Cascade & Handling Updates", "Quickly find the latest customer concern handling, cascades, and process updates.")}
+      ${C.pageHead("Cascade & Handling Updates", "Quickly find the latest customer concern handling, cascades, and process updates — arranged by handling area.")}
 
       <div class="filterbar">
         <div class="search">
@@ -108,14 +132,11 @@ window.KBPages = (function () {
 
       <div class="chips-wrap" id="cascade-chips">${chips}</div>
 
-      <div class="section__head">
-        <h2 class="section__title">${activeCat === "all" ? "All Handling Updates" : esc(activeCat)}</h2>
-        <span class="section__link">${list.length} result${list.length === 1 ? "" : "s"}</span>
-      </div>
+      ${activeCat === "all" && !q
+        ? `<div class="section__head"><h2 class="section__title">All Handling Updates</h2><span class="section__link">${list.length} total</span></div>${listHtml}`
+        : `<div class="section__head"><h2 class="section__title">${activeCat === "all" ? "All Handling Updates" : esc(activeCat)}</h2><span class="section__link">${list.length} result${list.length === 1 ? "" : "s"}</span></div>${listHtml}`}
 
-      <div class="grid" style="grid-template-columns:1fr; gap:14px;" id="cascade-list">${items}</div>
-
-      ${C.notice("Cascades are imported from the live cascade document (" + D.cascades.length + " entries). Each chained concern shows its full CURRENT → UPDATED → PREVIOUS handling history. Products, resources, handbook, and team remain placeholders for later phases.")}
+      ${C.notice("Cascades are imported from the live cascade documents (" + D.cascades.length + " entries) via encrypted repository secrets and arranged by handling area. Each chained concern shows its full CURRENT → UPDATED → PREVIOUS handling history.")}
     `;
   }
 
