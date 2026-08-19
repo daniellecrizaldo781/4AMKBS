@@ -2583,7 +2583,7 @@ window.KB_RAW_CASCADES = [
     "product": "",
     "date": "January 07, 2026",
     "status": "current",
-    "desc": "Please be advised that we now have a new Amazon, Ebay, Walmart 2026 tracking sheet, which is located inside the same existing link. Kindly make sure you are usi",
+    "desc": "🔵 ACTIVE / EXISTING Please be advised that we now have a new Amazon, Ebay, Walmart 2026 tracking sheet, which is located inside the same existing link. Kindly m",
     "tags": [],
     "relatedResources": [],
     "relatedProducts": [],
@@ -2594,7 +2594,7 @@ window.KB_RAW_CASCADES = [
         "date": "January 07, 2026",
         "by": "",
         "title": "New Amazon, Ebay, Walmart 2026 tracking sheet",
-        "body": "Please be advised that we now have a new Amazon, Ebay, Walmart 2026 tracking sheet, which is located inside the same existing link. Kindly make sure you are using this updated sheet moving forward.\nWhen escalating any concerns, please ensure the following:\n* Use the correct Order ID format\n* Provide complete and accurate details to avoid delays in resolution\nIncomplete or incorrectly formatted submissions may result in delays, so please double-check all information before escalating."
+        "body": "🔵 ACTIVE / EXISTING \nPlease be advised that we now have a new Amazon, Ebay, Walmart 2026 tracking sheet, which is located inside the same existing link. Kindly make sure you are using this updated sheet moving forward.\nWhen escalating any concerns, please ensure the following:\n* Use the correct Order ID format\n* Provide complete and accurate details to avoid delays in resolution\nIncomplete or incorrectly formatted submissions may result in delays, so please double-check all information before escalating."
       }
     ]
   },
