@@ -119,18 +119,6 @@
         }, 250);
       });
     }
-    document.querySelectorAll("#cascade-chips .chip").forEach(chip => {
-      chip.addEventListener("click", () => {
-        const cat = chip.dataset.cat;
-        const cur = parseHash().params;
-        const q = cur.q ? `q=${cur.q}` : "";
-        const c = cat !== "all" ? `cat=${encodeURIComponent(cat)}` : "";
-        const join = (c || q) ? "?" : "";
-        const amp = (c && q) ? "&" : "";
-        location.hash = "#/cascades" + join + c + amp + q;
-      });
-    });
-
     // Search page input
     const spInput = document.getElementById("search-page-input");
     if (spInput) {

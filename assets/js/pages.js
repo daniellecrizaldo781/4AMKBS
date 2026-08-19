@@ -69,16 +69,12 @@ window.KBPages = (function () {
 
   /* ====================== CASCADE & HANDLING ====================== */
   function cascades(params) {
-    const activeCat = params && params.cat ? decodeURIComponent(params.cat) : "all";
     const q = params && params.q ? decodeURIComponent(params.q) : "";
 
-    const chips = [`<button class="chip ${activeCat === "all" ? "is-active" : ""}" data-cat="all">All</button>`]
-      .concat(D.cascadeCategories.map(c =>
-        `<button class="chip ${activeCat === c ? "is-active" : ""}" data-cat="${esc(c)}">${esc(c)}</button>`
-      )).join("");
+    // Sort by date, newest first (latest -> oldest), across all handling areas.
+    const byDate = (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime();
+    let list = D.cascades.slice().sort(byDate);
 
-    let list = D.cascades.slice();
-    if (activeCat !== "all") list = list.filter(c => c.category === activeCat);
     if (q) {
       const t = q.toLowerCase();
       list = list.filter(c =>
@@ -92,34 +88,10 @@ window.KBPages = (function () {
 
     const items = list.length
       ? list.map(C.cascadeItem).join("")
-      : C.emptyState("🔍", "No cascades match", "Try a different category or search term.");
-
-    // When showing "All", arrange cascades per handling category (grouped sections).
-    let listHtml;
-    if (activeCat === "all" && !q) {
-      const groups = {};
-      const order = [];
-      list.forEach(c => {
-        const cat = c.category || "General CSR Handling";
-        if (!groups[cat]) { groups[cat] = []; order.push(cat); }
-        groups[cat].push(c);
-      });
-      order.sort();
-      listHtml = order.map(cat => `
-        <section class="cascade-group">
-          <div class="section__head">
-            <h2 class="section__title">${esc(cat)}</h2>
-            <span class="section__link">${groups[cat].length} update${groups[cat].length === 1 ? "" : "s"}</span>
-          </div>
-          <div class="grid" style="grid-template-columns:1fr; gap:14px;">${groups[cat].map(C.cascadeItem).join("")}</div>
-        </section>
-      `).join("");
-    } else {
-      listHtml = `<div class="grid" style="grid-template-columns:1fr; gap:14px;" id="cascade-list">${items}</div>`;
-    }
+      : C.emptyState("🔍", "No cascades match", "Try a different search term.");
 
     return `
-      ${C.pageHead("Cascade & Handling Updates", "Quickly find the latest customer concern handling, cascades, and process updates — arranged by handling area.")}
+      ${C.pageHead("Cascade & Handling Updates", "All customer-concern handling, cascades, and process updates — arranged newest to oldest (January → August 2026).")}
 
       <div class="filterbar">
         <div class="search">
@@ -130,13 +102,14 @@ window.KBPages = (function () {
         </div>
       </div>
 
-      <div class="chips-wrap" id="cascade-chips">${chips}</div>
+      <div class="section__head">
+        <h2 class="section__title">All Handling Updates</h2>
+        <span class="section__link">${list.length} update${list.length === 1 ? "" : "s"} · newest first</span>
+      </div>
 
-      ${activeCat === "all" && !q
-        ? `<div class="section__head"><h2 class="section__title">All Handling Updates</h2><span class="section__link">${list.length} total</span></div>${listHtml}`
-        : `<div class="section__head"><h2 class="section__title">${activeCat === "all" ? "All Handling Updates" : esc(activeCat)}</h2><span class="section__link">${list.length} result${list.length === 1 ? "" : "s"}</span></div>${listHtml}`}
+      <div class="grid" style="grid-template-columns:1fr; gap:14px;" id="cascade-list">${items}</div>
 
-      ${C.notice("Cascades are imported from the live cascade documents (" + D.cascades.length + " entries) via encrypted repository secrets and arranged by handling area. Each chained concern shows its full CURRENT → UPDATED → PREVIOUS handling history.")}
+      ${C.notice("Cascades are imported from the live cascade documents (" + D.cascades.length + " entries) via encrypted repository secrets and sorted newest → oldest. Each card shows its handling area, the update date, and the full current handling text. Related cascades are grouped by handling area on each detail page.")}
     `;
   }
 
