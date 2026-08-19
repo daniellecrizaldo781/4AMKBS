@@ -37,6 +37,17 @@ window.KBPages = (function () {
     return `
       ${C.pageHead("Dashboard", "")}
 
+      <section class="welcome">
+        <div class="welcome__logo">
+          <img src="assets/img/4am-logo-transparent.png" alt="4AM Media logo" />
+        </div>
+        <div class="welcome__body">
+          <div class="welcome__eyebrow">Knowledge Base</div>
+          <h1 class="welcome__title">Welcome to 4AM Media Knowledge Base System</h1>
+          <p class="welcome__sub">Your internal home for customer-concern handling, cascades, products, resources, and team policies — kept current from the live cascade documents.</p>
+        </div>
+      </section>
+
       <section class="section" style="margin-top:0;">
         <div class="section__head">
           <h2 class="section__title">Latest Updates</h2>
