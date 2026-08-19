@@ -109,7 +109,7 @@ window.KBPages = (function () {
 
       <div class="grid" style="grid-template-columns:1fr; gap:14px;" id="cascade-list">${items}</div>
 
-      ${C.notice("Cascades are imported from the live cascade documents (" + D.cascades.length + " entries) via encrypted repository secrets and sorted newest → oldest. Each card shows its handling area, the update date, and the full current handling text. Related cascades are grouped by handling area on each detail page.")}
+      ${C.notice("Cascades are imported directly from the live cascade documents (" + D.cascades.length + " dated entries, January → August 2026) and sorted newest → oldest. Each card shows its handling area, the update date, and the full handling text. Open any card to read the complete context and see other updates in the same handling area.")}
     `;
   }
 
@@ -164,8 +164,8 @@ window.KBPages = (function () {
 
       <section class="section">
         <div class="section__head">
-          <h2 class="section__title">Related Cascades</h2>
-          <a class="section__link" href="#/cascades">All cascades &rarr;</a>
+          <h2 class="section__title">Related Cascades in ${esc(c.category)}</h2>
+          <a class="section__link" href="#/cascades">${D.cascades.filter(x => x.category === c.category).length} in this handling area &rarr;</a>
         </div>
         ${related}
       </section>
