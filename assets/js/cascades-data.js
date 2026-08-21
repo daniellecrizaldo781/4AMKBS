@@ -49,7 +49,7 @@ window.KB_RAW_CASCADES = [
     ],
     "cascadedBy": "",
     "sampleImage": "N/A",
-    "sampleImageUrl": "N/A",
+    "sampleImageUrl": "",
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [

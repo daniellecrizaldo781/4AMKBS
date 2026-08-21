@@ -68,10 +68,11 @@ jobs:
           DRIVE_RE=re.compile(r"drive\.google\.com/(?:file/d/|open\?id=)([A-Za-z0-9_-]+)")
           def img_url(raw):
             if not raw: return ""
+            if raw.strip().upper() in ("N/A","NA","-"): return ""
             m=DRIVE_RE.search(raw)
             if m: return f"https://lh3.googleusercontent.com/d/{m.group(1)}"
             if raw.lower().startswith("http") and re.search(r"\.(png|jpe?g|webp|gif)", raw, re.I): return raw
-            return raw
+            return ""
           def norm(s): return STATUS_MAP.get(re.sub(r"\s+"," ",(s or "").strip().lower()), DEFAULT_STATUS)
           def cat(t,b):
             x=(t+" "+b[:200]).lower()
