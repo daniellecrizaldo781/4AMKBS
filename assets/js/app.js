@@ -214,6 +214,59 @@
     if (!document.getElementById("global-search").contains(e.target)) searchDropdown.hidden = true;
   });
 
+  /* --------------------------- IMAGE ZOOM (lightbox) --------------------------- */
+  // Click a ".zoomable-img" to open the full image in a full-screen overlay.
+  // If the image fails to load (e.g. a restricted Drive link), KBZoom.fail() swaps in a
+  // friendly placeholder so a broken image never shows as a blank box.
+  window.KBZoom = {
+    overlay: null,
+    open(e, el) {
+      e.preventDefault();
+      e.stopPropagation();
+      const full = el.getAttribute("data-full");
+      const alt = el.getAttribute("data-alt") || "Image";
+      if (!this.overlay) {
+        this.overlay = document.createElement("div");
+        this.overlay.className = "lightbox";
+        this.overlay.setAttribute("role", "dialog");
+        this.overlay.setAttribute("aria-modal", "true");
+        this.overlay.innerHTML =
+          '<button class="lightbox__close" aria-label="Close">✕</button>' +
+          '<img class="lightbox__img" alt="" />' +
+          '<div class="lightbox__hint">Click outside or press Esc to close</div>';
+        document.body.appendChild(this.overlay);
+        this.overlay.addEventListener("click", (ev) => {
+          if (ev.target === this.overlay || ev.target.classList.contains("lightbox__close")) this.close();
+        });
+      }
+      const img = this.overlay.querySelector(".lightbox__img");
+      img.src = full;
+      img.alt = alt;
+      img.onerror = () => { img.replaceWith(this._placeholder(alt)); };
+      this.overlay.hidden = false;
+      document.body.style.overflow = "hidden";
+    },
+    close() {
+      if (!this.overlay) return;
+      this.overlay.hidden = true;
+      document.body.style.overflow = "";
+      const img = this.overlay.querySelector(".lightbox__img");
+      if (img) img.onerror = null;
+    },
+    fail(imgEl) {
+      // broken thumbnail -> placeholder in place of the image
+      const wrap = imgEl.closest(".zoomable-img");
+      if (wrap) wrap.replaceChildren(this._placeholder(imgEl.alt || "Sample image", true));
+    },
+    _placeholder(text, inline) {
+      const d = document.createElement("div");
+      d.className = inline ? "img-fallback img-fallback--inline" : "img-fallback";
+      d.innerHTML = "🖼️<br><span>" + (window.KBComponents ? window.KBComponents.esc(text) : text) + "</span><br><small>Image unavailable</small>";
+      return d;
+    }
+  };
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") window.KBZoom.close(); });
+
   /* --------------------------- BOOT --------------------------- */
   window.addEventListener("hashchange", render);
   if (!location.hash) location.hash = "#/dashboard";

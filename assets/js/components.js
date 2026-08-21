@@ -115,7 +115,7 @@ window.KBComponents = (function () {
     const tags = (c.tags || []).map(t => `<span class="pill pill--brand">${esc(t)}</span>`).join("");
     const ch = c.channel ? `<span class="pill pill--channel">${esc(c.channelIcon || "")} ${esc(c.channel)}</span>` : "";
     const sampleImg = c.sampleImageUrl
-      ? `<div class="cascade-item__img"><img src="${esc(c.sampleImageUrl)}" alt="${esc(c.title)} — sample image" loading="lazy" /></div>`
+      ? `<div class="cascade-item__img zoomable-img" data-full="${esc(c.sampleImageUrl)}" data-alt="${esc(c.title)} — sample image" onclick="KBZoom.open(event,this)"><img src="${esc(c.sampleImageUrl)}" alt="${esc(c.title)} — sample image" loading="lazy" onerror="KBZoom.fail(this)" /></div>`
       : (c.sampleImage ? `<div class="cascade-item__imgref"><span class="cascade-item__imgicon" aria-hidden="true">🖼️</span> Sample image: <code>${esc(c.sampleImage)}</code></div>` : "");
     // Show the full CURRENT handling body inline so the entire content is visible on the list.
     const current = (c.versions && c.versions[0]) ? c.versions[0] : null;
