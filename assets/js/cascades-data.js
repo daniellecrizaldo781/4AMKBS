@@ -1,6 +1,5 @@
-/* Auto-generated from the live cascade tracking sheet by sheet_cascades.py.
-   3 cascade entries, newest first. Source of truth = Google Sheet.
-   Status comes from the sheet's 'Cascade Status' column (new/active/superseded/retired). */
+/* Auto-generated from the live cascade tracking sheet by sync-to-site.yml.
+   Status comes from the sheet's 'Cascade Status' column. Newest first. */
 window.KB_RAW_CASCADES = [
   {
     "id": "reminder-all-returns-with-refunds-issued-january-06-2026",
@@ -68,7 +67,7 @@ window.KB_RAW_CASCADES = [
     "id": "handling-update-all-returns-with-refunds-issued-january-02-2026",
     "title": "Handling Update: All returns with refunds issued",
     "category": "Returns & Refunds",
-    "supersedes": "",
+    "supersedes": "NONE",
     "supersededBy": "",
     "channel": "Email + Call",
     "channelIcon": "📧📞",
@@ -77,7 +76,8 @@ window.KB_RAW_CASCADES = [
     "status": "active",
     "desc": "Following the cascade on 07/02/25 (see image below), all returns with refunds issued — whether full refund less shipping, reprocessing fee, or even 50% for inte",
     "tags": [
-      "Email + Call"
+      "Email + Call",
+      "Supersedes: NONE"
     ],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1j2hzq4G46m5cl-DY7h3EEqn1TYMnsPCD/view?usp=sharing",
