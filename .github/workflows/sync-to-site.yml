@@ -95,7 +95,7 @@ jobs:
             body=re.sub(r"\n{3,}","\n\n",(r.get("Cascade") or "").strip()).strip()
             img=(r.get("Sample Image") or "").strip(); status=norm(r.get("Cascade Status"))
             img_url_val=img_url(img)
-            supersedes_raw=(r.get("Supersedes") or "").strip()
+            supersedes_raw=(r.get("Superseded Cascade") or r.get("Supersedes") or "").strip()
             if not title: title=body[:60] or f"Untitled cascade {i+1}"
             by=CAS_RE.search(body); by=by.group(1).strip() if by else ""
             c=cat(title,body); chx=ch(title,body); tags=[chx]
