@@ -1,5 +1,6 @@
-/* Auto-generated from the live cascade tracking sheet by sync-to-site.yml.
-   Status comes from the sheet's 'Cascade Status' column. Newest first. */
+/* Auto-generated from the live cascade tracking sheet by sheet_cascades.py.
+   3 cascade entries, newest first. Source of truth = Google Sheet.
+   Status comes from the sheet's 'Cascade Status' column (new/active/superseded/retired). */
 window.KB_RAW_CASCADES = [
   {
     "id": "reminder-all-returns-with-refunds-issued-january-06-2026",
@@ -7,15 +8,13 @@ window.KB_RAW_CASCADES = [
     "category": "Returns & Refunds",
     "supersedes": "",
     "supersededBy": "",
-    "channel": "Entire Team",
+    "channel": "",
     "channelIcon": "👥",
     "product": "",
     "date": "January 06, 2026",
     "status": "active",
     "desc": "Reminder: I can still see invalid escalations in the Failed Refund Sheet under the BEYOND TAT tab. Proper handling has already been cascaded, however some CSRs ",
-    "tags": [
-      "Entire Team"
-    ],
+    "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1Sd5Q9_8tUSkBDxUWANRjXkP3rdVz1KZJ/view",
     "sampleImageUrl": "https://lh3.googleusercontent.com/d/1Sd5Q9_8tUSkBDxUWANRjXkP3rdVz1KZJ",
@@ -38,15 +37,13 @@ window.KB_RAW_CASCADES = [
     "category": "Email & Comms",
     "supersedes": "",
     "supersededBy": "",
-    "channel": "Email",
-    "channelIcon": "📧",
+    "channel": "",
+    "channelIcon": "👥",
     "product": "",
     "date": "January 06, 2026",
     "status": "retired",
     "desc": "Just a heads-up that we’re currently seeing duplicate order entries in Shiphero, which may cause some customers to receive multiple order confirmation emails. N",
-    "tags": [
-      "Email"
-    ],
+    "tags": [],
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
@@ -67,18 +64,15 @@ window.KB_RAW_CASCADES = [
     "id": "handling-update-all-returns-with-refunds-issued-january-02-2026",
     "title": "Handling Update: All returns with refunds issued",
     "category": "Returns & Refunds",
-    "supersedes": "NONE",
+    "supersedes": "",
     "supersededBy": "",
-    "channel": "Email + Call",
-    "channelIcon": "📧📞",
+    "channel": "",
+    "channelIcon": "👥",
     "product": "",
     "date": "January 02, 2026",
     "status": "active",
     "desc": "Following the cascade on 07/02/25 (see image below), all returns with refunds issued — whether full refund less shipping, reprocessing fee, or even 50% for inte",
-    "tags": [
-      "Email + Call",
-      "Supersedes: NONE"
-    ],
+    "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1j2hzq4G46m5cl-DY7h3EEqn1TYMnsPCD/view?usp=sharing",
     "sampleImageUrl": "https://lh3.googleusercontent.com/d/1j2hzq4G46m5cl-DY7h3EEqn1TYMnsPCD",

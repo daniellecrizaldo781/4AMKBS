@@ -61,8 +61,7 @@ jobs:
             ("Order Processing", ["order","sku","campaign","upsell"]),
           ]
           DEF="General CSR Handling"
-          EMAIL_HITS=["email","emails","email team","email only","e-mail","(email","marketing email","unsubscribe","email tickets","email ticket","zendesk","gorgias","social media","nova ai","bot","bbb review","trustpilot","review request"]
-          CALL_HITS=["call handling","call team","phone","ivr","ghost call","misrouted call","misrouted","on hold","hold time","during the call","call spiel","call flow","smartflow","calls","call/chat"]
+          CHANNELS={"email":"Email","call":"Call","email + call":"Email + Call","entire team":"Entire Team"}
           CH_ICON={"Email":"\U0001F4E7","Call":"\U0001F4DE","Email + Call":"\U0001F4E7\U0001F4DE","Entire Team":"\U0001F465"}
           CAS_RE=re.compile(r"Cascaded by[:\s]+(.+?)(?:\n|$)", re.I)
           DRIVE_RE=re.compile(r"drive\.google\.com/(?:file/d/|open\?id=)([A-Za-z0-9_-]+)")
@@ -80,11 +79,7 @@ jobs:
               if any(k in x for k in kws): return c
             return DEF
           def ch(t,b):
-            x=(t+" "+b).lower(); ie=any(h in x for h in EMAIL_HITS); ic=any(h in x for h in CALL_HITS)
-            if ie and ic: return "Email + Call"
-            if ie: return "Email"
-            if ic: return "Call"
-            return "Entire Team"
+            return CHANNELS.get((r.get("Channel") or "").strip().lower(), "")
           def slug(s): return re.sub(r"[^a-z0-9]+","-",s.lower()).strip("-")[:60]
           def ts(d):
             try: return datetime.datetime.strptime((d or "").strip(),"%B %d, %Y").timestamp()
@@ -97,9 +92,10 @@ jobs:
             img=(r.get("Sample Image") or "").strip(); status=norm(r.get("Cascade Status"))
             img_url_val=img_url(img)
             supersedes_raw=(r.get("Superseded Cascade") or r.get("Supersedes") or "").strip()
+            if supersedes_raw.upper() in ("NONE","N/A","NA","-"): supersedes_raw=""
             if not title: title=body[:60] or f"Untitled cascade {i+1}"
             by=CAS_RE.search(body); by=by.group(1).strip() if by else ""
-            c=cat(title,body); chx=ch(title,body); tags=[chx]
+            c=cat(title,body); chx=ch(title,body); tags=[chx] if chx else []
             if by: tags.append("Cascaded by "+by)
             if supersedes_raw: tags.append("Supersedes: "+supersedes_raw)
             base=slug(title)+"-"+slug(date); base=base if base else "entry"
