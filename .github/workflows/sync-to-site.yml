@@ -95,18 +95,26 @@ jobs:
             body=re.sub(r"\n{3,}","\n\n",(r.get("Cascade") or "").strip()).strip()
             img=(r.get("Sample Image") or "").strip(); status=norm(r.get("Cascade Status"))
             img_url_val=img_url(img)
+            supersedes_raw=(r.get("Supersedes") or "").strip()
             if not title: title=body[:60] or f"Untitled cascade {i+1}"
             by=CAS_RE.search(body); by=by.group(1).strip() if by else ""
             c=cat(title,body); chx=ch(title,body); tags=[chx]
             if by: tags.append("Cascaded by "+by)
+            if supersedes_raw: tags.append("Supersedes: "+supersedes_raw)
             base=slug(title)+"-"+slug(date); base=base if base else "entry"
             if base in used: used[base]+=1; cid=f"{base}-{used[base]}"
             else: used[base]=0; cid=base
-            cascades.append({"id":cid,"title":title,"category":c,"channel":chx,
+            cascades.append({"id":cid,"title":title,"category":c,"supersedes":supersedes_raw,"supersededBy":"","channel":chx,
               "channelIcon":CH_ICON.get(chx,"\U0001F465"),"product":"","date":date,"status":status,
               "desc":re.sub(r"\s+"," ",body)[:160],"tags":tags,"cascadedBy":by,
               "sampleImage":img,"sampleImageUrl":img_url_val,"relatedResources":[],"relatedProducts":[],
               "versions":[{"status":status,"label":status.upper(),"date":date,"by":by,"title":title,"body":body}]})
+          title_to_id={c["title"]:c["id"] for c in cascades}
+          for c in cascades:
+            s=c.get("supersedes","").strip()
+            if s and s in title_to_id and title_to_id[s]!=c["id"]:
+              older=next((x for x in cascades if x["id"]==title_to_id[s]),None)
+              if older: older["supersededBy"]=c["title"]
           cascades.sort(key=lambda c:ts(c["date"]),reverse=True)
           js="/* Auto-generated from the live cascade tracking sheet by sync-to-site.yml.\n"
           js+="   Status comes from the sheet's 'Cascade Status' column. Newest first. */\n"

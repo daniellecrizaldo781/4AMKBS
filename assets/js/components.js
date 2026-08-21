@@ -110,25 +110,15 @@ window.KBComponents = (function () {
     </a>`;
   }
 
-  /* ---------- Cascade list item (shows full content) ---------- */
+  /* ---------- Cascade list item (compact: title + status + meta only) ---------- */
   function cascadeItem(c) {
     const tags = (c.tags || []).map(t => `<span class="pill pill--brand">${esc(t)}</span>`).join("");
     const ch = c.channel ? `<span class="pill pill--channel">${esc(c.channelIcon || "")} ${esc(c.channel)}</span>` : "";
-    const sampleImg = c.sampleImageUrl
-      ? `<div class="cascade-item__img zoomable-img" data-full="${esc(c.sampleImageUrl)}" data-alt="${esc(c.title)} — sample image" onclick="KBZoom.open(event,this)"><img src="${esc(c.sampleImageUrl)}" alt="${esc(c.title)} — sample image" loading="lazy" onerror="KBZoom.fail(this)" /></div>`
-      : (c.sampleImage ? `<div class="cascade-item__imgref"><span class="cascade-item__imgicon" aria-hidden="true">🖼️</span> Sample image: <code>${esc(c.sampleImage)}</code></div>` : "");
-    // Show the full CURRENT handling body inline so the entire content is visible on the list.
-    const current = (c.versions && c.versions[0]) ? c.versions[0] : null;
-    const bodyHtml = current
-      ? `<div class="cascade-item__body">${esc(current.body).replace(/\n/g, "<br>")}</div>`
-      : `<div class="cascade-item__desc">${esc(c.desc)}</div>`;
     return `<a class="card card--link cascade-item" href="#/cascades/${esc(c.id)}">
       <div class="cascade-item__top">
         <span class="cascade-item__title">${esc(c.title)}</span>
         ${statusChip(c.status)}
       </div>
-      ${bodyHtml}
-      ${sampleImg}
       <div class="cascade-item__meta">
         <span><b>${esc(c.category)}</b></span>
         ${ch}
@@ -164,6 +154,34 @@ window.KBComponents = (function () {
         </div>
       </div>`).join("");
     return `<div class="version-block">${rows}</div>`;
+  }
+
+  /* ---------- Cascade cross-links (supersedes / superseded by) ---------- */
+  // Resolve a cascade title to its detail link (needs the full cascade list).
+  function cascadeLink(cascades, title) {
+    const c = cascades.find(x => x.title === title);
+    if (!c) return esc(title); // title not found -> show plain text, no broken link
+    return `<a href="#/cascades/${esc(c.id)}">${esc(title)}</a>`;
+  }
+
+  // Shows on a cascade's detail page:
+  //  - "Supersedes: <older title>" when this cascade replaces an older one
+  //  - "Superseded by: <newer title>" when this cascade was replaced
+  function supersedesBlock(c, cascades) {
+    const parts = [];
+    if (c.supersedes && c.supersedes.trim()) {
+      parts.push(`<div class="supersede-row supersede-row--replaces">
+        <span class="supersede-row__icon" aria-hidden="true">&#8593;</span>
+        <span><b>Supersedes:</b> ${cascadeLink(cascades, c.supersedes.trim())}</span>
+      </div>`);
+    }
+    if (c.supersededBy && c.supersededBy.trim()) {
+      parts.push(`<div class="supersede-row supersede-row--replaced">
+        <span class="supersede-row__icon" aria-hidden="true">&#8595;</span>
+        <span><b>Superseded by:</b> ${cascadeLink(cascades, c.supersededBy.trim())}</span>
+      </div>`);
+    }
+    return parts.length ? `<div class="supersede-block">${parts.join("")}</div>` : "";
   }
 
   /* ---------- Resource card ---------- */
@@ -216,6 +234,7 @@ window.KBComponents = (function () {
     esc, brandMark, pageHead, notice, emptyState,
     statusChip, statusLegend, statusMeta, STATUS_META,
     navCard, catCard, productCard, productPlaceholder, cascadeItem,
-    versionBlock, resourceCard, handbookCard, teamCard, relatedItem
+    versionBlock, supersedesBlock, cascadeLink,
+    resourceCard, handbookCard, teamCard, relatedItem
   };
 })();

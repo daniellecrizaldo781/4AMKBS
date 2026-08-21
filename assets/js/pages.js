@@ -164,6 +164,8 @@ window.KBPages = (function () {
 
       ${c.sampleImageUrl ? `<div class="detail-img zoomable-img" data-full="${esc(c.sampleImageUrl)}" data-alt="${esc(c.title)} — sample image" onclick="KBZoom.open(event,this)"><img src="${esc(c.sampleImageUrl)}" alt="${esc(c.title)} — sample image" loading="lazy" onerror="KBZoom.fail(this)" /></div>` : (c.sampleImage ? `<div class="detail-imgref">🖼️ Sample image: <code>${esc(c.sampleImage)}</code></div>` : "")}
 
+      ${C.supersedesBlock(c, D.cascades)}
+
       <section class="section">
         <h2 class="section__title">Handling History</h2>
         <p class="muted" style="font-size:13.5px;margin-top:-6px;">The newest handling is shown first and is always the one to follow. Older versions are kept for reference and are not to be applied.</p>

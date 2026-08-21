@@ -1,11 +1,13 @@
 /* Auto-generated from the live cascade tracking sheet by sheet_cascades.py.
-   2 cascade entries, newest first. Source of truth = Google Sheet.
+   3 cascade entries, newest first. Source of truth = Google Sheet.
    Status comes from the sheet's 'Cascade Status' column (new/active/superseded/retired). */
 window.KB_RAW_CASCADES = [
   {
     "id": "reminder-all-returns-with-refunds-issued-january-06-2026",
     "title": "Reminder: All returns with refunds issued",
     "category": "Returns & Refunds",
+    "supersedes": "",
+    "supersededBy": "",
     "channel": "Entire Team",
     "channelIcon": "👥",
     "product": "",
@@ -32,9 +34,42 @@ window.KB_RAW_CASCADES = [
     ]
   },
   {
+    "id": "duplicate-order-confirmations-shiphero-january-06-2026",
+    "title": "Duplicate Order Confirmations (Shiphero)",
+    "category": "Email & Comms",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "Email",
+    "channelIcon": "📧",
+    "product": "",
+    "date": "January 06, 2026",
+    "status": "retired",
+    "desc": "Just a heads-up that we’re currently seeing duplicate order entries in Shiphero, which may cause some customers to receive multiple order confirmation emails. N",
+    "tags": [
+      "Email"
+    ],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "N/A",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "retired",
+        "label": "RETIRED",
+        "date": "January 06, 2026",
+        "by": "",
+        "title": "Duplicate Order Confirmations (Shiphero)",
+        "body": "Just a heads-up that we’re currently seeing duplicate order entries in Shiphero, which may cause some customers to receive multiple order confirmation emails.\n\nNo need to panic—this is only an email/notification issue:\n\n Only one charge goes through\n\n Only one order is active\n\n Only one shipment will be sent\n\nOur team is already working on a fix to stop this from happening again.\n\nWhat to do:\n\nIf a customer reaches out about getting multiple order confirmation emails, please use the macro below to reassure them.\n\n Macro: Multiple Order Confirmation Emails\n\nWe’re really sorry for the confusion caused by the multiple order confirmation emails you received — we know that can be alarming, and we truly appreciate you bringing this to our attention.\n\nWe’ve checked your order and can confirm everything looks good: only one order is active, with a single charge and one shipment scheduled. The extra emails were just a notification issue, and your payment details are completely secure.\n\nThere’s nothing you need to do on your end. We’re already fixing the issue to make sure this doesn’t happen again.\n\nIf you have any questions or want us to double-check anything for peace of mind, we’re always happy to help. Thanks so much for your patience—we really appreciate it!"
+      }
+    ]
+  },
+  {
     "id": "handling-update-all-returns-with-refunds-issued-january-02-2026",
     "title": "Handling Update: All returns with refunds issued",
     "category": "Returns & Refunds",
+    "supersedes": "",
+    "supersededBy": "",
     "channel": "Email + Call",
     "channelIcon": "📧📞",
     "product": "",
