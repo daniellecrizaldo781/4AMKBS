@@ -331,7 +331,13 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; color: var(--text); line-height: 1
 .chip--filter .chip__dot { font-size: 11px; line-height: 1; }
 .chip--filter.is-active { background: var(--brand); border-color: var(--brand); color: #fff; }
 
-/* ---- Sample image reference (sheet column) ---- */
+/* ---- Sample image (sheet column) ---- */
+.cascade-item__img, .detail-img {
+  margin-top: 12px; border: 1px solid var(--border); border-radius: var(--r);
+  overflow: hidden; background: var(--bg-2);
+  max-width: 420px;
+}
+.cascade-item__img img, .detail-img img { display: block; width: 100%; height: auto; }
 .cascade-item__imgref, .detail-imgref {
   margin-top: 10px; font-size: 12.5px; color: var(--muted);
   display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
