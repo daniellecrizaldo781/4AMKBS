@@ -16,8 +16,8 @@ window.KB_RAW_CASCADES = [
       "Entire Team"
     ],
     "cascadedBy": "",
-    "sampleImage": "reminder refund escalation.png",
-    "sampleImageUrl": "",
+    "sampleImage": "https://drive.google.com/file/d/1Sd5Q9_8tUSkBDxUWANRjXkP3rdVz1KZJ/view",
+    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1Sd5Q9_8tUSkBDxUWANRjXkP3rdVz1KZJ",
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -45,8 +45,8 @@ window.KB_RAW_CASCADES = [
       "Email + Call"
     ],
     "cascadedBy": "",
-    "sampleImage": "Returns with refunds.png",
-    "sampleImageUrl": "",
+    "sampleImage": "https://drive.google.com/file/d/1j2hzq4G46m5cl-DY7h3EEqn1TYMnsPCD/view?usp=sharing",
+    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1j2hzq4G46m5cl-DY7h3EEqn1TYMnsPCD",
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [

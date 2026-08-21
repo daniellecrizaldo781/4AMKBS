@@ -65,6 +65,13 @@ jobs:
           CALL_HITS=["call handling","call team","phone","ivr","ghost call","misrouted call","misrouted","on hold","hold time","during the call","call spiel","call flow","smartflow","calls","call/chat"]
           CH_ICON={"Email":"\U0001F4E7","Call":"\U0001F4DE","Email + Call":"\U0001F4E7\U0001F4DE","Entire Team":"\U0001F465"}
           CAS_RE=re.compile(r"Cascaded by[:\s]+(.+?)(?:\n|$)", re.I)
+          DRIVE_RE=re.compile(r"drive\.google\.com/(?:file/d/|open\?id=)([A-Za-z0-9_-]+)")
+          def img_url(raw):
+            if not raw: return ""
+            m=DRIVE_RE.search(raw)
+            if m: return f"https://lh3.googleusercontent.com/d/{m.group(1)}"
+            if raw.lower().startswith("http") and re.search(r"\.(png|jpe?g|webp|gif)", raw, re.I): return raw
+            return raw
           def norm(s): return STATUS_MAP.get(re.sub(r"\s+"," ",(s or "").strip().lower()), DEFAULT_STATUS)
           def cat(t,b):
             x=(t+" "+b[:200]).lower()
@@ -87,6 +94,7 @@ jobs:
             date=(r.get("Date") or "").strip(); title=(r.get("Cascade Title") or "").strip()
             body=re.sub(r"\n{3,}","\n\n",(r.get("Cascade") or "").strip()).strip()
             img=(r.get("Sample Image") or "").strip(); status=norm(r.get("Cascade Status"))
+            img_url_val=img_url(img)
             if not title: title=body[:60] or f"Untitled cascade {i+1}"
             by=CAS_RE.search(body); by=by.group(1).strip() if by else ""
             c=cat(title,body); chx=ch(title,body); tags=[chx]
@@ -97,7 +105,7 @@ jobs:
             cascades.append({"id":cid,"title":title,"category":c,"channel":chx,
               "channelIcon":CH_ICON.get(chx,"\U0001F465"),"product":"","date":date,"status":status,
               "desc":re.sub(r"\s+"," ",body)[:160],"tags":tags,"cascadedBy":by,
-              "sampleImage":img,"sampleImageUrl":"","relatedResources":[],"relatedProducts":[],
+              "sampleImage":img,"sampleImageUrl":img_url_val,"relatedResources":[],"relatedProducts":[],
               "versions":[{"status":status,"label":status.upper(),"date":date,"by":by,"title":title,"body":body}]})
           cascades.sort(key=lambda c:ts(c["date"]),reverse=True)
           js="/* Auto-generated from the live cascade tracking sheet by sync-to-site.yml.\n"

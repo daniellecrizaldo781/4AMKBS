@@ -162,7 +162,7 @@ window.KBPages = (function () {
         <span class="muted" style="font-size:13px;">${esc(c.cascadedBy ? "Cascaded by " + c.cascadedBy + " · " : "")}Updated ${esc(c.date)}</span>
       </div>
 
-      ${c.sampleImage ? `<div class="detail-imgref">🖼️ Sample image: <code>${esc(c.sampleImage)}</code>${c.sampleImageUrl ? ` — <a href="${esc(c.sampleImageUrl)}" target="_blank" rel="noopener">open</a>` : ""}</div>` : ""}
+      ${c.sampleImageUrl ? `<div class="detail-img"><img src="${esc(c.sampleImageUrl)}" alt="${esc(c.title)} — sample image" loading="lazy" /></div>` : (c.sampleImage ? `<div class="detail-imgref">🖼️ Sample image: <code>${esc(c.sampleImage)}</code></div>` : "")}
 
       <section class="section">
         <h2 class="section__title">Handling History</h2>
