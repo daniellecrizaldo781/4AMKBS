@@ -62,13 +62,18 @@ window.KBPages = (function () {
   }
 
   /* ====================== CASCADE & HANDLING ====================== */
+  const STATUS_ORDER = ["new", "active", "superseded", "retired"];
   function cascades(params) {
     const q = params && params.q ? decodeURIComponent(params.q) : "";
+    const activeStatus = (params && params.status) ? params.status.toLowerCase() : "all";
 
     // Sort by date, newest first (latest -> oldest), across all handling areas.
     const byDate = (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime();
     let list = D.cascades.slice().sort(byDate);
 
+    if (activeStatus !== "all") {
+      list = list.filter(c => (c.status || "").toLowerCase() === activeStatus);
+    }
     if (q) {
       const t = q.toLowerCase();
       list = list.filter(c =>
@@ -82,10 +87,25 @@ window.KBPages = (function () {
 
     const items = list.length
       ? list.map(C.cascadeItem).join("")
-      : C.emptyState("🔍", "No cascades match", "Try a different search term.");
+      : C.emptyState("🔍", "No cascades match", "Try a different search term or status filter.");
+
+    // Status filter chips/tabs (All is default). Works with search + category.
+    const chip = (key, label, dot) => {
+      const isActive = activeStatus === key;
+      const href = key === "all"
+        ? `#/cascades${q ? `?q=${encodeURIComponent(q)}` : ""}`
+        : `#/cascades?status=${key}${q ? `&q=${encodeURIComponent(q)}` : ""}`;
+      return `<a class="chip chip--filter${isActive ? " is-active" : ""}" href="${href}" data-status="${key}">
+        ${dot ? `<span class="chip__dot" aria-hidden="true">${dot}</span>` : ""}${esc(label)}</a>`;
+    };
+    const statusChips = chip("all", "All")
+      + chip("new", "NEW / CURRENT", "🟢")
+      + chip("active", "ACTIVE / EXISTING", "🔵")
+      + chip("superseded", "SUPERSEDED", "🟡")
+      + chip("retired", "RETIRED", "🔴");
 
     return `
-      ${C.pageHead("Cascade & Handling Updates", "All customer-concern handling, cascades, and process updates — arranged newest to oldest (January → August 2026).")}
+      ${C.pageHead("Cascade & Handling Updates", "All customer-concern handling, cascades, and process updates — arranged newest to oldest.")}
 
       <div class="filterbar">
         <div class="search">
@@ -94,6 +114,8 @@ window.KBPages = (function () {
             placeholder="Search a customer concern, product, handling, or keyword..."
             value="${esc(q)}" aria-label="Search cascades" autocomplete="off" />
         </div>
+        <div class="chips-wrap chips-wrap--filters" role="tablist" aria-label="Filter by status">${statusChips}</div>
+        ${C.statusLegend()}
       </div>
 
       <div class="section__head">
@@ -103,7 +125,7 @@ window.KBPages = (function () {
 
       <div class="grid" style="grid-template-columns:1fr; gap:14px;" id="cascade-list">${items}</div>
 
-      ${C.notice("Cascades are imported directly from the live cascade documents (" + D.cascades.length + " dated entries, January → August 2026) and sorted newest → oldest. Each card shows its handling area, the update date, and the full handling text. Open any card to read the complete context and see other updates in the same handling area.")}
+      ${C.notice("Cascades are imported directly from the live cascade tracking sheet (" + D.cascades.length + " entries) and sorted newest → oldest. Each card shows its handling area, status, the update date, and the full handling text. Use the status filter to focus on current vs. retired handling.")}
     `;
   }
 
@@ -132,12 +154,15 @@ window.KBPages = (function () {
 
       ${C.pageHead(c.title, c.desc)}
       <div class="row" style="margin-top:-8px;">
-        ${C.statusBadge(c.status)}
+        ${C.statusChip(c.status)}
         <span class="pill pill--brand">${esc(c.category)}</span>
         ${c.product ? `<span class="pill pill--brand">${esc(c.product)}</span>` : ""}
         ${c.channelLabel ? `<span class="pill pill--brand">${esc(c.channelLabel)}</span>` : ""}
+        ${c.channel ? `<span class="pill pill--channel">${esc(c.channelIcon || "")} ${esc(c.channel)}</span>` : ""}
         <span class="muted" style="font-size:13px;">${esc(c.cascadedBy ? "Cascaded by " + c.cascadedBy + " · " : "")}Updated ${esc(c.date)}</span>
       </div>
+
+      ${c.sampleImage ? `<div class="detail-imgref">🖼️ Sample image: <code>${esc(c.sampleImage)}</code>${c.sampleImageUrl ? ` — <a href="${esc(c.sampleImageUrl)}" target="_blank" rel="noopener">open</a>` : ""}</div>` : ""}
 
       <section class="section">
         <h2 class="section__title">Handling History</h2>

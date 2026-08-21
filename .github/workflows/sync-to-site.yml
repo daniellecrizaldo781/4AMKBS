@@ -1,18 +1,16 @@
 name: Sync Cascades to Site
 
-# Rebuilds assets/js/cascades-data.js by FETCHING THE LIVE GOOGLE DOCS directly
-# (not from repo secrets — the refund doc is >64KB and exceeds the secret size limit).
-# If either fetch fails, the workflow aborts WITHOUT overwriting the existing data,
+# Rebuilds assets/js/cascades-data.js by FETCHING THE LIVE CASCADE TRACKING SHEET (CSV export).
+# The sheet is the single source of truth (replaces the old Google Docs).
+# The sheet ID comes from the CASCADE_SHEET_ID repository secret; the CSV is fetched directly
+# (no secret holds the data, so there is no 64KB size limit).
+# If the fetch fails, the workflow aborts WITHOUT overwriting the existing data,
 # so a transient network error can never wipe the cascade list.
-#
-# Each cascade is channel-tagged (Email / Call / Entire Team / Email + Call) and keeps
-# its "Cascaded by" sender, matching the tagging you organized — so sync preserves it.
 on:
   schedule:
     - cron: '23 6 * * *'        # daily 06:23 UTC
   workflow_dispatch:            # manual "Run" button
-  # NOTE: no `push` trigger on purpose — pushing this file or cascades-data.js
-  # must NOT re-trigger a rebuild (that is what clobbered the list before).
+  # NOTE: no `push` trigger on purpose — pushing this file must NOT re-trigger a rebuild.
 
 permissions:
   contents: write
@@ -21,127 +19,103 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      REFUND_DOC: "139FanVB1D07-zdVhei7suQtIaHyL7ihLs3bz9pQuluw"
-      TAGGING_DOC: "1nnjYnRg8HuA_Hvu6f1_2G2guIKZgIlLp13nOiWORjfY"
+      CASCADE_SHEET_ID: ${{ secrets.CASCADE_SHEET_ID }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch live cascade documents (text export)
+      - name: Fetch live cascade tracking sheet (CSV export)
         run: |
           set -euo pipefail
+          if [ -z "$CASCADE_SHEET_ID" ]; then
+            echo "CASCADE_SHEET_ID secret is not set — refusing to run."; exit 1
+          fi
           UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
-          curl -fsSL -A "$UA" "https://docs.google.com/document/d/${REFUND_DOC}/export?format=txt" -o /tmp/refund.txt
-          curl -fsSL -A "$UA" "https://docs.google.com/document/d/${TAGGING_DOC}/export?format=txt" -o /tmp/tagging.txt
-          echo "refund bytes: $(wc -c < /tmp/refund.txt)"
-          echo "tagging bytes: $(wc -c < /tmp/tagging.txt)"
-          # Sanity: each export must contain at least one dated entry.
-          grep -qE '^[A-Z][a-z]+ [0-9]{1,2}, [0-9]{4} - ' /tmp/refund.txt  || { echo "REFUND export looks empty/bad; aborting to protect data"; exit 1; }
-          grep -qE '^[A-Z][a-z]+ [0-9]{1,2}, [0-9]{4} - ' /tmp/tagging.txt || { echo "TAGGING export looks empty/bad; aborting to protect data"; exit 1; }
+          curl -fsSL -A "$UA" "https://docs.google.com/spreadsheets/d/${CASCADE_SHEET_ID}/export?format=csv&gid=0" -o /tmp/sheet.csv
+          echo "sheet bytes: $(wc -c < /tmp/sheet.csv)"
+          # Sanity: export must contain at least one data row beyond the header.
+          python3 - <<'PY'
+          import csv
+          rows=list(csv.DictReader(open("/tmp/sheet.csv",encoding="utf-8-sig")))
+          if len(rows)==0:
+            print("Sheet export looks empty/bad; aborting to protect data"); raise SystemExit(1)
+          print("sheet rows:", len(rows))
+          PY
 
-      - name: Parse both docs into cascades-data.js (one card per dated entry, channel-tagged)
+      - name: Parse sheet into cascades-data.js (status-tagged, one card per row)
         run: |
           python3 - <<'PY'
-          import os, re, json, datetime
-          DATE_RE = re.compile(r"^([A-Z][a-z]+ \d{1,2}, \d{4})\s*-\s*(.+?)\s*$", re.M)
-          CAS_RE  = re.compile(r"Cascaded by[:\s]+(.+?)(?:\n|$)", re.I)
+          import csv, re, json, datetime
+          STATUS_MAP = {
+            "new / current":"new","new/current":"new",
+            "active / existing":"active","active/existing":"active","active":"active",
+            "superseded":"superseded","replaced":"superseded","retired":"retired",
+          }
+          DEFAULT_STATUS="active"
           RULES = [
-            ("OHA / Hearing Aids", ["oricle hearing aid","oha ","audiologist","hearing aid",
-                                    "hearing specialist","hearing consultation","consultation booking",
-                                    "bte","hearing concern"]),
+            ("OHA / Hearing Aids", ["oricle hearing aid","oha ","audiologist","hearing aid","hearing specialist","hearing consultation","consultation booking","bte","hearing concern"]),
             ("Marketplace Escalations", ["amazon","walmart","ebay","marketplace"]),
-            ("Returns & Refunds", ["refund","return","redo","warranty","reship","rts",
-                                    "return portal","return label","return to sender","return policy",
-                                    "return process","return completed","return handling"]),
-            ("Email & Comms", ["email","gorgias","zendesk","marketing","bbb","trust pilot",
-                                "nova","macro","ticket","unsubscribe","ivr","ghost call",
-                                "misrouted","social media"]),
-            ("Shipping & Fulfillment", ["shiphero","sticky","shipment","fulfillment","warehouse",
-                                         "dhl","ups","shipping","delivery","tracking",
-                                         "order cancellation","order hold","manual order",
-                                         "damaged","duplicate order","rts / undelivered",
-                                         "undelivered package"]),
+            ("Returns & Refunds", ["refund","return","redo","warranty","reship","rts","return portal","return label","return to sender","return policy","return process","return completed","return handling"]),
+            ("Email & Comms", ["email","gorgias","zendesk","marketing","bbb","trust pilot","nova","macro","ticket","unsubscribe","ivr","ghost call","misrouted","social media"]),
+            ("Shipping & Fulfillment", ["shiphero","sticky","shipment","fulfillment","warehouse","dhl","ups","shipping","delivery","tracking","order cancellation","order hold","manual order","damaged","duplicate order","rts / undelivered","undelivered package"]),
             ("Tagging & Tracking", ["tagging","tag "]),
             ("Order Processing", ["order","sku","campaign","upsell"]),
           ]
-          DEF = "General CSR Handling"
-          EMAIL_HITS = ["email","emails","email team","email only","e-mail","(email",
-                        "marketing email","unsubscribe","email tickets","email tickets",
-                        "email ticket","zendesk","gorgias","social media","nova ai","bot",
-                        "bbb review","trustpilot","review request"]
-          CALL_HITS = ["call handling","call team","phone","ivr","ghost call","misrouted call",
-                       "misrouted","on hold","hold time","during the call","call spiel",
-                       "call flow","smartflow","calls","call/chat"]
-          CH_ICON = {"Email":"\U0001F4E7","Call":"\U0001F4DE","Email + Call":"\U0001F4E7\U0001F4DE","Entire Team":"\U0001F465"}
-          def split(text):
-            ms=list(DATE_RE.finditer(text)); out=[]
-            for i,m in enumerate(ms):
-              d=m.group(1); t=m.group(2).strip(); s=m.end(); e=ms[i+1].start() if i+1<len(ms) else len(text)
-              b=text[s:e].strip(); b=re.sub(r"\n{3,}","\n\n",b).strip()
-              out.append({"date":d,"title":t,"body":b})
-            return out
+          DEF="General CSR Handling"
+          EMAIL_HITS=["email","emails","email team","email only","e-mail","(email","marketing email","unsubscribe","email tickets","email ticket","zendesk","gorgias","social media","nova ai","bot","bbb review","trustpilot","review request"]
+          CALL_HITS=["call handling","call team","phone","ivr","ghost call","misrouted call","misrouted","on hold","hold time","during the call","call spiel","call flow","smartflow","calls","call/chat"]
+          CH_ICON={"Email":"\U0001F4E7","Call":"\U0001F4DE","Email + Call":"\U0001F4E7\U0001F4DE","Entire Team":"\U0001F465"}
+          CAS_RE=re.compile(r"Cascaded by[:\s]+(.+?)(?:\n|$)", re.I)
+          def norm(s): return STATUS_MAP.get(re.sub(r"\s+"," ",(s or "").strip().lower()), DEFAULT_STATUS)
           def cat(t,b):
-            blob=(t+" "+b[:200]).lower()
+            x=(t+" "+b[:200]).lower()
             for c,kws in RULES:
-              if any(k in blob for k in kws): return c
+              if any(k in x for k in kws): return c
             return DEF
-          def tag_channel(t,b):
-            blob=(t+" "+b).lower()
-            ie=any(h in blob for h in EMAIL_HITS); ic=any(h in blob for h in CALL_HITS)
+          def ch(t,b):
+            x=(t+" "+b).lower(); ie=any(h in x for h in EMAIL_HITS); ic=any(h in x for h in CALL_HITS)
             if ie and ic: return "Email + Call"
             if ie: return "Email"
             if ic: return "Call"
             return "Entire Team"
           def slug(s): return re.sub(r"[^a-z0-9]+","-",s.lower()).strip("-")[:60]
           def ts(d):
-            try: return datetime.datetime.strptime(d,"%B %d, %Y").timestamp()
+            try: return datetime.datetime.strptime((d or "").strip(),"%B %d, %Y").timestamp()
             except: return 0
-          all_e=[]
-          for path,src in (("/tmp/refund.txt","refund"),("/tmp/tagging.txt","tagging")):
-            for e in split(open(path,encoding="utf-8").read()):
-              e["source"]=src; all_e.append(e)
-          seen={}
-          for e in all_e:
-            k=(e["date"],e["title"].lower())
-            if k in seen:
-              if len(e["body"])>len(seen[k]["body"]): seen[k]=e
-            else: seen[k]=e
-          uniq=list(seen.values())
-          uniq.sort(key=lambda e:ts(e["date"]),reverse=True)
+          rows=list(csv.DictReader(open("/tmp/sheet.csv",encoding="utf-8-sig")))
           cascades=[]; used={}
-          for e in uniq:
-            c=cat(e["title"],e["body"])
-            by=CAS_RE.search(e["body"]); by=by.group(1).strip() if by else ""
-            ch=tag_channel(e["title"],e["body"])
-            tags=[ch]
+          for i,r in enumerate(rows):
+            date=(r.get("Date") or "").strip(); title=(r.get("Cascade Title") or "").strip()
+            body=re.sub(r"\n{3,}","\n\n",(r.get("Cascade") or "").strip()).strip()
+            img=(r.get("Sample Image") or "").strip(); status=norm(r.get("Cascade Status"))
+            if not title: title=body[:60] or f"Untitled cascade {i+1}"
+            by=CAS_RE.search(body); by=by.group(1).strip() if by else ""
+            c=cat(title,body); chx=ch(title,body); tags=[chx]
             if by: tags.append("Cascaded by "+by)
-            base=slug(e["title"])+"-"+slug(e["date"]); base=base if base else "entry"
+            base=slug(title)+"-"+slug(date); base=base if base else "entry"
             if base in used: used[base]+=1; cid=f"{base}-{used[base]}"
             else: used[base]=0; cid=base
-            cascades.append({"id":cid,"title":e["title"],"category":c,
-              "channel":ch,"channelIcon":CH_ICON.get(ch,"\U0001F465"),"product":"",
-              "date":e["date"],"status":"current","desc":re.sub(r"\s+"," ",e["body"])[:160],
-              "tags":tags,"cascadedBy":by,"relatedResources":[],"relatedProducts":[],
-              "versions":[{"status":"current","label":"CURRENT","date":e["date"],"by":by,
-                           "title":e["title"],"body":e["body"]}]})
-          js="// AUTO-GENERATED by sync-to-site.yml \u2014 do not edit by hand.\n"
-          js+="// Sources: live Google Docs (refund + tagging) fetched at sync time.\n"
-          js+="// One cascade card per dated entry; newest first; channel-tagged (Email/Call/Team).\n"
+            cascades.append({"id":cid,"title":title,"category":c,"channel":chx,
+              "channelIcon":CH_ICON.get(chx,"\U0001F465"),"product":"","date":date,"status":status,
+              "desc":re.sub(r"\s+"," ",body)[:160],"tags":tags,"cascadedBy":by,
+              "sampleImage":img,"sampleImageUrl":"","relatedResources":[],"relatedProducts":[],
+              "versions":[{"status":status,"label":status.upper(),"date":date,"by":by,"title":title,"body":body}]})
+          cascades.sort(key=lambda c:ts(c["date"]),reverse=True)
+          js="/* Auto-generated from the live cascade tracking sheet by sync-to-site.yml.\n"
+          js+="   Status comes from the sheet's 'Cascade Status' column. Newest first. */\n"
           js+="window.KB_RAW_CASCADES = "+json.dumps(cascades,indent=2,ensure_ascii=False)+";\n"
-          with open("assets/js/cascades-data.js","w",encoding="utf-8") as f: f.write(js)
-          print("cascades:",len(cascades),"| unique dated entries:",len(uniq))
+          open("assets/js/cascades-data.js","w",encoding="utf-8").write(js)
           from collections import Counter
-          print("by handling:",dict(Counter(c["category"] for c in cascades)))
-          print("by channel:",dict(Counter(c["channel"] for c in cascades)))
+          print("cascades:",len(cascades),"| by status:",dict(Counter(c["status"] for c in cascades)))
           PY
 
-      - name: Safety check — never commit fewer than 100 cascades
+      - name: Safety check — never commit fewer than 1 cascade
         run: |
           python3 - <<'PY'
           import re, json
           t=open("assets/js/cascades-data.js",encoding="utf-8").read()
           n=len(json.loads(re.search(r"window\.KB_RAW_CASCADES = (.*);",t,re.S).group(1)))
-          if n < 100:
-            print(f"ABORT: only {n} cascades parsed \u2014 refusing to publish (likely a bad fetch)."); raise SystemExit(1)
+          if n < 1:
+            print(f"ABORT: only {n} cascades parsed — refusing to publish (likely a bad fetch)."); raise SystemExit(1)
           print(f"OK: {n} cascades parsed.")
           PY
 
@@ -151,7 +125,7 @@ jobs:
           git config user.email "auto-sync@users.noreply.github.com"
           if ! git diff --quiet -- assets/js/cascades-data.js; then
             git add assets/js/cascades-data.js
-            git commit -m "auto-sync: rebuild cascades-data.js from live docs $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git commit -m "auto-sync: rebuild cascades-data.js from live sheet $(date -u +%Y-%m-%dT%H:%M:%SZ)"
             git push
             echo "pushed"
           else

@@ -111,11 +111,10 @@
         const v = encodeURIComponent(e.target.value);
         to = setTimeout(() => {
           const base = "#/cascades";
-          const cat = (params && params.cat) ? `cat=${encodeURIComponent(decodeURIComponent(params.cat))}` : "";
-          const q = e.target.value ? `q=${v}` : "";
-          const join = (cat || q) ? "?" : "";
-          const amp = (cat && q) ? "&" : "";
-          location.hash = base + join + cat + amp + q;
+          const parts = [];
+          if (params && params.status) parts.push("status=" + encodeURIComponent(params.status));
+          if (e.target.value) parts.push("q=" + v);
+          location.hash = base + (parts.length ? "?" + parts.join("&") : "");
         }, 250);
       });
     }

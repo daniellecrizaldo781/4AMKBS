@@ -40,10 +40,34 @@ window.KBComponents = (function () {
     </div>`;
   }
 
-  /* ---------- Status badge ---------- */
-  const STATUS_LABEL = { current: "CURRENT", updated: "UPDATED", previous: "PREVIOUS", outdated: "OUTDATED" };
-  function statusBadge(status) {
-    return `<span class="badge badge--${esc(status)}"><span class="status-dot status-dot--${esc(status)}"></span>${esc(STATUS_LABEL[status] || status)}</span>`;
+  /* ---------- Status: 4-state model (NEW/CURRENT, ACTIVE/EXISTING, SUPERSEDED, RETIRED) ---------- */
+  // Single source of truth for the cascade status system. Text is always visible
+  // (not color-only) so the meaning is accessible even without color perception.
+  const STATUS_META = {
+    "new":       { label: "NEW / CURRENT",   short: "NEW / CURRENT",   color: "green",  dot: "🟢", desc: "Latest cascade or recently updated handling." },
+    "active":    { label: "ACTIVE / EXISTING", short: "ACTIVE / EXISTING", color: "blue", dot: "🔵", desc: "Older cascade, but the handling is still currently implemented." },
+    "superseded":{ label: "SUPERSEDED",       short: "SUPERSEDED",      color: "amber", dot: "🟡", desc: "Older cascade that has been replaced by a newer handling." },
+    "retired":   { label: "RETIRED",          short: "RETIRED",         color: "red",   dot: "🔴", desc: "Cascade/handling that is no longer implemented and should not be followed." }
+  };
+  function statusMeta(status) {
+    return STATUS_META[(status || "").toLowerCase()] || STATUS_META["active"];
+  }
+  // Compact, polished status chip/badge — text stays visible (color is an accent, not the only signal).
+  function statusChip(status) {
+    const m = statusMeta(status);
+    return `<span class="status-chip status-chip--${m.color}" title="${esc(m.desc)}">
+      <span class="status-chip__dot" aria-hidden="true">${m.dot}</span>${esc(m.label)}
+    </span>`;
+  }
+  // Small legend block for the Cascade & Handling page.
+  function statusLegend() {
+    const rows = Object.keys(STATUS_META).map(k => {
+      const m = STATUS_META[k];
+      return `<span class="legend__item"><span class="status-chip status-chip--${m.color}">
+        <span class="status-chip__dot" aria-hidden="true">${m.dot}</span>${esc(m.label)}</span>
+        <span class="legend__desc">${esc(m.desc)}</span></span>`;
+    }).join("");
+    return `<div class="legend" aria-label="Cascade status legend">${rows}</div>`;
   }
 
   /* ---------- Dashboard / section nav card ---------- */
@@ -90,6 +114,9 @@ window.KBComponents = (function () {
   function cascadeItem(c) {
     const tags = (c.tags || []).map(t => `<span class="pill pill--brand">${esc(t)}</span>`).join("");
     const ch = c.channel ? `<span class="pill pill--channel">${esc(c.channelIcon || "")} ${esc(c.channel)}</span>` : "";
+    const sampleImg = c.sampleImage
+      ? `<div class="cascade-item__imgref"><span class="cascade-item__imgicon" aria-hidden="true">🖼️</span> Sample image: <code>${esc(c.sampleImage)}</code></div>`
+      : "";
     // Show the full CURRENT handling body inline so the entire content is visible on the list.
     const current = (c.versions && c.versions[0]) ? c.versions[0] : null;
     const bodyHtml = current
@@ -98,9 +125,10 @@ window.KBComponents = (function () {
     return `<a class="card card--link cascade-item" href="#/cascades/${esc(c.id)}">
       <div class="cascade-item__top">
         <span class="cascade-item__title">${esc(c.title)}</span>
-        ${statusBadge(c.status)}
+        ${statusChip(c.status)}
       </div>
       ${bodyHtml}
+      ${sampleImg}
       <div class="cascade-item__meta">
         <span><b>${esc(c.category)}</b></span>
         ${ch}
@@ -185,8 +213,9 @@ window.KBComponents = (function () {
   }
 
   return {
-    esc, brandMark, pageHead, notice, emptyState, statusBadge,
+    esc, brandMark, pageHead, notice, emptyState,
+    statusChip, statusLegend, statusMeta, STATUS_META,
     navCard, catCard, productCard, productPlaceholder, cascadeItem,
-    versionBlock, resourceCard, handbookCard, teamCard, relatedItem, STATUS_LABEL
+    versionBlock, resourceCard, handbookCard, teamCard, relatedItem
   };
 })();
