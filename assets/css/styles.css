@@ -476,6 +476,10 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; color: var(--text); line-height: 1
 .version-row__body p { margin: 0 0 10px; white-space: pre-wrap; }
 .version-row__body p:last-child { margin-bottom: 0; }
 .version-row__heading { font-size: 14.5px !important; font-weight: 700; color: #0B2E59; margin: 0 0 12px !important; white-space: pre-wrap; }
+/* Links inside cascade body text must LOOK clickable (navy + underline,
+   amber on hover) — the global `a { text-decoration:none }` hides them. */
+.version-row__body a { color: #0B2E59; text-decoration: underline; text-underline-offset: 2px; font-weight: 600; word-break: break-word; }
+.version-row__body a:hover { color: #F2A900; text-decoration: underline; }
 
 /* ============================ PRODUCT GRID ============================ */
 .product-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
