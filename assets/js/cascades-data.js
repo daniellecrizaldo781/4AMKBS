@@ -126,6 +126,64 @@ window.KB_RAW_CASCADES = [
     ]
   },
   {
+    "id": "update-misrouted-call-handling-march-24-2026",
+    "title": "Update: Misrouted Call Handling",
+    "category": "Email & Comms",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 24, 2026",
+    "status": "active",
+    "desc": "Please be guided on the proper handling of misrouted calls: DO NOT transfer the call If the concern is not under our scope, do not transfer the call to another ",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 24, 2026",
+        "by": "",
+        "title": "Update: Misrouted Call Handling",
+        "body": "Please be guided on the proper handling of misrouted calls:\n\nDO NOT transfer the call\n\nIf the concern is not under our scope, do not transfer the call to another line.\n\nProvide the correct hotline\n\nPolitely inform the customer that they have reached the wrong department.\nClearly provide the correct hotline number they should contact for proper assistance.\n\nIf the customer calls back\n\n• In case the customer reconnects to you, you may:\n\nUse your second name, or\nSlightly adjust your voice to avoid repeat recognition and ensure smooth handling.\n\nReminder:\n\nAlways maintain professionalism and provide clear guidance to the customer.\n\nEnsure the customer is properly redirected to the correct support channel."
+      }
+    ]
+  },
+  {
+    "id": "update-proper-tagging-for-dhl-reshipment-claim-sheet-march-24-2026",
+    "title": "Update: Proper Tagging for DHL Reshipment Claim Sheet",
+    "category": "Returns & Refunds",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 24, 2026",
+    "status": "active",
+    "desc": "To ensure accuracy and consistency in our DHL Reshipment Claim Sheet, please follow the correct tagging guidelines below: **Claim Type Tagging** Use the appropr",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 24, 2026",
+        "by": "",
+        "title": "Update: Proper Tagging for DHL Reshipment Claim Sheet",
+        "body": "To ensure accuracy and consistency in our DHL Reshipment Claim Sheet, please follow the correct tagging guidelines below:\n\n**Claim Type Tagging**\nUse the appropriate claim type based on the scenario:\n\n**Delivered at Incorrect Address – Customer’s Fault**\n→ Use when the customer reports non-receipt, but tracking confirms delivery to a different address provided by the customer\n\n**Stuck (No Movement > 7 Days)**\n→ Use when there is no tracking movement for more than 7 days *(excluding customs cases — see note below)*\n\n**Stuck in Confirmed Status**\n→ Use when a label has been created but the item has not been dispatched or handed over for transit\n\n**Damaged Item**\n→ Use when the customer received the item in damaged condition\n\n**Delayed Delivery (Forwarded)**\n→ Use when the latest tracking status shows “Forwarded”\n\n**Shipped without Street/House Number**\n→ Use when the order is marked shipped/delivered but lacks a complete house or street address\n\n**Important:**\nFor orders **Shipped without Street/House Number**, always offer a **Reshipment**.\n\n**Action Tagging**\nIn addition to claim type, make sure the **Action Taken** is correctly tagged:\n\n**Pending**\n→ If the order is still in transit OR a reshipment/refund has been offered but not yet completed\n\n**Reshipped / Refund**\n→ If reshipment or refund has already been processed\n\n**No Action Needed**\n→ If delivered to incorrect address due to customer’s fault\n\n**Order Successfully Delivered**\n→ If previously tagged as stuck but was eventually delivered\n\n**Additional Note:**\n\nOrders marked as **“Arrived at Customs”** are **NOT considered stuck**.\n→ These require **customer pickup at customs**, so **no need to escalate or add to the sheet**.\n\nAccurate tagging is critical to ensure proper tracking, reporting, and resolution of claims. Please"
+      }
+    ]
+  },
+  {
     "id": "update-macro-creation-with-layered-response-options-march-21-2026",
     "title": "Update: Macro Creation with Layered Response Options",
     "category": "Email & Comms",
@@ -153,6 +211,180 @@ window.KB_RAW_CASCADES = [
         "by": "",
         "title": "Update: Macro Creation with Layered Response Options",
         "body": "In line with the cascade shared on March 14 regarding macro revamping, here are the additional updates and macro additions completed so far:\n\nMacro Creation with Layered Response Options\n\n(Splash) CR16 - No Movement > 7 Days\n\nRenamed from (Splash) CR16 - No movement > 7 days to: Stuck (No Movement > 7 days) - L1 Monitor 7 Days\nLayer 2: Stuck (No Movement > 7 days) - L2 Confirm Address\n(Ticket is snoozed for one day; follow-up will be done once only. If no response, considered dropped)\nLayer 3: Stuck (No Movement > 7 days) - L3 Reshipped\n\nDelivered But Not Received (Stolen Package) - WITHOUT Warranty\n\nRenamed to: Delivered Not Received - Lost/Stolen Package - L1 Delivery Terms\nLayer 2: Delivered Not Received - Lost/Stolen Package - L2 Refund, Chargeback\n\n(Splash) CR23 - Order Stuck in \"Confirmed\" Status\n\nRenamed from (Splash) CR23 - Order stuck in \"confirmed\" status to: Stuck in Confirmed Status - L1 Monitor 7 Days\nLayer 2: Stuck in Confirmed Status - L2 Confirm Address\n(Ticket is snoozed for one day; follow-up will be done once only. If no response, considered dropped)\nLayer 3: Stuck (No Movement > 7 days) - L3 Reshipped\n\nCreated Macro: Delivered at Incorrect Address - Incorrect Customer-Provided Address\n\nLayer 1: Delivered at Incorrect Address - Incorrect Customer-Provided Address - L1 Shipping Terms\nLayer 2: Delivered at Incorrect Address - Incorrect Customer-Provided Address - L2 Refund, Chargeback\n\nTracking # Not Found\n\nRenamed from Tracking # Not Found Within 48hrs to: Tracking Not Found - Within 3 Days - L1 Monitor 3 Days\nLayer 2: Tracking Not Found - After 3 Days - L2 Reshipped\n\n(Splash) CR13 - Order Shows \"Labeled\" / \"Shipping Label Purchased\"\n\nRenamed from (Splash) CR13 - Order has shipped but only shows up as \"labeled\" or \"shipping label purchased\" to: Label Created - L1 Monitor 7 Days\nLayer 2: Label Created - L2 Confirm Address\nLayer 3: Label Created - L3 Reshipped\n\nNewly Added Macros\n\nDamaged Packaging Only (Box, Bottle, Bag)\nLayer 1: Ask Photo/Test\nLayer 2: Still Works\nLayer 3: $5 Compensation\n\nDamaged Item\n\nLayer 1: Ask Photo/Test\nLayer 2: Still Works\nLayer 3: Reshipped\n\nIncomplete Items Received\n\nLayer 1: Clarification\nLayer 2: Reshipped\n\nMissing Accessory\n\nLayer 1: Clarification\nLayer 2: Reshipped\n\nIncorrect Item Received\n\nLayer 1: Ask Photo\nLayer 2: Reshipped\n\nWe have created and renamed several macros, especially those with layered responses such as L1, L2, and L3, to help simplify your process.\n\nThese updates are now aligned with our revised Terms and Conditions, and we are confident that they will help reduce refunds while allowing us to provide stronger and\n\nmore consistent resolutions to our customers.\n\nTo follow are the macros for different RTS scenarios and defective items.\n\nWe encourage everyone to review and familiarize yourselves with these macros to ensure they are used correctly and consistently."
+      }
+    ]
+  },
+  {
+    "id": "updated-oha-subscription-tips-refund-process-march-20-2026",
+    "title": "Updated OHA Subscription Tips Refund Process",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 20, 2026",
+    "status": "active",
+    "desc": "We have an update regarding the refund process for OHA subscription tips. The Redo Portal has been updated, and there are important changes you need to follow m",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 20, 2026",
+        "by": "",
+        "title": "Updated OHA Subscription Tips Refund Process",
+        "body": "We have an update regarding the refund process for OHA subscription tips. The Redo Portal has been updated, and there are important changes you need to follow moving forward.\n\nWhat’s New:\n• Customers are no longer required to return the tips in order to receive a refund.\n• Subscription cancellations should continue to be processed via Sticky.\n• All refund requests must still be processed through the Redo Portal.\n\nImportant Reminder:\nEven though returns are no longer required for the tips, customers must still undergo the Redo Portal process in order for their refund to be issued.\n\nPlease ensure you are guiding customers correctly based on these updates and setting proper expectations regarding the process.\n\nAdditional Note:\n\nAll refund requests for OHA subscriptions must now be processed through the Go Redo Portal using the Return Request link.\n\nPlease make sure to clearly explain our return policy and any applicable fees to the customer before submitting the request.\n\nImportant Reminders:\n• All refund requests must be submitted through the Redo Portal.\n• Refunds are processed per order, not per subscription.\n• If a customer requests refunds for multiple subscription charges, they must submit a separate return request in the portal for each order/charge.\n• Ensure that customers understand the return policy and applicable fees before proceeding.\n• If the customer did not mention a refund and only wants to stop future charges, simply proceed with cancelling the subscription.\n• Only send the Redo Portal link if the customer specifically requests a refund.\n\nThis process will help ensure that refunds are tracked and processed accurately.\n\nIn addition to this. The portal is only for customers who want both a subscription cancellation and a refund for their most recent tips shipment. If the customer just request\n\nfor cancellation, no need to send them the return portal link."
+      }
+    ]
+  },
+  {
+    "id": "update-oha-subscription-refund-process-march-18-2026",
+    "title": "Update: OHA Subscription Refund Process",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 18, 2026",
+    "status": "active",
+    "desc": "Moving forward, all refund requests for OHA subscriptions must now be processed through the Go Redo Portal using the Return Request link. Please make sure to cl",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 18, 2026",
+        "by": "",
+        "title": "Update: OHA Subscription Refund Process",
+        "body": "Moving forward, all refund requests for OHA subscriptions must now be processed through the Go Redo Portal using the Return Request link.\n\nPlease make sure to clearly explain our return policy and any applicable fees to the customer before submitting the request.\n\nImportant Reminders:\n• All refund requests must be submitted through the Redo Portal.\n• Refunds are processed per order, not per subscription.\n• If a customer requests refunds for multiple subscription charges, they must submit a separate return request in the portal for each order/charge.\n• Ensure that customers understand the return policy and applicable fees before proceeding.\n• If the customer did not mention a refund and only wants to stop future charges, simply proceed with cancelling the subscription.\n• Only send the Redo Portal link if the customer specifically requests a refund.\n\nThis process will help ensure that refunds are tracked and processed accurately.\n\nFor subscription orders beyond 30 days, if the customer requests a reversal or refund for previous charges (not just the most recent one), please first explain our return policy to the customer. Let them know that subscription orders automatically send email notifications prior to the recurring charge or shipment, which serves as a reminder about their upcoming subscription order.\n\nYou may use the following spiel when explaining this to the customer:\n“I can confirm that your subscription has already been successfully canceled, so no further charges will occur.\n\nRegarding the past orders, these are outside of our standard 30-day return window, which begins from the delivery date of each shipment. As outlined in our policy, returns and refunds are only eligible within this 30-day period, and requests submitted beyond this timeframe are not eligible for refund or return processing.\n\nWe understand this may not be the outcome you were hoping for, and we truly appreciate your understanding of our policy. While we’re unable to process refunds for past shipments, please rest assured that your subscription is now fully stopped moving forward.”\n\nIf the customer still insists on requesting refunds for multiple previous charges, please note that each Order # would need to be handled separately, and a return extension request may be required per order depending on eligibility.\n\nIf the customer continues to push back after the policy explanation, please send a message to me or Ms. Michelle so we can assist further."
+      }
+    ]
+  },
+  {
+    "id": "shiphero-order-delay-manual-order-process-march-18-2026",
+    "title": "ShipHero Order Delay: Manual Order Process",
+    "category": "Shipping & Fulfillment",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 18, 2026",
+    "status": "retired",
+    "desc": "We are currently experiencing delays with orders appearing in ShipHero, which may cause some orders not to show immediately after being placed. If an order stil",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "retired",
+        "label": "RETIRED",
+        "date": "March 18, 2026",
+        "by": "",
+        "title": "ShipHero Order Delay: Manual Order Process",
+        "body": "We are currently experiencing delays with orders appearing in ShipHero, which may cause some orders not to show immediately after being placed.\n\nIf an order still does not appear in ShipHero after 24 hours from the time it was placed, you may now proceed with creating a manual order in ShipHero.\n\nOrder Number Source\nWhen creating a manual order, please obtain the order number from our Order Number List under the “New Order” tab:\nhttps://docs.google.com/spreadsheets/d/1J56-1DvUdZo0VNRCYHtrYhu24WBT5xgBXR7hvgixjbM/edit?gid=0#gid=0\n\nIf Order Modification Is Needed\n\nIf the order still does not appear in ShipHero after 24 hours and the customer requested a modification:\n\n• Create the manual order based on the customer’s updated request.\n• Remove the items the customer no longer wants from the manual order.\n• Process a refund for the extra items that were originally charged but are no longer included.\n\nWhen Customers Follow Up or Request Cancellation\n\nIf a customer reaches out following up on their order or requests cancellation because they have not received a shipment status yet, please do your best to save the order.\n\n• Inform the customer that there is a slight delay due to the high volume of orders.\n• Reassure them that their order will be prioritized for processing.\n• After the interaction, proceed with creating the manual order in ShipHero and tag it accordingly.\n\nImportant Reminder for CSRs\nPlease do not disclose that we are experiencing system issues. When communicating with customers, simply explain that there has been a slight delay due to a high volume of orders.\n\nSuggested spiel for customers:\n“Thank you for your patience. Due to a high volume of orders, there may be a slight delay in the order processing and system updates. Rest assured that we are actively monitoring your order and will ensure it is processed as soon as possible.”\n\nManual Order Tagging\nOnce a manual order is created, please make sure to tag the order as PRIORITY so it can be processed by the warehouse as soon as possible.\n\nPlease ensure all manual orders are accurate and aligned with the customer’s request before submitting."
+      }
+    ]
+  },
+  {
+    "id": "update-dhl-re-shipment-claim-template-march-17-2026",
+    "title": "Update: DHL Re-Shipment Claim Template",
+    "category": "Shipping & Fulfillment",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 17, 2026",
+    "status": "active",
+    "desc": "We’ve made some updates to how entries should be inputted in the DHL Re-Shipment Claim Template to ensure that claim amounts are calculated correctly. Please ta",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 17, 2026",
+        "by": "",
+        "title": "Update: DHL Re-Shipment Claim Template",
+        "body": "We’ve made some updates to how entries should be inputted in the DHL Re-Shipment Claim Template to ensure that claim amounts are calculated correctly. Please take note of the following changes:\n\nMultiple SKU entries:\n\nWhen entering multiple SKUs in the same cell, do not use line breaks.\nInstead, separate each SKU with a comma and a space.\n\nExample of correct entry:\n\n1x-DTC-OH-UVSANITIZER-P2-UPS, 1x-OH-OHA-PV\n\n(Notice the space after each comma before the next SKU.)\n\nClaim amount auto-calculation:\nThe claim amount is now automatically populated based on the SKUs entered.\nDo NOT input any amount manually.\nMake sure your SKU entries are accurate so the claim amount reflects correctly.\n\nFollowing this format ensures that the correct price will reflect on the claim amount every time"
+      }
+    ]
+  },
+  {
+    "id": "new-updated-macros-march-17-2026",
+    "title": "NEW & UPDATED MACROS",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 17, 2026",
+    "status": "active",
+    "desc": "Please be advised that the old OHA – Change of Mind Macros have now been archived, as we have new updated versions available. New Macros: OH_RP_Cancel_change_of",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "https://drive.google.com/file/d/1TgLOSCwtsfwLOunQ3G41A49h0xo7lJhd/view",
+    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1TgLOSCwtsfwLOunQ3G41A49h0xo7lJhd",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 17, 2026",
+        "by": "",
+        "title": "NEW & UPDATED MACROS",
+        "body": "Please be advised that the old OHA – Change of Mind Macros have now been archived, as we have new updated versions available.\n\nNew Macros:\n\nOH_RP_Cancel_change_of_mind_Shipped – NEW\n\nOH_RP_Cancel_change_of_mind – NEW (Offers expedited shipping at no cost)\n\nPlease note that BTE Upgrades are no longer offered for cancellation requests due to Change of Mind.\n\nOH_RP_Cancel_UV_Sanitizer_Shipped\n\n(Explains that the order can no longer be canceled, but this macro highlights the item’s benefits)\n\nOH_RP_Cancel_UV_Sanitizer_Unshipped\n\n(Offers expedited shipping at no cost)\n\nOHA – Approved Extension\n\nThis macro should be used for customers whose returns were rejected because the order exceeded the 30-day return window but were later granted an extension.\nPlease remember to update the number of extension days and the due date as needed.\n\nImportant:\n\nIf a customer’s return was initially rejected and an extension was later approved, the return request must be reset in the Redo Portal for it to go through. If you are unsure how to do this, please reach out to your TLs for assistance.\n\nPlease update your notes accordingly to avoid incorrect handling."
+      }
+    ]
+  },
+  {
+    "id": "reshipment-reminders-march-16-2026",
+    "title": "Reshipment Reminders",
+    "category": "Returns & Refunds",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 16, 2026",
+    "status": "active",
+    "desc": "A quick reminder regarding reshipments due to failed deliveries. If an order has already been reshipped once and the delivery still fails even though the addres",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 16, 2026",
+        "by": "",
+        "title": "Reshipment Reminders",
+        "body": "A quick reminder regarding reshipments due to failed deliveries.\n\nIf an order has already been reshipped once and the delivery still fails even though the address is accurate, please do not process another reshipment. We are\n\nlimiting this to one reshipment per order.\n\nIn these situations, we will proceed with a refund instead of sending another replacement or reshipment.\n\nThis helps us avoid repeated shipping issues and prevents unnecessary delays for the customer. Please keep this in mind moving forward.\n\nIf you encounter any special cases, feel free to flag them with the team."
       }
     ]
   },
@@ -1555,238 +1787,6 @@ window.KB_RAW_CASCADES = [
         "by": "",
         "title": "Proper Return Tagging (All Returns with Refunds Issued)",
         "body": "Following the cascade on 07/02/25 (see image below), all returns with refunds issued — whether full refund less shipping, reprocessing fee, or even 50% for international orders — must be tagged as:\n\nReturn > Item Returned > Returned – {specific reason}\n\nDo NOT tag these under:\n\nComplaint > Order Quality > {reason}\n\nException: Only if the customer called via the Priority line (OHA) and was advised not to return the package. For other brands, only if customer ordered 1 pack (cleaning products) and was refunded 50%.\n\nFor all applicable tickets:\n\n1. Add notes in Column I\n\n2. In Column D, add: Oricle Priority Support Aircall Phone Call or simply Prio Line\n\nWe have also observed refunded orders tagged as Doesn’t Work – No specific reason mentioned. This is not acceptable. You must identify the specific issue the customer encountered. Check Gorgias for prior emails or gently probe the customer for details. If the customer refuses to provide a reason, clearly indicate this in the notes or in your Sticki notes.\n\nOther errors found:\n\n1. Incorrect country selected\n\n2. Incomplete tagging (refund details missing)\n\nAll entries must be accurate and complete. Strict adherence is expected."
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-54-",
-    "title": "Untitled cascade 54",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 54",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-55-",
-    "title": "Untitled cascade 55",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 55",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-56-",
-    "title": "Untitled cascade 56",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 56",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-57-",
-    "title": "Untitled cascade 57",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 57",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-58-",
-    "title": "Untitled cascade 58",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 58",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-59-",
-    "title": "Untitled cascade 59",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 59",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-60-",
-    "title": "Untitled cascade 60",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 60",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-61-",
-    "title": "Untitled cascade 61",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 61",
-        "body": ""
       }
     ]
   },
