@@ -89,6 +89,10 @@ jobs:
           for i,r in enumerate(rows):
             date=(r.get("Date") or "").strip(); title=(r.get("Cascade Title") or "").strip()
             body=re.sub(r"\n{3,}","\n\n",(r.get("Cascade") or "").strip()).strip()
+            # Skip completely blank rows (empty title AND empty body) so the sheet's
+            # blank/template rows never become "Untitled cascade N" junk cards.
+            if not title and not body:
+                continue
             img=(r.get("Sample Image") or "").strip(); status=norm(r.get("Cascade Status"))
             img_url_val=img_url(img)
             supersedes_raw=(r.get("Superseded Cascade") or r.get("Supersedes") or "").strip()
