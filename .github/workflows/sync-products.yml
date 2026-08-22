@@ -56,6 +56,18 @@ jobs:
               if m: return f"https://lh3.googleusercontent.com/d/{m.group(1)}"
               if raw.lower().startswith("http") and re.search(r"\.(png|jpe?g|webp|gif)", raw, re.I): return raw
               return ""
+          # Probe whether a Drive file id is an IMAGE we can embed (lh3 serves image/*).
+          def is_drive_image(fid):
+              if not fid: return False
+              try:
+                  req=urllib.request.Request(f"https://lh3.googleusercontent.com/d/{fid}",
+                      headers={"User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/120 Safari/537.36"},
+                      method="GET")
+                  req.get_method=lambda:"HEAD"
+                  r=urllib.request.urlopen(req, timeout=20)
+                  return (r.headers.get("Content-Type") or "").startswith("image/")
+              except Exception:
+                  return False
           def site_url(raw):
               if not raw: return ""
               s=raw.strip()
@@ -98,6 +110,10 @@ jobs:
               base=slug(name); base=base if base else "product"
               if base in used: used[base]+=1; s=base+"-"+str(used[base])
               else: used[base]=0; s=base
+              # collect every Drive id referenced in this product's fields so we can
+              # probe which ones are embeddable images (package/instructions/etc.)
+              field_blob=" ".join([info,pkg,instr,pricing_dtc,pricing_shop,ret,image])
+              prod_drive_ids=[m for m in DRIVE_RE.findall(field_blob) if m]
               products.append({
                   "slug":s,"name":name,"category":c,"group":g,
                   "image":img_url(image),"imageRaw":image,"imageThumb":(f"https://drive.google.com/thumbnail?id={did}&sz=w800" if did else ""),
@@ -107,14 +123,27 @@ jobs:
                   "pricingShopify":site_url(pricing_shop),"pricingShopifyImg":img_url(pricing_shop),
                   "dtcUrl":site_url(dtc),"shopifyUrl":site_url(shop),
                   "returnPolicy":ret,
-                  "emailSupport":email,"hotline":hotline
+                  "emailSupport":email,"hotline":hotline,
+                  "_driveIds":prod_drive_ids
               })
           products.sort(key=lambda p:p["name"].lower())
+          # Build a global map of Drive id -> {lh3, thumb} for every id that is an image.
+          all_ids=[]
+          for p in products:
+              for did in p.pop("_driveIds", []):
+                  if did not in all_ids: all_ids.append(did)
+          drive_images={}
+          for fid in all_ids:
+              if is_drive_image(fid):
+                  drive_images[fid]={"lh3":f"https://lh3.googleusercontent.com/d/{fid}",
+                                      "thumb":f"https://drive.google.com/thumbnail?id={fid}&sz=w800"}
           js="/* Auto-generated from the live product sheet by sync-products.yml.\n"
           js+="   Newest products first by name. Images: Google Drive links -> lh3 thumbnails. */\n"
           js+="window.KB_RAW_PRODUCTS = "+json.dumps(products,indent=2,ensure_ascii=False)+";\n"
+          js+="/* Map of Google Drive file id -> image URLs for any sheet field that links to a Drive IMAGE. */\n"
+          js+="window.KB_DRIVE_IMAGES = "+json.dumps(drive_images,indent=2,ensure_ascii=False)+";\n"
           open("assets/js/products-data.js","w",encoding="utf-8").write(js)
-          print("products:",len(products),"| with image:",sum(1 for p in products if p["image"]))
+          print("products:",len(products),"| with image:",sum(1 for p in products if p["image"]),"| drive image ids:",len(drive_images))
           PY
 
       - name: Safety check — never commit fewer than 1 product

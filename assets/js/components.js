@@ -326,6 +326,30 @@ window.KBComponents = (function () {
       (u) => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`);
   }
 
+  // Same as linkify, but any Google Drive link that points to an IMAGE (per the
+  // window.KB_DRIVE_IMAGES map built at sync time) is rendered as a zoomable
+  // <img> (lh3 -> Drive thumbnail fallback) instead of a plain text link.
+  // Used for Package inclusion / Instructions / What is it / Return Policy so a
+  // Drive photo shows as an actual photo rather than a URL.
+  const DRIVE_IMG_RE = /drive\.google\.com\/(?:file\/d\/|open\?id=)([A-Za-z0-9_-]+)/;
+  function driveImageHtml(fid, alt) {
+    const map = window.KB_DRIVE_IMAGES || {};
+    const e = map[fid];
+    if (!e) return "";
+    const lh3 = e.lh3, thumb = e.thumb || "";
+    const fb = thumb ? ` onerror="if(this.dataset.fb!=='1'){this.dataset.fb='1';this.src='${esc(thumb)}';}else{KBZoom.fail(this);}"` : ` onerror="KBZoom.fail(this)"`;
+    return `<div class="zoomable-img drive-img" data-full="${esc(lh3)}" data-alt="${esc(alt)}" data-thumb="${esc(thumb)}" onclick="KBZoom.open(event,this)"><img src="${esc(lh3)}" alt="${esc(alt)}" loading="lazy"${fb}></div>`;
+  }
+  function linkifyImages(text, alt) {
+    alt = alt || "Image";
+    const safe = esc(text);
+    return safe.replace(/(https?:\/\/[^\s<>"']+)/g, (u) => {
+      const m = u.match(DRIVE_IMG_RE);
+      if (m && (window.KB_DRIVE_IMAGES || {})[m[1]]) return driveImageHtml(m[1], alt);
+      return `<a href="${u}" target="_blank" rel="noopener">${u}</a>`;
+    });
+  }
+
   /* ---------- Related item (detail sidebars) ---------- */
   function relatedItem(title, meta, href) {
     return `<a class="related-item" href="${esc(href)}">
@@ -338,7 +362,7 @@ window.KBComponents = (function () {
     esc, brandMark, pageHead, notice, emptyState,
     statusChip, statusLegend, statusMeta, STATUS_META,
     navCard, catCard, productCard, productPlaceholder, productImg, cascadeItem,
-    versionBlock, supersedesBlock, cascadeLink, supersededInline, cascadeImg, linkify,
+    versionBlock, supersedesBlock, cascadeLink, supersededInline, cascadeImg, linkify, linkifyImages,
     resourceCard, handbookCard, teamCard, relatedItem
   };
 })();

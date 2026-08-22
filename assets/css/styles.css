@@ -343,6 +343,9 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; color: var(--text); line-height: 1
 .zoomable-img { cursor: zoom-in; transition: box-shadow .15s; }
 .zoomable-img:hover { box-shadow: 0 0 0 2px var(--accent); }
 .zoomable-img img { cursor: zoom-in; }
+/* Drive image embedded inline in a product text field (Package / Instructions / etc.) */
+.drive-img { max-width: 360px; margin: 6px 0; border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+.drive-img img { width: 100%; height: auto; display: block; }
 
 /* inline video player (Google Drive preview) */
 .detail-video { margin-top: 12px; max-width: 520px; border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; background: #000; }

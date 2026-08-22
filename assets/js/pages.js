@@ -253,11 +253,13 @@ window.KBPages = (function () {
     // Clickable, zoomable hero image (reuses the cascade lightbox).
     const hero = C.productImg(p);
 
-    // Helper: render a text field with clickable links (URLs in the sheet text).
+    // Helper: render a text field. Any Google Drive link that points to an IMAGE
+    // (per window.KB_DRIVE_IMAGES) is shown as a zoomable photo; other URLs are
+    // clickable links. Plain text keeps its paragraph breaks.
     const field = (label, text) => {
       if (!text) return "";
       const body = text.split(/\n{2,}/).map(b => b.trim()).filter(Boolean)
-        .map(b => `<p>${C.linkify(b).replace(/\n/g, "<br>")}</p>`).join("");
+        .map(b => `<p>${C.linkifyImages(b, p.name + " — " + label).replace(/\n/g, "<br>")}</p>`).join("");
       return `<div class="deflist__row"><div class="deflist__key">${esc(label)}</div><div class="deflist__val">${body}</div></div>`;
     };
 

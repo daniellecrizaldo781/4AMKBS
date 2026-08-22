@@ -212,3 +212,86 @@ window.KB_RAW_PRODUCTS = [
     "hotline": "1 833 315 7237"
   }
 ];
+/* Map of Google Drive file id -> image URLs for any sheet field that links to a Drive IMAGE. */
+window.KB_DRIVE_IMAGES = {
+  "18BXTGEETZPQdZ4UUtplQX5NAki4ZKsNz": {
+    "lh3": "https://lh3.googleusercontent.com/d/18BXTGEETZPQdZ4UUtplQX5NAki4ZKsNz",
+    "thumb": "https://drive.google.com/thumbnail?id=18BXTGEETZPQdZ4UUtplQX5NAki4ZKsNz&sz=w800"
+  },
+  "1wfc877Nz2q2STuI1TGlTfY0kLVtaqCBl": {
+    "lh3": "https://lh3.googleusercontent.com/d/1wfc877Nz2q2STuI1TGlTfY0kLVtaqCBl",
+    "thumb": "https://drive.google.com/thumbnail?id=1wfc877Nz2q2STuI1TGlTfY0kLVtaqCBl&sz=w800"
+  },
+  "1o6JsPMDzCneZjC6fLTecGG_JU2B_N4-2": {
+    "lh3": "https://lh3.googleusercontent.com/d/1o6JsPMDzCneZjC6fLTecGG_JU2B_N4-2",
+    "thumb": "https://drive.google.com/thumbnail?id=1o6JsPMDzCneZjC6fLTecGG_JU2B_N4-2&sz=w800"
+  },
+  "1rLNn08lvfXEqeWRMQrC7JEiL4K97U-4m": {
+    "lh3": "https://lh3.googleusercontent.com/d/1rLNn08lvfXEqeWRMQrC7JEiL4K97U-4m",
+    "thumb": "https://drive.google.com/thumbnail?id=1rLNn08lvfXEqeWRMQrC7JEiL4K97U-4m&sz=w800"
+  },
+  "1aHMMEp5z2b06gzXXrJKsTXezAntZzDnN": {
+    "lh3": "https://lh3.googleusercontent.com/d/1aHMMEp5z2b06gzXXrJKsTXezAntZzDnN",
+    "thumb": "https://drive.google.com/thumbnail?id=1aHMMEp5z2b06gzXXrJKsTXezAntZzDnN&sz=w800"
+  },
+  "1MR9C3rsQctMMCEj5gHACXVRitDvf9D6U": {
+    "lh3": "https://lh3.googleusercontent.com/d/1MR9C3rsQctMMCEj5gHACXVRitDvf9D6U",
+    "thumb": "https://drive.google.com/thumbnail?id=1MR9C3rsQctMMCEj5gHACXVRitDvf9D6U&sz=w800"
+  },
+  "1QoQ-s4EeaVTxeipGvRCwxIqrPpeBjnaO": {
+    "lh3": "https://lh3.googleusercontent.com/d/1QoQ-s4EeaVTxeipGvRCwxIqrPpeBjnaO",
+    "thumb": "https://drive.google.com/thumbnail?id=1QoQ-s4EeaVTxeipGvRCwxIqrPpeBjnaO&sz=w800"
+  },
+  "1BiuujPCNFt4Ub6_MFpss_QTqScTrVYEy": {
+    "lh3": "https://lh3.googleusercontent.com/d/1BiuujPCNFt4Ub6_MFpss_QTqScTrVYEy",
+    "thumb": "https://drive.google.com/thumbnail?id=1BiuujPCNFt4Ub6_MFpss_QTqScTrVYEy&sz=w800"
+  },
+  "1QWictBoVRXq-EwIM4Jk9iGzS9RWp9x_A": {
+    "lh3": "https://lh3.googleusercontent.com/d/1QWictBoVRXq-EwIM4Jk9iGzS9RWp9x_A",
+    "thumb": "https://drive.google.com/thumbnail?id=1QWictBoVRXq-EwIM4Jk9iGzS9RWp9x_A&sz=w800"
+  },
+  "1UQvjpUrJPFSihgQASWVOsrkVyYUWtfx-": {
+    "lh3": "https://lh3.googleusercontent.com/d/1UQvjpUrJPFSihgQASWVOsrkVyYUWtfx-",
+    "thumb": "https://drive.google.com/thumbnail?id=1UQvjpUrJPFSihgQASWVOsrkVyYUWtfx-&sz=w800"
+  },
+  "1m_ZdHFvtsUwNymrc3R3fw73ePxuz8kZm": {
+    "lh3": "https://lh3.googleusercontent.com/d/1m_ZdHFvtsUwNymrc3R3fw73ePxuz8kZm",
+    "thumb": "https://drive.google.com/thumbnail?id=1m_ZdHFvtsUwNymrc3R3fw73ePxuz8kZm&sz=w800"
+  },
+  "1TyKN_ycKGgGI1k9m6i3fdXvqIP2FNCU2": {
+    "lh3": "https://lh3.googleusercontent.com/d/1TyKN_ycKGgGI1k9m6i3fdXvqIP2FNCU2",
+    "thumb": "https://drive.google.com/thumbnail?id=1TyKN_ycKGgGI1k9m6i3fdXvqIP2FNCU2&sz=w800"
+  },
+  "1pCthE1tvT4Jg7rwHJxrAlCujGhTPmD_0": {
+    "lh3": "https://lh3.googleusercontent.com/d/1pCthE1tvT4Jg7rwHJxrAlCujGhTPmD_0",
+    "thumb": "https://drive.google.com/thumbnail?id=1pCthE1tvT4Jg7rwHJxrAlCujGhTPmD_0&sz=w800"
+  },
+  "1gFrbKTT-YCJ6EX88sVRIa8c4EwGSszn9": {
+    "lh3": "https://lh3.googleusercontent.com/d/1gFrbKTT-YCJ6EX88sVRIa8c4EwGSszn9",
+    "thumb": "https://drive.google.com/thumbnail?id=1gFrbKTT-YCJ6EX88sVRIa8c4EwGSszn9&sz=w800"
+  },
+  "16A9Evw1IVWKCcwmr4sx8qxMUT_PY5I4x": {
+    "lh3": "https://lh3.googleusercontent.com/d/16A9Evw1IVWKCcwmr4sx8qxMUT_PY5I4x",
+    "thumb": "https://drive.google.com/thumbnail?id=16A9Evw1IVWKCcwmr4sx8qxMUT_PY5I4x&sz=w800"
+  },
+  "1riZUnot6BlCZKBBBymOPrR7hUnLLteXB": {
+    "lh3": "https://lh3.googleusercontent.com/d/1riZUnot6BlCZKBBBymOPrR7hUnLLteXB",
+    "thumb": "https://drive.google.com/thumbnail?id=1riZUnot6BlCZKBBBymOPrR7hUnLLteXB&sz=w800"
+  },
+  "191o3KaIVijoWkN49nagDN1mHUTSKZLy2": {
+    "lh3": "https://lh3.googleusercontent.com/d/191o3KaIVijoWkN49nagDN1mHUTSKZLy2",
+    "thumb": "https://drive.google.com/thumbnail?id=191o3KaIVijoWkN49nagDN1mHUTSKZLy2&sz=w800"
+  },
+  "1BU-9oxuzLVz7qEou-AaiWYn9uea7h896": {
+    "lh3": "https://lh3.googleusercontent.com/d/1BU-9oxuzLVz7qEou-AaiWYn9uea7h896",
+    "thumb": "https://drive.google.com/thumbnail?id=1BU-9oxuzLVz7qEou-AaiWYn9uea7h896&sz=w800"
+  },
+  "1NqNp9j5bq3FN3DQSjRMdHdBDIMz2PYSf": {
+    "lh3": "https://lh3.googleusercontent.com/d/1NqNp9j5bq3FN3DQSjRMdHdBDIMz2PYSf",
+    "thumb": "https://drive.google.com/thumbnail?id=1NqNp9j5bq3FN3DQSjRMdHdBDIMz2PYSf&sz=w800"
+  },
+  "1kIPXBcxHp3dtYD-OOYladptg1GasCzVa": {
+    "lh3": "https://lh3.googleusercontent.com/d/1kIPXBcxHp3dtYD-OOYladptg1GasCzVa",
+    "thumb": "https://drive.google.com/thumbnail?id=1kIPXBcxHp3dtYD-OOYladptg1GasCzVa&sz=w800"
+  }
+};
