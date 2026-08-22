@@ -95,7 +95,9 @@ jobs:
                   "slug":s,"name":name,"category":c,"group":g,
                   "image":img_url(image),"imageRaw":image,
                   "information":info,"package":pkg,"instructions":instr,
-                  "pricingDtc":site_url(pricing_dtc),"pricingShopify":site_url(pricing_shop),
+                  # Pricing columns hold Drive links to pricing IMAGES -> lh3 thumbnails.
+                  "pricingDtc":site_url(pricing_dtc),"pricingDtcImg":img_url(pricing_dtc),
+                  "pricingShopify":site_url(pricing_shop),"pricingShopifyImg":img_url(pricing_shop),
                   "dtcUrl":site_url(dtc),"shopifyUrl":site_url(shop),
                   "returnPolicy":ret
               })
