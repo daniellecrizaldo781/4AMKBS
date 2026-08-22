@@ -126,6 +126,35 @@ window.KB_RAW_CASCADES = [
     ]
   },
   {
+    "id": "splash-x-all-refund-pushback-process-update-january-09-2026",
+    "title": "Splash/X-All Refund Pushback Process Update",
+    "category": "Returns & Refunds",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "January 09, 2026",
+    "status": "active",
+    "desc": "This is an update on the refund pushback process for Splash Cleaner, Splashfoam Spray, Spotless, and X-All Toilet Cleaner: No follow-up emails should be sent af",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "January 09, 2026",
+        "by": "",
+        "title": "Splash/X-All Refund Pushback Process Update",
+        "body": "This is an update on the refund pushback process for Splash Cleaner, Splashfoam Spray, Spotless, and X-All Toilet Cleaner:\n\nNo follow-up emails should be sent after the bundle set offer is made, as this may reduce the chance that the customer will drop the refund.\nIf no response is received, simply close the ticket.\nIf customer later responds after the 30-day return window, we should still proceed with the bundle offer previously sent.\n\nYou can check the guide here:\n\nhttps://docs.google.com/document/d/1x2Xdsx_HJ6oZFKOewHjuEBlXfJoWRwzZywY89ZfHDv4/edit?tab=t.0"
+      }
+    ]
+  },
+  {
     "id": "handling-email-marketing-ticket-january-8-2026-january-08-2026",
     "title": "Handling Email Marketing Ticket (January 8,2026)",
     "category": "Email & Comms",
@@ -151,6 +180,35 @@ window.KB_RAW_CASCADES = [
         "by": "",
         "title": "Handling Email Marketing Ticket (January 8,2026)",
         "body": "To ensure compliance with email marketing regulations and internal processes, please follow the guidelines below when handling customer inquiries related to Klaviyo marketing email subscriptions:\n\nAll unsubscribe request tickets must be assigned to @Mary Rose for handling.\n\nAdhering to this process is critical to maintaining compliance and ensuring unsubscribe requests are managed correctly.\n\nFor the Email Team:\nPlease use the macro “General – Unsubscribe Confirmation.”\nAdd an internal note stating “Response sent – please unsubscribe”\n\nThen assign the ticket to @Mary Rose."
+      }
+    ]
+  },
+  {
+    "id": "reminder-serial-number-collection-handling-january-08-2026",
+    "title": "Reminder: Serial Number Collection Handling",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "January 08, 2026",
+    "status": "active",
+    "desc": "Just a quick reminder on how we’ll handle Serial Number (S/N) collection: Template: Please use the template uploaded in Gorgias — do not use your own template o",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "January 08, 2026",
+        "by": "",
+        "title": "Reminder: Serial Number Collection Handling",
+        "body": "Just a quick reminder on how we’ll handle Serial Number (S/N) collection:\n\nTemplate:\n\nPlease use the template uploaded in Gorgias — do not use your own template or rephrase.\nMacro name: OHA – S/N Request\nThe macro is set to snooze and reopen after 24 hours if there’s no customer response. We may then proceed with processing the return/refund.\n\nImportant:\n\nThe serial number should not be a prerequisite for issuing a return/refund. You can proceed if the customer does not respond within 24 hours.\n\nDocumentation:\n\nMake sure to update the tagging sheet (Note part) as:\n\n“No response / SN not provided.”"
       }
     ]
   },
@@ -267,64 +325,6 @@ window.KB_RAW_CASCADES = [
         "by": "",
         "title": "Proper Return Tagging (All Returns with Refunds Issued)",
         "body": "Following the cascade on 07/02/25 (see image below), all returns with refunds issued — whether full refund less shipping, reprocessing fee, or even 50% for international orders — must be tagged as:\n\nReturn > Item Returned > Returned – {specific reason}\n\nDo NOT tag these under:\n\nComplaint > Order Quality > {reason}\n\nException: Only if the customer called via the Priority line (OHA) and was advised not to return the package. For other brands, only if customer ordered 1 pack (cleaning products) and was refunded 50%.\n\nFor all applicable tickets:\n\n1. Add notes in Column I\n\n2. In Column D, add: Oricle Priority Support Aircall Phone Call or simply Prio Line\n\nWe have also observed refunded orders tagged as Doesn’t Work – No specific reason mentioned. This is not acceptable. You must identify the specific issue the customer encountered. Check Gorgias for prior emails or gently probe the customer for details. If the customer refuses to provide a reason, clearly indicate this in the notes or in your Sticki notes.\n\nOther errors found:\n\n1. Incorrect country selected\n\n2. Incomplete tagging (refund details missing)\n\nAll entries must be accurate and complete. Strict adherence is expected."
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-10-",
-    "title": "Untitled cascade 10",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 10",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-11-",
-    "title": "Untitled cascade 11",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 11",
-        "body": ""
       }
     ]
   },
