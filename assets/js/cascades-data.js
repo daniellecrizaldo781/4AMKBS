@@ -2,33 +2,95 @@
    Status comes from the sheet's 'Cascade Status' column. Newest first. */
 window.KB_RAW_CASCADES = [
   {
-    "id": "to-all-handling-email-tickets-email-social-media-team-may-14-may-14-2026",
-    "title": "To all handling Email Tickets (Email & Social Media Team) (May 14,2026)",
+    "id": "reminder-marketing-email-handling-may-31-2026-may-31-2026",
+    "title": "Reminder: Marketing Email Handling  (May 31,2026)",
     "category": "Email & Comms",
-    "supersedes": "Handling Email Marketing Ticket (May 7,2026)",
+    "supersedes": "Update: Marketing Email Handling  (Effective Immediately) (May 29,2026)",
     "supersededBy": "",
     "channel": "",
     "channelIcon": "👥",
     "product": "",
-    "date": "May 14, 2026",
+    "date": "May 31, 2026",
     "status": "active",
-    "desc": "",
+    "desc": "We are still seeing a significant number of marketing emails and unsubscription request tickets being submitted in Pending status today, despite previous guidan",
     "tags": [
-      "Supersedes: Handling Email Marketing Ticket (May 7,2026)"
+      "Supersedes: Update: Marketing Email Handling  (Effective Immediately) (May 29,2026)"
     ],
     "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
+    "sampleImage": "https://drive.google.com/file/d/18p8jSXp7vxVrEHQELdf-sq1wCjAlHgTF/view",
+    "sampleImageUrl": "https://lh3.googleusercontent.com/d/18p8jSXp7vxVrEHQELdf-sq1wCjAlHgTF",
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
       {
         "status": "active",
         "label": "ACTIVE",
+        "date": "May 31, 2026",
+        "by": "",
+        "title": "Reminder: Marketing Email Handling  (May 31,2026)",
+        "body": "We are still seeing a significant number of marketing emails and unsubscription request tickets being submitted in Pending status today, despite previous guidance.\n\nAs a reminder, marketing email tickets should be marked as SOLVED once Admin Support has been added as a follower. These tickets should not be placed in Pending status unless specifically instructed.\n\nIf a ticket is simply awaiting a response or confirmation from the customer, it should still be set to Solved. Once the customer replies, the ticket will automatically reopen for further handling.\n\nThank you for your cooperation and for helping maintain accurate ticket handling procedures and workflow consistency."
+      }
+    ]
+  },
+  {
+    "id": "update-marketing-email-handling-effective-immediately-may-29-may-29-2026",
+    "title": "Update: Marketing Email Handling  (Effective Immediately) (May 29,2026)",
+    "category": "Email & Comms",
+    "supersedes": "To all handling Email Tickets (Email & Social Media Team) (May 14,2026)",
+    "supersededBy": "Reminder: Marketing Email Handling  (May 31,2026)",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "May 29, 2026",
+    "status": "superseded",
+    "desc": "Once marketing tickets are only waiting to be tracked, they must NO LONGER be submitted as “Pending.” Instead, please submit these tickets as “SOLVED.” All othe",
+    "tags": [
+      "Supersedes: To all handling Email Tickets (Email & Social Media Team) (May 14,2026)"
+    ],
+    "cascadedBy": "",
+    "sampleImage": "https://drive.google.com/file/d/18p8jSXp7vxVrEHQELdf-sq1wCjAlHgTF/view",
+    "sampleImageUrl": "https://lh3.googleusercontent.com/d/18p8jSXp7vxVrEHQELdf-sq1wCjAlHgTF",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "superseded",
+        "label": "SUPERSEDED",
+        "date": "May 29, 2026",
+        "by": "",
+        "title": "Update: Marketing Email Handling  (Effective Immediately) (May 29,2026)",
+        "body": "Once marketing tickets are only waiting to be tracked, they must NO LONGER be submitted as “Pending.”\n\nInstead, please submit these tickets as “SOLVED.”\n\nAll other steps in the current process remain unchanged:\nAdd Admin Support as a follower while waiting for tracking\nRemove Admin Support once tracking is completed and logged in the internal note\nDo not assign tickets to Admin Support — you remain the assignee\n\nPlease ensure this update is followed moving forward."
+      }
+    ]
+  },
+  {
+    "id": "to-all-handling-email-tickets-email-social-media-team-may-14-may-14-2026",
+    "title": "To all handling Email Tickets (Email & Social Media Team) (May 14,2026)",
+    "category": "Email & Comms",
+    "supersedes": "Handling Email Marketing Ticket (May 7,2026)",
+    "supersededBy": "Update: Marketing Email Handling  (Effective Immediately) (May 29,2026)",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "May 14, 2026",
+    "status": "superseded",
+    "desc": "For all marketing tickets that are only waiting to be tracked, please: Add Admin Support as a follower Solve the ticket as “Pending” Once the ticket has already",
+    "tags": [
+      "Supersedes: Handling Email Marketing Ticket (May 7,2026)"
+    ],
+    "cascadedBy": "",
+    "sampleImage": "https://drive.google.com/file/d/1ptnlNwhM3NIAY6Xv4jv0jv8E1I-uo57F/view",
+    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1ptnlNwhM3NIAY6Xv4jv0jv8E1I-uo57F",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "superseded",
+        "label": "SUPERSEDED",
         "date": "May 14, 2026",
         "by": "",
         "title": "To all handling Email Tickets (Email & Social Media Team) (May 14,2026)",
-        "body": ""
+        "body": "For all marketing tickets that are only waiting to be tracked, please:\n\nAdd Admin Support as a follower\nSolve the ticket as “Pending”\nOnce the ticket has already been tracked (a tracked internal note will appear on the email thread), there is no need to keep Admin Support as a follower anymore. Please remove them from the followers list.\nClarification:\n\nThere is no need to assign the ticket to Admin Support. You will remain as the assignee of the ticket — Admin Support should only be added as a follower while waiting for the tracking to be completed."
       }
     ]
   },
@@ -205,64 +267,6 @@ window.KB_RAW_CASCADES = [
         "by": "",
         "title": "Proper Return Tagging (All Returns with Refunds Issued)",
         "body": "Following the cascade on 07/02/25 (see image below), all returns with refunds issued — whether full refund less shipping, reprocessing fee, or even 50% for international orders — must be tagged as:\n\nReturn > Item Returned > Returned – {specific reason}\n\nDo NOT tag these under:\n\nComplaint > Order Quality > {reason}\n\nException: Only if the customer called via the Priority line (OHA) and was advised not to return the package. For other brands, only if customer ordered 1 pack (cleaning products) and was refunded 50%.\n\nFor all applicable tickets:\n\n1. Add notes in Column I\n\n2. In Column D, add: Oricle Priority Support Aircall Phone Call or simply Prio Line\n\nWe have also observed refunded orders tagged as Doesn’t Work – No specific reason mentioned. This is not acceptable. You must identify the specific issue the customer encountered. Check Gorgias for prior emails or gently probe the customer for details. If the customer refuses to provide a reason, clearly indicate this in the notes or in your Sticki notes.\n\nOther errors found:\n\n1. Incorrect country selected\n\n2. Incomplete tagging (refund details missing)\n\nAll entries must be accurate and complete. Strict adherence is expected."
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-8-",
-    "title": "Untitled cascade 8",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 8",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-9-",
-    "title": "Untitled cascade 9",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 9",
-        "body": ""
       }
     ]
   },
