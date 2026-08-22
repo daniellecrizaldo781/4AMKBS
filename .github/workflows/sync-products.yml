@@ -8,7 +8,7 @@ name: Sync Products to Site
 # so a transient network error can never wipe the product list.
 on:
   schedule:
-    - cron: '41 6 * * *'        # daily 06:41 UTC (after sync-to-site at 06:23)
+    - cron: '7-59/15 * * * *'     # every 15 minutes (offset 7 to avoid clashing with sync-to-site), picks up sheet edits automatically
   workflow_dispatch:            # manual "Run" button
   # NOTE: no `push` trigger on purpose — pushing this file must NOT re-trigger a rebuild.
 

@@ -8,7 +8,7 @@ name: Sync Cascades to Site
 # so a transient network error can never wipe the cascade list.
 on:
   schedule:
-    - cron: '23 6 * * *'        # daily 06:23 UTC
+    - cron: '*/15 * * * *'       # every 15 minutes — picks up sheet edits automatically
   workflow_dispatch:            # manual "Run" button
   # NOTE: no `push` trigger on purpose — pushing this file must NOT re-trigger a rebuild.
 
