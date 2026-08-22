@@ -10,6 +10,12 @@ window.KBPages = (function () {
   const C = window.KBComponents;
   const esc = C.esc;
 
+  // Customer support contacts (edit these once real values are set).
+  const SUPPORT = {
+    email: "support@4ammedia.com",
+    hotline: "+1 (800) 555-0199"
+  };
+
   /* =========================== DASHBOARD =========================== */
   function dashboard() {
     // Latest Updates: newest real cascades (highest number = most recent)
@@ -289,9 +295,7 @@ window.KBPages = (function () {
     const relCascades = D.cascades.filter(c =>
       (c.relatedProducts || []).includes(p.slug) || c.product === p.name
     ).slice(0, 5);
-    const cascadeLinks = relCascades.length
-      ? relCascades.map(c => C.relatedItem(c.title, `${c.category} · ${c.date}`, `#/cascades/${esc(c.id)}`)).join("")
-      : `<p class="muted" style="font-size:13px;">No cascades linked to this product yet.</p>`;
+    void relCascades; // reserved for future "Related Cascades" linking
 
     return `
       <nav class="breadcrumbs" style="margin-bottom:18px;">
@@ -335,7 +339,7 @@ window.KBPages = (function () {
           <div class="card panel">
             <div class="panel__title">Customer Handling</div>
             <div class="deflist">
-              <div class="deflist__row"><div class="deflist__key">Common concerns</div><div class="deflist__val">See the related cascades below for approved handling.</div></div>
+              <div class="deflist__row"><div class="deflist__key">Common concerns</div><div class="deflist__val">See the Return policy above for approved handling.</div></div>
               <div class="deflist__row"><div class="deflist__key">Return / refund</div><div class="deflist__val">See related cascades and the Return policy above.</div></div>
             </div>
           </div>
@@ -343,13 +347,9 @@ window.KBPages = (function () {
 
         <div>
           <div class="card aside-block">
-            <div class="aside-block__title">Related Cascades</div>
-            ${cascadeLinks}
-          </div>
-          <div class="card aside-block">
-            <div class="aside-block__title">Related Content</div>
-            ${C.relatedItem("Return Policy", "Resource", "#/resources")}
-            ${C.relatedItem("Refund Handling", "Cascade", "#/cascades?cat=Refunds%20%26%20Payments")}
+            <div class="aside-block__title">Support</div>
+            ${C.relatedItem("Email Support", SUPPORT.email, "mailto:" + SUPPORT.email)}
+            ${C.relatedItem("Hotline", SUPPORT.hotline, "tel:" + SUPPORT.hotline.replace(/[^+\d]/g, ""))}
           </div>
         </div>
       </div>
