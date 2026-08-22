@@ -65,14 +65,24 @@ window.KBPages = (function () {
   const STATUS_ORDER = ["new", "active", "superseded", "retired"];
   function cascades(params) {
     const q = params && params.q ? decodeURIComponent(params.q) : "";
-    const activeStatus = (params && params.status) ? params.status.toLowerCase() : "all";
+    // Default landing view = ACTIVE + NEW (the currently-relevant handling).
+    // "all" still available via the All chip.
+    const activeStatus = (params && params.status) ? params.status.toLowerCase() : "current";
 
     // Sort by date, newest first (latest -> oldest), across all handling areas.
     const byDate = (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime();
     let list = D.cascades.slice().sort(byDate);
 
     if (activeStatus !== "all") {
-      list = list.filter(c => (c.status || "").toLowerCase() === activeStatus);
+      if (activeStatus === "current") {
+        // Landing default: currently-relevant handling = NEW/CURRENT + ACTIVE/EXISTING.
+        list = list.filter(c => {
+          const s = (c.status || "").toLowerCase();
+          return s === "new" || s === "active";
+        });
+      } else {
+        list = list.filter(c => (c.status || "").toLowerCase() === activeStatus);
+      }
     }
     if (q) {
       const t = q.toLowerCase();
@@ -89,16 +99,21 @@ window.KBPages = (function () {
       ? list.map(c => C.cascadeItem(c, D.cascades)).join("")
       : C.emptyState("🔍", "No cascades match", "Try a different search term or status filter.");
 
-    // Status filter chips/tabs (All is default). Works with search + category.
+    // Status filter chips/tabs. Default landing = "active-new" (ACTIVE & NEW).
+    // "All" shows everything. Works with search + category.
     const chip = (key, label, dot) => {
-      const isActive = activeStatus === key;
-      const href = key === "all"
+      // The default view maps to the "active-new" chip being active.
+      const isActive = (key === "active-new" && activeStatus === "current") || (key !== "active-new" && activeStatus === key);
+      const href = key === "active-new"
+        ? `#/cascades?status=active-new${q ? `&q=${encodeURIComponent(q)}` : ""}`
+        : key === "all"
         ? `#/cascades${q ? `?q=${encodeURIComponent(q)}` : ""}`
         : `#/cascades?status=${key}${q ? `&q=${encodeURIComponent(q)}` : ""}`;
       return `<a class="chip chip--filter${isActive ? " is-active" : ""}" href="${href}" data-status="${key}">
-        ${dot ? `<span class="chip__dot" aria-hidden="true">${dot}</span>` : ""}${esc(label)}</a>`;
+        ${dot ? `<span class="chip__dot" aria-hidden="true">${dot}</span>` : ""}${label}</a>`;
     };
-    const statusChips = chip("all", "All")
+    const statusChips = chip("active-new", "ACTIVE &amp; NEW", "🔵")
+      + chip("all", "All")
       + chip("new", "NEW / CURRENT", "🟢")
       + chip("active", "ACTIVE / EXISTING", "🔵")
       + chip("superseded", "SUPERSEDED", "🟡")

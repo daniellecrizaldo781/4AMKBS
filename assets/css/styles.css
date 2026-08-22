@@ -472,10 +472,10 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; color: var(--text); line-height: 1
 .version-row--outdated { background: var(--danger-bg); opacity: .92; }
 .version-row__label { font-weight: 700; font-size: 13px; display: flex; flex-direction: column; gap: 6px; line-height: 1.45; }
 .version-row__label .date { font-weight: 500; font-size: 12.5px; color: var(--muted); line-height: 1.4; }
-.version-row__body { font-size: 14px; line-height: 1.7; color: #20303F; max-width: 72ch; }
-.version-row__body p { margin: 0 0 10px; }
+.version-row__body { font-size: 14px; line-height: 1.7; color: #20303F; max-width: 72ch; white-space: pre-wrap; }
+.version-row__body p { margin: 0 0 10px; white-space: pre-wrap; }
 .version-row__body p:last-child { margin-bottom: 0; }
-.version-row__heading { font-size: 14.5px !important; font-weight: 700; color: #0B2E59; margin: 0 0 12px !important; }
+.version-row__heading { font-size: 14.5px !important; font-weight: 700; color: #0B2E59; margin: 0 0 12px !important; white-space: pre-wrap; }
 
 /* ============================ PRODUCT GRID ============================ */
 .product-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }

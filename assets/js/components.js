@@ -156,11 +156,11 @@ window.KBComponents = (function () {
   function versionBlock(versions) {
     if (!versions || !versions.length) return "";
     const showTitle = versions.length > 1;
-    // Turn the raw body (which carries its own line breaks / numbered steps)
-    // into readable paragraphs instead of one wall of text.
+    // Preserve the sheet's exact spacing: keep each block's internal line breaks
+    // and leading indentation (rendered via white-space: pre-wrap in CSS).
     const toParas = (body) => {
       if (!body) return "";
-      return body.split(/\n{2,}/).map(blk => blk.trim()).filter(Boolean)
+      return body.split(/\n{2,}/).map(blk => blk.replace(/\s+$/,"")).filter(Boolean)
         .map(blk => `<p>${linkify(blk).replace(/\n/g, "<br>")}</p>`).join("");
     };
     const rows = versions.map(v => `
