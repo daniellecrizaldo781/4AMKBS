@@ -224,6 +224,7 @@
       e.preventDefault();
       e.stopPropagation();
       const full = el.getAttribute("data-full");
+      const thumb = el.getAttribute("data-thumb") || "";
       const alt = el.getAttribute("data-alt") || "Image";
       if (!this.overlay) {
         this.overlay = document.createElement("div");
@@ -240,9 +241,9 @@
         });
       }
       const img = this.overlay.querySelector(".lightbox__img");
+      img.onerror = () => { if (thumb && img.src !== thumb) { img.src = thumb; } else { img.replaceWith(this._placeholder(alt)); } };
       img.src = full;
       img.alt = alt;
-      img.onerror = () => { img.replaceWith(this._placeholder(alt)); };
       this.overlay.hidden = false;
       document.body.style.overflow = "hidden";
     },

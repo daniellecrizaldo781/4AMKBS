@@ -45,6 +45,10 @@ jobs:
           python3 - <<'PY'
           import csv, re, json, urllib.request, urllib.error
           DRIVE_RE=re.compile(r"drive\.google\.com/(?:file/d/|open\?id=)([A-Za-z0-9_-]+)")
+          def drive_id(raw):
+              if not raw: return ""
+              m=DRIVE_RE.search(raw)
+              return m.group(1) if m else ""
           def img_url(raw):
               if not raw: return ""
               if raw.strip().upper() in ("N/A","NA","-"): return ""
@@ -89,13 +93,14 @@ jobs:
               email=(r.get("Email Support") or "").strip()
               hotline=(r.get("Hotline Number") or "").strip()
               image=(r.get("Image") or "").strip()
+              did=drive_id(image)
               c=cat(name); g=grp(c)
               base=slug(name); base=base if base else "product"
               if base in used: used[base]+=1; s=base+"-"+str(used[base])
               else: used[base]=0; s=base
               products.append({
                   "slug":s,"name":name,"category":c,"group":g,
-                  "image":img_url(image),"imageRaw":image,
+                  "image":img_url(image),"imageRaw":image,"imageThumb":(f"https://drive.google.com/thumbnail?id={did}&sz=w800" if did else ""),
                   "information":info,"package":pkg,"instructions":instr,
                   # Pricing columns hold Drive links to pricing IMAGES -> lh3 thumbnails.
                   "pricingDtc":site_url(pricing_dtc),"pricingDtcImg":img_url(pricing_dtc),

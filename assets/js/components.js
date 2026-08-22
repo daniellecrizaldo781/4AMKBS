@@ -99,14 +99,23 @@ window.KBComponents = (function () {
   }
   // Product image: zoomable (click to open the lightbox) when a real image exists.
   // Uses a plain .zoomable-img wrapper so it fits both the card and the 220px detail hero.
+  // Falls back lh3 -> Drive thumbnail (p.imageThumb) if lh3 fails to load in-browser,
+  // then to the placeholder (KBZoom.fail) only as a last resort.
   function productImg(p) {
-    if (p.image)
-      return `<div class="zoomable-img" data-full="${esc(p.image)}" data-alt="${esc(p.name)}" onclick="KBZoom.open(event,this)"><img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" onerror="KBZoom.fail(this)" /></div>`;
+    if (p.image) {
+      const fb = p.imageThumb ? ` onerror="if(this.dataset.fb!=='1'){this.dataset.fb='1';this.src='${esc(p.imageThumb)}';}else{KBZoom.fail(this);}"` : ` onerror="KBZoom.fail(this)"`;
+      const thumbAttr = p.imageThumb ? ` data-thumb="${esc(p.imageThumb)}"` : "";
+      return `<div class="zoomable-img" data-full="${esc(p.image)}" data-alt="${esc(p.name)}"${thumbAttr} onclick="KBZoom.open(event,this)"><img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy"${fb} /></div>`;
+    }
     return productPlaceholder(p.group, p.name);
   }
   function productCard(p) {
     const img = p.image
-      ? `<div class="zoomable-img product-card__img" data-full="${esc(p.image)}" data-alt="${esc(p.name)}" onclick="KBZoom.open(event,this)"><img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" onerror="KBZoom.fail(this)" /></div>`
+      ? (() => {
+          const fb = p.imageThumb ? ` onerror="if(this.dataset.fb!=='1'){this.dataset.fb='1';this.src='${esc(p.imageThumb)}';}else{KBZoom.fail(this);}"` : ` onerror="KBZoom.fail(this)"`;
+          const thumbAttr = p.imageThumb ? ` data-thumb="${esc(p.imageThumb)}"` : "";
+          return `<div class="zoomable-img product-card__img" data-full="${esc(p.image)}" data-alt="${esc(p.name)}"${thumbAttr} onclick="KBZoom.open(event,this)"><img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy"${fb} /></div>`;
+        })()
       : productPlaceholder(p.group, p.name);
     return `<a class="card card--link product-card" href="#/products/${esc(p.slug)}">
       ${img}
