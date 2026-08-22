@@ -275,11 +275,15 @@ window.KBPages = (function () {
     if (p.pricingDtcImg)     pricingImgs.push(["DTC", p.pricingDtcImg, p.pricingDtc]);
     if (p.pricingShopifyImg) pricingImgs.push(["Shopify", p.pricingShopifyImg, p.pricingShopify]);
     const pricingRow = pricingImgs.length
-      ? `<div class="deflist__row"><div class="deflist__key">Pricing</div><div class="deflist__val"><div class="pricing-imgs">${pricingImgs.map(([k,img,link]) => `
-            <div class="pricing-img">
-              <div class="zoomable-img pricing-img__zoom" data-full="${esc(img)}" data-alt="${esc(p.name)} pricing (${k})" onclick="KBZoom.open(event,this)"><img src="${esc(img)}" alt="${esc(p.name)} pricing (${k})" loading="lazy" onerror="KBZoom.fail(this)"></div>
-              <div class="pricing-img__cap">${esc(k)}${link && link.toLowerCase().startsWith("http") ? ` · <a href="${esc(link)}" target="_blank" rel="noopener">Open ↗</a>` : ""}</div>
-            </div>`).join("")}</div></div>`
+      ? `<div class="product-pricing">
+            <div class="product-pricing__title">Pricing</div>
+            <div class="pricing-imgs">${pricingImgs.map(([k,img,link]) => `
+              <figure class="pricing-img">
+                <div class="zoomable-img pricing-img__zoom" data-full="${esc(img)}" data-alt="${esc(p.name)} pricing (${k})" onclick="KBZoom.open(event,this)"><img src="${esc(img)}" alt="${esc(p.name)} pricing (${k})" loading="lazy" onerror="KBZoom.fail(this)"></div>
+                <figcaption class="pricing-img__cap">${esc(k)}${link && link.toLowerCase().startsWith("http") ? ` · <a href="${esc(link)}" target="_blank" rel="noopener">Open ↗</a>` : ""}</figcaption>
+              </figure>`).join("")}
+            </div>
+         </div>`
       : "";
 
     const relCascades = D.cascades.filter(c =>
@@ -313,17 +317,18 @@ window.KBPages = (function () {
               ${field("What is it?", p.information)}
               ${field("Package inclusion", p.package)}
               ${field("Instructions", p.instructions)}
-              ${pricingRow}
               ${storeRow}
-              <div class="card panel" style="margin-top:18px;">
-                <button type="button" class="cascade-item__header" aria-expanded="false" style="width:100%;">
-                  <span class="cascade-item__chevron" aria-hidden="true">&#9656;</span>
-                  <span class="cascade-item__title">Return Policy</span>
-                </button>
-                <div class="cascade-item__panel" hidden>
-                  ${field("Return policy", p.returnPolicy) || `<p class="muted">No return policy provided.</p>`}
-                </div>
-              </div>
+            </div>
+            ${pricingRow}
+          </div>
+
+          <div class="card panel product-return">
+            <button type="button" class="cascade-item__header" aria-expanded="false" style="width:100%;">
+              <span class="cascade-item__chevron" aria-hidden="true">&#9656;</span>
+              <span class="cascade-item__title">Return Policy</span>
+            </button>
+            <div class="cascade-item__panel" hidden>
+              ${field("Return policy", p.returnPolicy) || `<p class="muted">No return policy provided.</p>`}
             </div>
           </div>
 
