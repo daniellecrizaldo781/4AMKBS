@@ -10,21 +10,15 @@ window.KB = (function () {
   "use strict";
 
   /* ----------------------------- PRODUCTS ----------------------------- */
-  // category values map to a CSS modifier for the placeholder art color.
-  const products = [
-    { slug: "splash-foaming-cleaner", name: "Splash Foaming Cleaner", category: "Cleaning",  group: "cleaning", image: null },
-    { slug: "splash-foam-spray",      name: "Splash Foam Spray",       category: "Cleaning",  group: "cleaning", image: null },
-    { slug: "splash-spotless",        name: "Splash Spotless",         category: "Cleaning",  group: "cleaning", image: null },
-    { slug: "splash-rinse",           name: "Splash Rinse",            category: "Cleaning",  group: "cleaning", image: null },
-    { slug: "glabrous-skin",          name: "Glabrous Skin",           category: "Personal Care", group: "care", image: null },
-    { slug: "best-breath",            name: "Best Breath",             category: "Personal Care", group: "care", image: null },
-    { slug: "oricle-hearing-aids",    name: "Oricle Hearing Aids",     category: "Hearing",   group: "hearing", image: null },
-    { slug: "klean-ears",             name: "Klean Ears",             category: "Dental",    group: "dental", image: null },
-    { slug: "denta-blast",            name: "Denta Blast",             category: "Dental",    group: "dental", image: null },
-    { slug: "pee-buster",             name: "Pee Buster",             category: "Pet",       group: "pet", image: null },
-    { slug: "barks-no-more",          name: "Barks No More",          category: "Pet",       group: "pet", image: null },
-    { slug: "x-all",                  name: "X-All",                  category: "Other",     group: "other", image: null }
+  // Real product data comes from window.KB_RAW_PRODUCTS (products-data.js),
+  // built by the sync-products.yml auto-sync from the live product sheet.
+  // Falls back to a small placeholder list only if the sync hasn't run yet.
+  const placeholderProducts = [
+    { slug: "splash-foaming-cleaner", name: "Splash Foaming Cleaner", category: "Cleaning",  group: "cleaning", image: null }
   ];
+  const products = (typeof window.KB_RAW_PRODUCTS !== "undefined" && window.KB_RAW_PRODUCTS.length)
+    ? window.KB_RAW_PRODUCTS
+    : placeholderProducts;
 
   /* ----------------------------- CASCADES -----------------------------
      Real cascade data comes from window.KB_RAW_CASCADES (cascades-data.js),

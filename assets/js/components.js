@@ -97,12 +97,19 @@ window.KBComponents = (function () {
       <span>${esc(label)}</span>
     </div>`;
   }
+  // Product image: zoomable (click to open the lightbox) when a real image exists.
+  // Uses a plain .zoomable-img wrapper so it fits both the card and the 220px detail hero.
+  function productImg(p) {
+    if (p.image)
+      return `<div class="zoomable-img" data-full="${esc(p.image)}" data-alt="${esc(p.name)}" onclick="KBZoom.open(event,this)"><img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" onerror="KBZoom.fail(this)" /></div>`;
+    return productPlaceholder(p.group, p.name);
+  }
   function productCard(p) {
     const img = p.image
-      ? `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">`
+      ? `<div class="zoomable-img product-card__img" data-full="${esc(p.image)}" data-alt="${esc(p.name)}" onclick="KBZoom.open(event,this)"><img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy" onerror="KBZoom.fail(this)" /></div>`
       : productPlaceholder(p.group, p.name);
     return `<a class="card card--link product-card" href="#/products/${esc(p.slug)}">
-      <div class="product-card__img">${img}</div>
+      ${img}
       <div class="product-card__body">
         <div class="product-card__cat">${esc(p.category)}</div>
         <div class="product-card__name">${esc(p.name)}</div>
@@ -321,7 +328,7 @@ window.KBComponents = (function () {
   return {
     esc, brandMark, pageHead, notice, emptyState,
     statusChip, statusLegend, statusMeta, STATUS_META,
-    navCard, catCard, productCard, productPlaceholder, cascadeItem,
+    navCard, catCard, productCard, productPlaceholder, productImg, cascadeItem,
     versionBlock, supersedesBlock, cascadeLink, supersededInline, cascadeImg, linkify,
     resourceCard, handbookCard, teamCard, relatedItem
   };

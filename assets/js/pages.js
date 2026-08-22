@@ -250,9 +250,30 @@ window.KBPages = (function () {
     const p = D.products.find(x => x.slug === slug);
     if (!p) return notFound("Product not found", "We couldn't find that product.", "#/products");
 
-    const hero = p.image
-      ? `<img src="${esc(p.image)}" alt="${esc(p.name)}">`
-      : C.productPlaceholder(p.group, p.name);
+    // Clickable, zoomable hero image (reuses the cascade lightbox).
+    const hero = C.productImg(p);
+
+    // Helper: render a text field with clickable links (URLs in the sheet text).
+    const field = (label, text) => {
+      if (!text) return "";
+      const body = text.split(/\n{2,}/).map(b => b.trim()).filter(Boolean)
+        .map(b => `<p>${C.linkify(b).replace(/\n/g, "<br>")}</p>`).join("");
+      return `<div class="deflist__row"><div class="deflist__key">${esc(label)}</div><div class="deflist__val">${body}</div></div>`;
+    };
+
+    // Store buttons (clickable links to the DTC / Shopify sites).
+    const storeBtns = [];
+    if (p.dtcUrl)     storeBtns.push(`<a class="btn btn--primary btn--sm" href="${esc(p.dtcUrl)}" target="_blank" rel="noopener">View on DTC Site ↗</a>`);
+    if (p.shopifyUrl) storeBtns.push(`<a class="btn btn--primary btn--sm" href="${esc(p.shopifyUrl)}" target="_blank" rel="noopener">View on Shopify ↗</a>`);
+    const storeRow = storeBtns.length
+      ? `<div class="deflist__row"><div class="deflist__key">Where to buy</div><div class="deflist__val deflist__val--btns">${storeBtns.join(" ")}</div></div>`
+      : "";
+
+    // Pricing: the sheet holds full Drive links for pricing; if it's a URL, link it, else show text.
+    const pricingBits = [["DTC", p.pricingDtc], ["Shopify", p.pricingShopify]].filter(([_,v]) => v);
+    const pricingRow = pricingBits.length
+      ? `<div class="deflist__row"><div class="deflist__key">Pricing</div><div class="deflist__val">${pricingBits.map(([k,v]) => `${esc(k)}: ${v.toLowerCase().startsWith("http") ? `<a href="${esc(v)}" target="_blank" rel="noopener">${esc(v)}</a>` : esc(v)}`).join("<br>")}</div></div>`
+      : "";
 
     const relCascades = D.cascades.filter(c =>
       (c.relatedProducts || []).includes(p.slug) || c.product === p.name
@@ -273,7 +294,7 @@ window.KBPages = (function () {
         <div class="detail-intro">
           <div class="detail-intro__cat">${esc(p.category)}</div>
           <h1 class="detail-intro__name">${esc(p.name)}</h1>
-          <p class="detail-intro__desc">${esc(p.name)} — product overview, information, troubleshooting, and approved customer handling. (Placeholder content for Phase 1.)</p>
+          <p class="detail-intro__desc">${esc(p.information || (p.name + " — product overview, information, and approved customer handling."))}</p>
         </div>
       </div>
 
@@ -282,30 +303,20 @@ window.KBPages = (function () {
           <div class="card panel">
             <div class="panel__title">Product Information</div>
             <div class="deflist">
-              <div class="deflist__row"><div class="deflist__key">What is it?</div><div class="deflist__val">Placeholder description — to be replaced with the real product brief.</div></div>
-              <div class="deflist__row"><div class="deflist__key">Key features</div><div class="deflist__val"><ul><li>Feature placeholder</li><li>Feature placeholder</li></ul></div></div>
-              <div class="deflist__row"><div class="deflist__key">What's included</div><div class="deflist__val">To be added.</div></div>
-              <div class="deflist__row"><div class="deflist__key">Variants</div><div class="deflist__val">To be added.</div></div>
-              <div class="deflist__row"><div class="deflist__key">Pricing</div><div class="deflist__val">To be added.</div></div>
-            </div>
-          </div>
-
-          <div class="card panel">
-            <div class="panel__title">Troubleshooting</div>
-            <div class="deflist">
-              <div class="deflist__row"><div class="deflist__key">Common issues</div><div class="deflist__val">Placeholder — common customer-reported issues will be listed here.</div></div>
-              <div class="deflist__row"><div class="deflist__key">Troubleshooting steps</div><div class="deflist__val">Placeholder — step-by-step guidance.</div></div>
-              <div class="deflist__row"><div class="deflist__key">Escalation guidance</div><div class="deflist__val">Placeholder — when and how to escalate.</div></div>
+              ${field("What is it?", p.information)}
+              ${field("Package inclusion", p.package)}
+              ${field("Instructions", p.instructions)}
+              ${pricingRow}
+              ${storeRow}
+              ${field("Return policy", p.returnPolicy)}
             </div>
           </div>
 
           <div class="card panel">
             <div class="panel__title">Customer Handling</div>
             <div class="deflist">
-              <div class="deflist__row"><div class="deflist__key">Common concerns</div><div class="deflist__val">Placeholder.</div></div>
-              <div class="deflist__row"><div class="deflist__key">Approved handling</div><div class="deflist__val">Placeholder.</div></div>
-              <div class="deflist__row"><div class="deflist__key">Return / refund</div><div class="deflist__val">Placeholder — see related cascades.</div></div>
-              <div class="deflist__row"><div class="deflist__key">Warranty</div><div class="deflist__val">Placeholder.</div></div>
+              <div class="deflist__row"><div class="deflist__key">Common concerns</div><div class="deflist__val">See the related cascades below for approved handling.</div></div>
+              <div class="deflist__row"><div class="deflist__key">Return / refund</div><div class="deflist__val">See related cascades and the Return policy above.</div></div>
             </div>
           </div>
         </div>
@@ -322,8 +333,6 @@ window.KBPages = (function () {
           </div>
         </div>
       </div>
-
-      ${C.notice("All sections above are placeholder templates. Real product documentation will populate these fields in the next phase.")}
     `;
   }
 

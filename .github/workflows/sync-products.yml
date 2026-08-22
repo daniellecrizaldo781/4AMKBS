@@ -1,0 +1,132 @@
+name: Sync Products to Site
+
+# Rebuilds assets/js/products-data.js by FETCHING THE LIVE PRODUCT SHEET (CSV export).
+# The sheet is the single source of truth. The sheet ID comes from the
+# PRODUCT_SHEET_ID repository secret; the CSV is fetched directly (no secret
+# holds the data, so there is no 64KB size limit).
+# If the fetch fails, the workflow aborts WITHOUT overwriting the existing data,
+# so a transient network error can never wipe the product list.
+on:
+  schedule:
+    - cron: '41 6 * * *'        # daily 06:41 UTC (after sync-to-site at 06:23)
+  workflow_dispatch:            # manual "Run" button
+  # NOTE: no `push` trigger on purpose — pushing this file must NOT re-trigger a rebuild.
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      PRODUCT_SHEET_ID: ${{ secrets.PRODUCT_SHEET_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch live product sheet (CSV export)
+        run: |
+          set -euo pipefail
+          if [ -z "$PRODUCT_SHEET_ID" ]; then
+            echo "PRODUCT_SHEET_ID secret is not set — refusing to run."; exit 1
+          fi
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
+          curl -fsSL -A "$UA" "https://docs.google.com/spreadsheets/d/${PRODUCT_SHEET_ID}/export?format=csv&gid=0" -o /tmp/products.csv
+          echo "sheet bytes: $(wc -c < /tmp/products.csv)"
+          python3 - <<'PY'
+          import csv
+          rows=list(csv.DictReader(open("/tmp/products.csv",encoding="utf-8-sig")))
+          if len(rows)==0:
+            print("Product sheet export looks empty/bad; aborting to protect data"); raise SystemExit(1)
+          print("product rows:", len(rows))
+          PY
+
+      - name: Parse sheet into products-data.js (status-tagged, one card per product)
+        run: |
+          python3 - <<'PY'
+          import csv, re, json, urllib.request, urllib.error
+          DRIVE_RE=re.compile(r"drive\.google\.com/(?:file/d/|open\?id=)([A-Za-z0-9_-]+)")
+          def img_url(raw):
+              if not raw: return ""
+              if raw.strip().upper() in ("N/A","NA","-"): return ""
+              m=DRIVE_RE.search(raw)
+              if m: return f"https://lh3.googleusercontent.com/d/{m.group(1)}"
+              if raw.lower().startswith("http") and re.search(r"\.(png|jpe?g|webp|gif)", raw, re.I): return raw
+              return ""
+          def site_url(raw):
+              if not raw: return ""
+              s=raw.strip()
+              if s.upper() in ("N/A","NA","-"): return ""
+              if s.lower().startswith("http"): return s
+              return ""
+          def slug(s): return re.sub(r"[^a-z0-9]+","-",s.lower()).strip("-")[:60]
+          def cat(name):
+              n=name.lower()
+              if "hearing" in n or "oricle" in n: return "Hearing"
+              if "splash" in n or "clean" in n or "foam" in n or "rinse" in n or "spotless" in n: return "Cleaning"
+              if "skin" in n or "breath" in n or "care" in n: return "Personal Care"
+              if "ear" in n or "denta" in n or "blast" in n: return "Dental"
+              if "pet" in n or "bark" in n or "pee" in n: return "Pet"
+              return "Other"
+          def grp(cat):
+              return {"Hearing":"hearing","Cleaning":"cleaning","Personal Care":"care",
+                      "Dental":"dental","Pet":"pet","Other":"other"}.get(cat,"other")
+          # strip a trailing " (something)" qualifier from the product name for the slug only
+          rows=list(csv.DictReader(open("/tmp/products.csv",encoding="utf-8-sig")))
+          products=[]
+          used={}
+          for i,r in enumerate(rows):
+              name=(r.get("Product Name") or "").strip()
+              if not name:  # skip blank rows
+                  continue
+              info=(r.get("Product Information ") or r.get("Product Information") or "").strip()
+              pkg=(r.get("Package Inclusion") or "").strip()
+              instr=(r.get("Instructions") or "").strip()
+              pricing_dtc=(r.get("Pricing DTC") or "").strip()
+              pricing_shop=(r.get("Pricing Shopify") or "").strip()
+              dtc=(r.get("DTC Website") or "").strip()
+              shop=(r.get("Shopify Website") or "").strip()
+              ret=(r.get("Return Policy") or "").strip()
+              image=(r.get("Image") or "").strip()
+              c=cat(name); g=grp(c)
+              base=slug(name); base=base if base else "product"
+              if base in used: used[base]+=1; s=base+"-"+str(used[base])
+              else: used[base]=0; s=base
+              products.append({
+                  "slug":s,"name":name,"category":c,"group":g,
+                  "image":img_url(image),"imageRaw":image,
+                  "information":info,"package":pkg,"instructions":instr,
+                  "pricingDtc":site_url(pricing_dtc),"pricingShopify":site_url(pricing_shop),
+                  "dtcUrl":site_url(dtc),"shopifyUrl":site_url(shop),
+                  "returnPolicy":ret
+              })
+          products.sort(key=lambda p:p["name"].lower())
+          js="/* Auto-generated from the live product sheet by sync-products.yml.\n"
+          js+="   Newest products first by name. Images: Google Drive links -> lh3 thumbnails. */\n"
+          js+="window.KB_RAW_PRODUCTS = "+json.dumps(products,indent=2,ensure_ascii=False)+";\n"
+          open("assets/js/products-data.js","w",encoding="utf-8").write(js)
+          print("products:",len(products),"| with image:",sum(1 for p in products if p["image"]))
+          PY
+
+      - name: Safety check — never commit fewer than 1 product
+        run: |
+          python3 - <<'PY'
+          import re, json
+          t=open("assets/js/products-data.js",encoding="utf-8").read()
+          n=len(json.loads(re.search(r"window\.KB_RAW_PRODUCTS = (.*);",t,re.S).group(1)))
+          if n < 1:
+            print(f"ABORT: only {n} products parsed — refusing to publish (likely a bad fetch)."); raise SystemExit(1)
+          print(f"OK: {n} products parsed.")
+          PY
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "product auto-sync"
+          git config user.email "auto-sync@users.noreply.github.com"
+          if ! git diff --quiet -- assets/js/products-data.js; then
+            git add assets/js/products-data.js
+            git commit -m "auto-sync: rebuild products-data.js from live product sheet $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push
+            echo "pushed"
+          else
+            echo "no change"
+          fi
