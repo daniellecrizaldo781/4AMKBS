@@ -328,14 +328,6 @@ window.KBPages = (function () {
               ${field("Return policy", p.returnPolicy) || `<p class="muted">No return policy provided.</p>`}
             </div>
           </div>
-
-          <div class="card panel">
-            <div class="panel__title">Customer Handling</div>
-            <div class="deflist">
-              <div class="deflist__row"><div class="deflist__key">Common concerns</div><div class="deflist__val">See the Return policy above for approved handling.</div></div>
-              <div class="deflist__row"><div class="deflist__key">Return / refund</div><div class="deflist__val">See related cascades and the Return policy above.</div></div>
-            </div>
-          </div>
         </div>
 
         <div>
