@@ -99,25 +99,22 @@ window.KBPages = (function () {
       ? list.map(c => C.cascadeItem(c, D.cascades)).join("")
       : C.emptyState("🔍", "No cascades match", "Try a different search term or status filter.");
 
-    // Status filter chips/tabs. Default landing = "active-new" (ACTIVE & NEW).
-    // "All" shows everything. Works with search + category.
+    // Status filter chips/tabs. Default landing view = active+new (the
+    // "current" filter), but there is no dedicated chip for it — the four
+    // status chips + "All" let a CSR narrow or see everything. "All" is last.
     const chip = (key, label, dot) => {
-      // The default view maps to the "active-new" chip being active.
-      const isActive = (key === "active-new" && activeStatus === "current") || (key !== "active-new" && activeStatus === key);
-      const href = key === "active-new"
-        ? `#/cascades?status=active-new${q ? `&q=${encodeURIComponent(q)}` : ""}`
-        : key === "all"
+      const isActive = activeStatus === key;
+      const href = key === "all"
         ? `#/cascades${q ? `?q=${encodeURIComponent(q)}` : ""}`
         : `#/cascades?status=${key}${q ? `&q=${encodeURIComponent(q)}` : ""}`;
       return `<a class="chip chip--filter${isActive ? " is-active" : ""}" href="${href}" data-status="${key}">
-        ${dot ? `<span class="chip__dot" aria-hidden="true">${dot}</span>` : ""}${label}</a>`;
+        ${dot ? `<span class="chip__dot" aria-hidden="true">${dot}</span>` : ""}${esc(label)}</a>`;
     };
-    const statusChips = chip("active-new", "ACTIVE &amp; NEW", "🔵")
-      + chip("all", "All")
-      + chip("new", "NEW / CURRENT", "🟢")
+    const statusChips = chip("new", "NEW / CURRENT", "🟢")
       + chip("active", "ACTIVE / EXISTING", "🔵")
       + chip("superseded", "SUPERSEDED", "🟡")
-      + chip("retired", "RETIRED", "🔴");
+      + chip("retired", "RETIRED", "🔴")
+      + chip("all", "All");
 
     return `
       ${C.pageHead("Cascade & Handling Updates", "All customer-concern handling, cascades, and process updates — arranged newest to oldest.")}
