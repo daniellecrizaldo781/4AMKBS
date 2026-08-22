@@ -110,8 +110,30 @@ window.KBComponents = (function () {
     </a>`;
   }
 
-  /* ---------- Cascade sample image (zoomable) ---------- */
+  /* ---------- Cascade media (images + videos from the sheet) ----------
+     The sheet's "Sample Image" column can hold Google Drive links that are
+     either images OR videos. We render images as the zoomable <img> (as before)
+     and videos as an inline, playable player (Drive preview) with a fallback
+     link. `c.media` is an array built by the auto-sync; legacy single
+     `sampleImage`/`sampleImageUrl` fields are still supported. */
+  function cascadeMediaItem(m) {
+    if (m.type === "video") {
+      const open = `https://drive.google.com/file/d/${esc(m.driveId)}/view?usp=sharing`;
+      return `<div class="detail-video">
+        <iframe class="detail-video__frame" src="${esc(m.preview)}" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="${esc(m.alt || "Sample video")}" loading="lazy"></iframe>
+        <a class="detail-video__link" href="${esc(open)}" target="_blank" rel="noopener">▶ Watch on Google Drive ↗</a>
+      </div>`;
+    }
+    // image
+    const full = m.url || m.src;
+    return `<div class="detail-img zoomable-img" data-full="${esc(full)}" data-alt="${esc(m.alt || "sample image")}" onclick="KBZoom.open(event,this)"><img src="${esc(m.src)}" alt="${esc(m.alt || "sample image")}" loading="lazy" onerror="KBZoom.fail(this)" /></div>`;
+  }
   function cascadeImg(c) {
+    // New shape: explicit media array (images + videos).
+    if (Array.isArray(c.media) && c.media.length) {
+      return c.media.map(cascadeMediaItem).join("");
+    }
+    // Legacy single-image fields (kept for backward compatibility).
     if (c.sampleImageUrl)
       return `<div class="detail-img zoomable-img" data-full="${esc(c.sampleImageUrl)}" data-alt="${esc(c.title)} — sample image" onclick="KBZoom.open(event,this)"><img src="${esc(c.sampleImageUrl)}" alt="${esc(c.title)} — sample image" loading="lazy" onerror="KBZoom.fail(this)" /></div>`;
     if (c.sampleImage)

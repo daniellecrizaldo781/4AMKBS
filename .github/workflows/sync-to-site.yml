@@ -84,6 +84,43 @@ jobs:
             if m: return f"https://lh3.googleusercontent.com/d/{m.group(1)}"
             if raw.lower().startswith("http") and re.search(r"\.(png|jpe?g|webp|gif)", raw, re.I): return raw
             return ""
+          import urllib.request, urllib.error
+          def _probe_mime(drive_id, timeout=12):
+              url=f"https://drive.google.com/uc?export=download&id={drive_id}"
+              try:
+                  req=urllib.request.Request(url, method="HEAD", headers={"User-Agent":"Mozilla/5.0"})
+                  resp=urllib.request.urlopen(req, timeout=timeout)
+                  ct=resp.headers.get("Content-Type","")
+                  if resp.status in (301,302,303,307,308):
+                      loc=resp.headers.get("Location","")
+                      if "confirm" in loc or "download" in loc:
+                          try:
+                              r2=urllib.request.urlopen(urllib.request.Request(loc, method="HEAD", headers={"User-Agent":"Mozilla/5.0"}), timeout=timeout)
+                              ct=r2.headers.get("Content-Type","")
+                          except Exception:
+                              pass
+                  return ct
+              except Exception:
+                  return ""
+          def media_list(raw, title=""):
+              if not raw: return []
+              if raw.strip().upper() in ("N/A","NA","-"): return []
+              out=[]
+              for m in DRIVE_RE.finditer(raw):
+                  did=m.group(1)
+                  ct=_probe_mime(did)
+                  if ct.startswith("video"):
+                      out.append({"type":"video","driveId":did,
+                                  "preview":f"https://drive.google.com/file/d/{did}/preview",
+                                  "alt":(title or "Sample video")})
+                  else:
+                      out.append({"type":"image","driveId":did,"src":f"https://lh3.googleusercontent.com/d/{did}",
+                                  "alt":(title or "sample image")})
+              for h in re.findall(r"https?://[^\s]+", raw):
+                  if "drive.google.com" in h: continue
+                  if re.search(r"\.(png|jpe?g|webp|gif)", h, re.I):
+                      out.append({"type":"image","src":h,"alt":(title or "sample image")})
+              return out
           def norm(s): return STATUS_MAP.get(re.sub(r"\s+"," ",(s or "").strip().lower()), DEFAULT_STATUS)
           def cat(t,b):
             x=(t+" "+b[:200]).lower()
@@ -111,6 +148,7 @@ jobs:
                 continue
             img=(r.get("Sample Image") or "").strip(); status=norm(r.get("Cascade Status"))
             img_url_val=img_url(img)
+            media_val=media_list(img, title)
             supersedes_raw=(r.get("Superseded Cascade") or r.get("Supersedes") or "").strip()
             if supersedes_raw.upper() in ("NONE","N/A","NA","-"): supersedes_raw=""
             if not title: title=body[:60] or f"Untitled cascade {i+1}"
@@ -124,7 +162,7 @@ jobs:
             cascades.append({"id":cid,"title":title,"category":c,"supersedes":supersedes_raw,"supersededBy":"","channel":chx,
               "channelIcon":CH_ICON.get(chx,"\U0001F465"),"product":"","date":date,"status":status,
               "desc":re.sub(r"\s+"," ",body)[:160],"tags":tags,"cascadedBy":by,
-              "sampleImage":img,"sampleImageUrl":img_url_val,"relatedResources":[],"relatedProducts":[],
+              "sampleImage":img,"sampleImageUrl":img_url_val,"media":media_val,"relatedResources":[],"relatedProducts":[],
               "versions":[{"status":status,"label":status.upper(),"date":date,"by":by,"title":title,"body":body}]})
           title_to_id={c["title"]:c["id"] for c in cascades}
           for c in cascades:

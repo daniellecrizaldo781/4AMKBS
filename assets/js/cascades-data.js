@@ -16,6 +16,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -44,7 +45,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1LMmJTHWJSjpuEfyOh9A8GJsL2sSuo9ZQ/view?usp=sharing",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1LMmJTHWJSjpuEfyOh9A8GJsL2sSuo9ZQ",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "video",
+        "driveId": "1LMmJTHWJSjpuEfyOh9A8GJsL2sSuo9ZQ",
+        "preview": "https://drive.google.com/file/d/1LMmJTHWJSjpuEfyOh9A8GJsL2sSuo9ZQ/preview",
+        "alt": "Replacement Process for Defective Items"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -73,7 +82,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1YW91Zftz2htd0xr4exquFx66OuDdyFd9/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1YW91Zftz2htd0xr4exquFx66OuDdyFd9",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1YW91Zftz2htd0xr4exquFx66OuDdyFd9",
+        "src": "https://lh3.googleusercontent.com/d/1YW91Zftz2htd0xr4exquFx66OuDdyFd9",
+        "alt": "Update: OHA Double Dome Tips Fit & Insertion Assistance"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -103,6 +120,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -132,6 +150,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -161,6 +180,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -190,6 +210,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -219,6 +240,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -248,6 +270,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -277,6 +300,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -306,6 +330,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -334,7 +359,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1CMXg2pDd_dU7in7mNM_rdRwWOoahsIB9/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1CMXg2pDd_dU7in7mNM_rdRwWOoahsIB9",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1CMXg2pDd_dU7in7mNM_rdRwWOoahsIB9",
+        "src": "https://lh3.googleusercontent.com/d/1CMXg2pDd_dU7in7mNM_rdRwWOoahsIB9",
+        "alt": "Reminder: Assisting Customers with Oricle Upgrades Following Hearing Consultations"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -363,7 +396,21 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1tOfOSwFX9gxy1UHTVoEzWqBjE6GO_M52/view?usp=sharing\nhttps://drive.google.com/file/d/1xyfCL8aZ5R_ZbIXORjJYXKmzzHDKH-wq/view?usp=sharing",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1tOfOSwFX9gxy1UHTVoEzWqBjE6GO_M52",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1tOfOSwFX9gxy1UHTVoEzWqBjE6GO_M52",
+        "src": "https://lh3.googleusercontent.com/d/1tOfOSwFX9gxy1UHTVoEzWqBjE6GO_M52",
+        "alt": "Update: New Process for Walmart Escalation Tickets"
+      },
+      {
+        "type": "image",
+        "driveId": "1xyfCL8aZ5R_ZbIXORjJYXKmzzHDKH-wq",
+        "src": "https://lh3.googleusercontent.com/d/1xyfCL8aZ5R_ZbIXORjJYXKmzzHDKH-wq",
+        "alt": "Update: New Process for Walmart Escalation Tickets"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -392,7 +439,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1Ipf9OxRn4qUqEqikrNRFJlJFxNGuQxbk/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1Ipf9OxRn4qUqEqikrNRFJlJFxNGuQxbk",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1Ipf9OxRn4qUqEqikrNRFJlJFxNGuQxbk",
+        "src": "https://lh3.googleusercontent.com/d/1Ipf9OxRn4qUqEqikrNRFJlJFxNGuQxbk",
+        "alt": "Order Processing Update: Campaign ID Reference & Upsell Reminder"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -421,7 +476,21 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1uNGVlv9WNcfIMLAAtQbd12Du7Rygv-M_/view\nhttps://drive.google.com/file/d/1zNIP4FLQLImhp5Cg614m6bz6LOAdc_m_/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1uNGVlv9WNcfIMLAAtQbd12Du7Rygv-M_",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1uNGVlv9WNcfIMLAAtQbd12Du7Rygv-M_",
+        "src": "https://lh3.googleusercontent.com/d/1uNGVlv9WNcfIMLAAtQbd12Du7Rygv-M_",
+        "alt": "Update: Placing an order via Sticky"
+      },
+      {
+        "type": "image",
+        "driveId": "1zNIP4FLQLImhp5Cg614m6bz6LOAdc_m_",
+        "src": "https://lh3.googleusercontent.com/d/1zNIP4FLQLImhp5Cg614m6bz6LOAdc_m_",
+        "alt": "Update: Placing an order via Sticky"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -451,6 +520,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -479,7 +549,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1s-9DvjEAg6lM-3V01w9_No1z-rfM3y9I/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1s-9DvjEAg6lM-3V01w9_No1z-rfM3y9I",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1s-9DvjEAg6lM-3V01w9_No1z-rfM3y9I",
+        "src": "https://lh3.googleusercontent.com/d/1s-9DvjEAg6lM-3V01w9_No1z-rfM3y9I",
+        "alt": "Reminder: Proper Tagging for Tickets with Multiple Concerns"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -508,7 +586,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1cYFFrQBLM95J1v-aJqLvvBouaBPFQgjr/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1cYFFrQBLM95J1v-aJqLvvBouaBPFQgjr",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1cYFFrQBLM95J1v-aJqLvvBouaBPFQgjr",
+        "src": "https://lh3.googleusercontent.com/d/1cYFFrQBLM95J1v-aJqLvvBouaBPFQgjr",
+        "alt": "Update: Redo Process ( X-All | Splash )"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -537,7 +623,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1yElRIDZwrBQZBJ4TRp8JeFB8hV8zkpjF/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1yElRIDZwrBQZBJ4TRp8JeFB8hV8zkpjF",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1yElRIDZwrBQZBJ4TRp8JeFB8hV8zkpjF",
+        "src": "https://lh3.googleusercontent.com/d/1yElRIDZwrBQZBJ4TRp8JeFB8hV8zkpjF",
+        "alt": "Update: Internal Notes in Shiphero"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -566,7 +660,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1_Hg7ja_AYRGYqSO8lnvrw0ZCNo13XSui/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1_Hg7ja_AYRGYqSO8lnvrw0ZCNo13XSui",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1_Hg7ja_AYRGYqSO8lnvrw0ZCNo13XSui",
+        "src": "https://lh3.googleusercontent.com/d/1_Hg7ja_AYRGYqSO8lnvrw0ZCNo13XSui",
+        "alt": "Update: Marketing Ticket Manual Tagging"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -597,7 +699,15 @@ window.KB_RAW_CASCADES = [
     ],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/18p8jSXp7vxVrEHQELdf-sq1wCjAlHgTF/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/18p8jSXp7vxVrEHQELdf-sq1wCjAlHgTF",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "18p8jSXp7vxVrEHQELdf-sq1wCjAlHgTF",
+        "src": "https://lh3.googleusercontent.com/d/18p8jSXp7vxVrEHQELdf-sq1wCjAlHgTF",
+        "alt": "Reminder: Marketing Email Handling  (May 31,2026)"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -628,7 +738,15 @@ window.KB_RAW_CASCADES = [
     ],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/18p8jSXp7vxVrEHQELdf-sq1wCjAlHgTF/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/18p8jSXp7vxVrEHQELdf-sq1wCjAlHgTF",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "18p8jSXp7vxVrEHQELdf-sq1wCjAlHgTF",
+        "src": "https://lh3.googleusercontent.com/d/18p8jSXp7vxVrEHQELdf-sq1wCjAlHgTF",
+        "alt": "Update: Marketing Email Handling  (Effective Immediately) (May 29,2026)"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -660,6 +778,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -689,6 +808,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -718,6 +838,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -747,6 +868,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -776,6 +898,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -805,6 +928,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -835,7 +959,15 @@ window.KB_RAW_CASCADES = [
     ],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1ptnlNwhM3NIAY6Xv4jv0jv8E1I-uo57F/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1ptnlNwhM3NIAY6Xv4jv0jv8E1I-uo57F",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1ptnlNwhM3NIAY6Xv4jv0jv8E1I-uo57F",
+        "src": "https://lh3.googleusercontent.com/d/1ptnlNwhM3NIAY6Xv4jv0jv8E1I-uo57F",
+        "alt": "To all handling Email Tickets (Email & Social Media Team) (May 14,2026)"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -865,6 +997,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -896,6 +1029,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -927,6 +1061,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -956,6 +1091,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -984,7 +1120,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1HUU9SXHGdNRDIfnFzMXBtrmKtkE9JEVm/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1HUU9SXHGdNRDIfnFzMXBtrmKtkE9JEVm",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1HUU9SXHGdNRDIfnFzMXBtrmKtkE9JEVm",
+        "src": "https://lh3.googleusercontent.com/d/1HUU9SXHGdNRDIfnFzMXBtrmKtkE9JEVm",
+        "alt": "Reminder: Escalated Tickets in Zendesk"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1013,7 +1157,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/13lUxTWeOZzhqMJ53Tf5Dy9nTHRwWOR2_/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/13lUxTWeOZzhqMJ53Tf5Dy9nTHRwWOR2_",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "13lUxTWeOZzhqMJ53Tf5Dy9nTHRwWOR2_",
+        "src": "https://lh3.googleusercontent.com/d/13lUxTWeOZzhqMJ53Tf5Dy9nTHRwWOR2_",
+        "alt": "Reminder: Merging Tickets"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1043,6 +1195,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1071,7 +1224,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/12e3QvqTqm3ld7rkgW1AKwWWKjW4Pl_Rw/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/12e3QvqTqm3ld7rkgW1AKwWWKjW4Pl_Rw",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "12e3QvqTqm3ld7rkgW1AKwWWKjW4Pl_Rw",
+        "src": "https://lh3.googleusercontent.com/d/12e3QvqTqm3ld7rkgW1AKwWWKjW4Pl_Rw",
+        "alt": "REDO Refunded Orders (Return Completed)"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1100,7 +1261,21 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1F6RgsDfF_R4T1V8M-Jvx0DgjGoX6XDtV/view?usp=sharing\nhttps://drive.google.com/file/d/1BOH2UGSAKoXwT3ygMwosiH-KQvhhjtnt/view?usp=sharing",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1F6RgsDfF_R4T1V8M-Jvx0DgjGoX6XDtV",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1F6RgsDfF_R4T1V8M-Jvx0DgjGoX6XDtV",
+        "src": "https://lh3.googleusercontent.com/d/1F6RgsDfF_R4T1V8M-Jvx0DgjGoX6XDtV",
+        "alt": "Attention: Duplicate Order Incident –  (All Brands)"
+      },
+      {
+        "type": "image",
+        "driveId": "1BOH2UGSAKoXwT3ygMwosiH-KQvhhjtnt",
+        "src": "https://lh3.googleusercontent.com/d/1BOH2UGSAKoXwT3ygMwosiH-KQvhhjtnt",
+        "alt": "Attention: Duplicate Order Incident –  (All Brands)"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1130,6 +1305,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1158,7 +1334,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1yLFV1ZX44mP5LcToHoI5yTwM9VID5WZH/view?usp=sharing",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1yLFV1ZX44mP5LcToHoI5yTwM9VID5WZH",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1yLFV1ZX44mP5LcToHoI5yTwM9VID5WZH",
+        "src": "https://lh3.googleusercontent.com/d/1yLFV1ZX44mP5LcToHoI5yTwM9VID5WZH",
+        "alt": "Misrouted Emails: SPLASH"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1188,6 +1372,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1217,6 +1402,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1248,6 +1434,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1276,7 +1463,21 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1otAX0__WqygDL9ji9CYhYheHnxn24gw9/view?usp=sharing\nhttps://drive.google.com/file/d/1otLISiWVPQFwzjT4qnbKWLssr1veymHh/view?usp=sharing",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1otAX0__WqygDL9ji9CYhYheHnxn24gw9",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1otAX0__WqygDL9ji9CYhYheHnxn24gw9",
+        "src": "https://lh3.googleusercontent.com/d/1otAX0__WqygDL9ji9CYhYheHnxn24gw9",
+        "alt": "Update: Audiologist Consultation Invitation – Declined"
+      },
+      {
+        "type": "image",
+        "driveId": "1otLISiWVPQFwzjT4qnbKWLssr1veymHh",
+        "src": "https://lh3.googleusercontent.com/d/1otLISiWVPQFwzjT4qnbKWLssr1veymHh",
+        "alt": "Update: Audiologist Consultation Invitation – Declined"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1306,6 +1507,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1334,7 +1536,21 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1ONOS1M_PM-3cZ1ImxnFraSXgezsnCJxS/view?usp=sharing\nhttps://drive.google.com/file/d/1kZnpjXnbuSDFGzrdU7aATbVe_PQzgdty/view?usp=sharing",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1ONOS1M_PM-3cZ1ImxnFraSXgezsnCJxS",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1ONOS1M_PM-3cZ1ImxnFraSXgezsnCJxS",
+        "src": "https://lh3.googleusercontent.com/d/1ONOS1M_PM-3cZ1ImxnFraSXgezsnCJxS",
+        "alt": "Update: Process for handling Walmart customer emails"
+      },
+      {
+        "type": "image",
+        "driveId": "1kZnpjXnbuSDFGzrdU7aATbVe_PQzgdty",
+        "src": "https://lh3.googleusercontent.com/d/1kZnpjXnbuSDFGzrdU7aATbVe_PQzgdty",
+        "alt": "Update: Process for handling Walmart customer emails"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1363,7 +1579,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1XfwzUFeXYd1gwQLGt2RgwKgblfiW4ri9/view?usp=sharing",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1XfwzUFeXYd1gwQLGt2RgwKgblfiW4ri9",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1XfwzUFeXYd1gwQLGt2RgwKgblfiW4ri9",
+        "src": "https://lh3.googleusercontent.com/d/1XfwzUFeXYd1gwQLGt2RgwKgblfiW4ri9",
+        "alt": "Update: Audiologist Consultation Portal"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1393,6 +1617,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1424,6 +1649,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1453,6 +1679,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1484,6 +1711,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1513,6 +1741,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1542,6 +1771,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1571,6 +1801,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1600,6 +1831,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1629,6 +1861,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1658,6 +1891,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1687,6 +1921,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1718,6 +1953,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1747,6 +1983,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1776,6 +2013,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1805,6 +2043,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1834,6 +2073,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1862,7 +2102,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1TgLOSCwtsfwLOunQ3G41A49h0xo7lJhd/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1TgLOSCwtsfwLOunQ3G41A49h0xo7lJhd",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1TgLOSCwtsfwLOunQ3G41A49h0xo7lJhd",
+        "src": "https://lh3.googleusercontent.com/d/1TgLOSCwtsfwLOunQ3G41A49h0xo7lJhd",
+        "alt": "NEW & UPDATED MACROS"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1892,6 +2140,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1923,6 +2172,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1952,6 +2202,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -1981,6 +2232,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2009,7 +2261,21 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1TbyX4sEdL3jEdCYG3s5llwdWIpvWqyRV/view?usp=sharing\nhttps://drive.google.com/file/d/12xHwEV08C7B1FOWlm5xOUQ2djugh5v3l/view?usp=sharing",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1TbyX4sEdL3jEdCYG3s5llwdWIpvWqyRV",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1TbyX4sEdL3jEdCYG3s5llwdWIpvWqyRV",
+        "src": "https://lh3.googleusercontent.com/d/1TbyX4sEdL3jEdCYG3s5llwdWIpvWqyRV",
+        "alt": "Update: Prioritizing sending BBB review requests for Oricle and X-ALL"
+      },
+      {
+        "type": "image",
+        "driveId": "12xHwEV08C7B1FOWlm5xOUQ2djugh5v3l",
+        "src": "https://lh3.googleusercontent.com/d/12xHwEV08C7B1FOWlm5xOUQ2djugh5v3l",
+        "alt": "Update: Prioritizing sending BBB review requests for Oricle and X-ALL"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2039,6 +2305,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2068,6 +2335,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2097,6 +2365,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2126,6 +2395,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2155,6 +2425,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2183,7 +2454,27 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1B25cBo00GWYSGJu_maLEJMBBwEaxDhsD/view\nhttps://drive.google.com/file/d/1gSkxjxScRRmNZmR66j-L40TqeGn07zXh/view\nhttps://drive.google.com/file/d/1AGhsNjIpZbrUatApTKkWdW66MZuk1J8F/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1B25cBo00GWYSGJu_maLEJMBBwEaxDhsD",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1B25cBo00GWYSGJu_maLEJMBBwEaxDhsD",
+        "src": "https://lh3.googleusercontent.com/d/1B25cBo00GWYSGJu_maLEJMBBwEaxDhsD",
+        "alt": "Update: Consultation Booking Reminder"
+      },
+      {
+        "type": "image",
+        "driveId": "1gSkxjxScRRmNZmR66j-L40TqeGn07zXh",
+        "src": "https://lh3.googleusercontent.com/d/1gSkxjxScRRmNZmR66j-L40TqeGn07zXh",
+        "alt": "Update: Consultation Booking Reminder"
+      },
+      {
+        "type": "image",
+        "driveId": "1AGhsNjIpZbrUatApTKkWdW66MZuk1J8F",
+        "src": "https://lh3.googleusercontent.com/d/1AGhsNjIpZbrUatApTKkWdW66MZuk1J8F",
+        "alt": "Update: Consultation Booking Reminder"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2212,7 +2503,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1xtzWl8mNVHza1paXBb4GNi340uQovrA1/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1xtzWl8mNVHza1paXBb4GNi340uQovrA1",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1xtzWl8mNVHza1paXBb4GNi340uQovrA1",
+        "src": "https://lh3.googleusercontent.com/d/1xtzWl8mNVHza1paXBb4GNi340uQovrA1",
+        "alt": "Update: 50% Immediate Refund – Customer Dispute Reminder"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2241,7 +2540,21 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1kTQKddQCLeXk6CKkXgOVIOKyXNS8CE4z/view\nhttps://drive.google.com/file/d/1iu5844Wio9z_q05xrzdGsuklYXkkSlPi/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1kTQKddQCLeXk6CKkXgOVIOKyXNS8CE4z",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1kTQKddQCLeXk6CKkXgOVIOKyXNS8CE4z",
+        "src": "https://lh3.googleusercontent.com/d/1kTQKddQCLeXk6CKkXgOVIOKyXNS8CE4z",
+        "alt": "Update: How to Access and Share UPS Proof of Delivery (Photo)"
+      },
+      {
+        "type": "image",
+        "driveId": "1iu5844Wio9z_q05xrzdGsuklYXkkSlPi",
+        "src": "https://lh3.googleusercontent.com/d/1iu5844Wio9z_q05xrzdGsuklYXkkSlPi",
+        "alt": "Update: How to Access and Share UPS Proof of Delivery (Photo)"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2271,6 +2584,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2300,6 +2614,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2329,6 +2644,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2358,6 +2674,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2386,7 +2703,27 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1J7SRr-3Sk0JGmaJRCrTIaz2g4m8bINie/view\nhttps://drive.google.com/file/d/16VDC_aB9IJhA6b30BkIydLKjTdEwaGP6/view\nhttps://drive.google.com/file/d/1q1wZuI7HdSjPpX8nXvCJVCkRHlB3N4wO/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1J7SRr-3Sk0JGmaJRCrTIaz2g4m8bINie",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1J7SRr-3Sk0JGmaJRCrTIaz2g4m8bINie",
+        "src": "https://lh3.googleusercontent.com/d/1J7SRr-3Sk0JGmaJRCrTIaz2g4m8bINie",
+        "alt": "Update: Refund Process on OHA Return Portal"
+      },
+      {
+        "type": "image",
+        "driveId": "16VDC_aB9IJhA6b30BkIydLKjTdEwaGP6",
+        "src": "https://lh3.googleusercontent.com/d/16VDC_aB9IJhA6b30BkIydLKjTdEwaGP6",
+        "alt": "Update: Refund Process on OHA Return Portal"
+      },
+      {
+        "type": "image",
+        "driveId": "1q1wZuI7HdSjPpX8nXvCJVCkRHlB3N4wO",
+        "src": "https://lh3.googleusercontent.com/d/1q1wZuI7HdSjPpX8nXvCJVCkRHlB3N4wO",
+        "alt": "Update: Refund Process on OHA Return Portal"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2416,6 +2753,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2444,7 +2782,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1hSV_4XRYh4sjxZqTEl5_b-lK8y2e1qdD/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1hSV_4XRYh4sjxZqTEl5_b-lK8y2e1qdD",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1hSV_4XRYh4sjxZqTEl5_b-lK8y2e1qdD",
+        "src": "https://lh3.googleusercontent.com/d/1hSV_4XRYh4sjxZqTEl5_b-lK8y2e1qdD",
+        "alt": "Update: Hearing Specialist Log"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2473,7 +2819,33 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1NuOvIs03vwYy43ebQmfI1F1olTY8v_-F/view\nhttps://drive.google.com/file/d/1CT9JNHpQmOY3oPghV-Fz0SHRtFcQE7Wy/view\nhttps://drive.google.com/file/d/11kP-jcEJwA85UYZwuVhWGYzV0Rae8YWn/view\nhttps://drive.google.com/file/d/1QNsuiSZGP8w53tx-iX16PsRrRt0fK78h/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1NuOvIs03vwYy43ebQmfI1F1olTY8v_-F",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1NuOvIs03vwYy43ebQmfI1F1olTY8v_-F",
+        "src": "https://lh3.googleusercontent.com/d/1NuOvIs03vwYy43ebQmfI1F1olTY8v_-F",
+        "alt": "Update: Refund Process on OHA (Return Portal Update)"
+      },
+      {
+        "type": "image",
+        "driveId": "1CT9JNHpQmOY3oPghV-Fz0SHRtFcQE7Wy",
+        "src": "https://lh3.googleusercontent.com/d/1CT9JNHpQmOY3oPghV-Fz0SHRtFcQE7Wy",
+        "alt": "Update: Refund Process on OHA (Return Portal Update)"
+      },
+      {
+        "type": "image",
+        "driveId": "11kP-jcEJwA85UYZwuVhWGYzV0Rae8YWn",
+        "src": "https://lh3.googleusercontent.com/d/11kP-jcEJwA85UYZwuVhWGYzV0Rae8YWn",
+        "alt": "Update: Refund Process on OHA (Return Portal Update)"
+      },
+      {
+        "type": "image",
+        "driveId": "1QNsuiSZGP8w53tx-iX16PsRrRt0fK78h",
+        "src": "https://lh3.googleusercontent.com/d/1QNsuiSZGP8w53tx-iX16PsRrRt0fK78h",
+        "alt": "Update: Refund Process on OHA (Return Portal Update)"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2503,6 +2875,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2532,6 +2905,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2560,7 +2934,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1bs_nnC_-A28dkb6rnI0C0HkbY1j72Huy/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1bs_nnC_-A28dkb6rnI0C0HkbY1j72Huy",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1bs_nnC_-A28dkb6rnI0C0HkbY1j72Huy",
+        "src": "https://lh3.googleusercontent.com/d/1bs_nnC_-A28dkb6rnI0C0HkbY1j72Huy",
+        "alt": "Missed or Overlooked Consultation Invite Handling"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2590,6 +2972,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2619,6 +3002,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "c",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2648,6 +3032,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2677,6 +3062,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2706,6 +3092,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2735,6 +3122,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2764,6 +3152,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2793,6 +3182,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2824,6 +3214,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "Georgina",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2855,6 +3246,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2886,6 +3278,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2915,6 +3308,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2944,6 +3338,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -2975,6 +3370,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -3004,6 +3400,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -3033,6 +3430,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -3062,6 +3460,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -3091,6 +3490,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -3120,6 +3520,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -3149,6 +3550,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -3178,6 +3580,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -3207,6 +3610,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -3235,7 +3639,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1Sd5Q9_8tUSkBDxUWANRjXkP3rdVz1KZJ/view",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1Sd5Q9_8tUSkBDxUWANRjXkP3rdVz1KZJ",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1Sd5Q9_8tUSkBDxUWANRjXkP3rdVz1KZJ",
+        "src": "https://lh3.googleusercontent.com/d/1Sd5Q9_8tUSkBDxUWANRjXkP3rdVz1KZJ",
+        "alt": "Proper Escalation for Failed Refunds"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -3265,6 +3677,7 @@ window.KB_RAW_CASCADES = [
     "cascadedBy": "",
     "sampleImage": "N/A",
     "sampleImageUrl": "",
+    "media": [],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [
@@ -3293,7 +3706,15 @@ window.KB_RAW_CASCADES = [
     "tags": [],
     "cascadedBy": "",
     "sampleImage": "https://drive.google.com/file/d/1j2hzq4G46m5cl-DY7h3EEqn1TYMnsPCD/view?usp=sharing",
-    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1j2hzq4G46m5cl-DY7h3EEqn1TYMnsPCD",
+    "sampleImageUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "driveId": "1j2hzq4G46m5cl-DY7h3EEqn1TYMnsPCD",
+        "src": "https://lh3.googleusercontent.com/d/1j2hzq4G46m5cl-DY7h3EEqn1TYMnsPCD",
+        "alt": "Proper Return Tagging (All Returns with Refunds Issued)"
+      }
+    ],
     "relatedResources": [],
     "relatedProducts": [],
     "versions": [

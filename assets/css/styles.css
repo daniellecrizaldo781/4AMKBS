@@ -344,6 +344,12 @@ h1, h2, h3, h4 { margin: 0; font-weight: 700; color: var(--text); line-height: 1
 .zoomable-img:hover { box-shadow: 0 0 0 2px var(--accent); }
 .zoomable-img img { cursor: zoom-in; }
 
+/* inline video player (Google Drive preview) */
+.detail-video { margin-top: 12px; max-width: 520px; border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; background: #000; }
+.detail-video__frame { display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; }
+.detail-video__link { display: block; padding: 8px 12px; font-size: 13px; font-weight: 600; color: var(--brand); text-decoration: none; background: var(--bg-2); }
+.detail-video__link:hover { color: var(--accent); text-decoration: underline; }
+
 /* full-screen lightbox */
 .lightbox {
   position: fixed; inset: 0; z-index: 1000;
