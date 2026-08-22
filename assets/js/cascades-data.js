@@ -126,6 +126,1236 @@ window.KB_RAW_CASCADES = [
     ]
   },
   {
+    "id": "update-macro-creation-with-layered-response-options-march-21-2026",
+    "title": "Update: Macro Creation with Layered Response Options",
+    "category": "Email & Comms",
+    "supersedes": "Important Update: Terms and Conditions / Terms of Service (March 14,2026)",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 21, 2026",
+    "status": "active",
+    "desc": "In line with the cascade shared on March 14 regarding macro revamping, here are the additional updates and macro additions completed so far: Macro Creation with",
+    "tags": [
+      "Supersedes: Important Update: Terms and Conditions / Terms of Service (March 14,2026)"
+    ],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 21, 2026",
+        "by": "",
+        "title": "Update: Macro Creation with Layered Response Options",
+        "body": "In line with the cascade shared on March 14 regarding macro revamping, here are the additional updates and macro additions completed so far:\n\nMacro Creation with Layered Response Options\n\n(Splash) CR16 - No Movement > 7 Days\n\nRenamed from (Splash) CR16 - No movement > 7 days to: Stuck (No Movement > 7 days) - L1 Monitor 7 Days\nLayer 2: Stuck (No Movement > 7 days) - L2 Confirm Address\n(Ticket is snoozed for one day; follow-up will be done once only. If no response, considered dropped)\nLayer 3: Stuck (No Movement > 7 days) - L3 Reshipped\n\nDelivered But Not Received (Stolen Package) - WITHOUT Warranty\n\nRenamed to: Delivered Not Received - Lost/Stolen Package - L1 Delivery Terms\nLayer 2: Delivered Not Received - Lost/Stolen Package - L2 Refund, Chargeback\n\n(Splash) CR23 - Order Stuck in \"Confirmed\" Status\n\nRenamed from (Splash) CR23 - Order stuck in \"confirmed\" status to: Stuck in Confirmed Status - L1 Monitor 7 Days\nLayer 2: Stuck in Confirmed Status - L2 Confirm Address\n(Ticket is snoozed for one day; follow-up will be done once only. If no response, considered dropped)\nLayer 3: Stuck (No Movement > 7 days) - L3 Reshipped\n\nCreated Macro: Delivered at Incorrect Address - Incorrect Customer-Provided Address\n\nLayer 1: Delivered at Incorrect Address - Incorrect Customer-Provided Address - L1 Shipping Terms\nLayer 2: Delivered at Incorrect Address - Incorrect Customer-Provided Address - L2 Refund, Chargeback\n\nTracking # Not Found\n\nRenamed from Tracking # Not Found Within 48hrs to: Tracking Not Found - Within 3 Days - L1 Monitor 3 Days\nLayer 2: Tracking Not Found - After 3 Days - L2 Reshipped\n\n(Splash) CR13 - Order Shows \"Labeled\" / \"Shipping Label Purchased\"\n\nRenamed from (Splash) CR13 - Order has shipped but only shows up as \"labeled\" or \"shipping label purchased\" to: Label Created - L1 Monitor 7 Days\nLayer 2: Label Created - L2 Confirm Address\nLayer 3: Label Created - L3 Reshipped\n\nNewly Added Macros\n\nDamaged Packaging Only (Box, Bottle, Bag)\nLayer 1: Ask Photo/Test\nLayer 2: Still Works\nLayer 3: $5 Compensation\n\nDamaged Item\n\nLayer 1: Ask Photo/Test\nLayer 2: Still Works\nLayer 3: Reshipped\n\nIncomplete Items Received\n\nLayer 1: Clarification\nLayer 2: Reshipped\n\nMissing Accessory\n\nLayer 1: Clarification\nLayer 2: Reshipped\n\nIncorrect Item Received\n\nLayer 1: Ask Photo\nLayer 2: Reshipped\n\nWe have created and renamed several macros, especially those with layered responses such as L1, L2, and L3, to help simplify your process.\n\nThese updates are now aligned with our revised Terms and Conditions, and we are confident that they will help reduce refunds while allowing us to provide stronger and\n\nmore consistent resolutions to our customers.\n\nTo follow are the macros for different RTS scenarios and defective items.\n\nWe encourage everyone to review and familiarize yourselves with these macros to ensure they are used correctly and consistently."
+      }
+    ]
+  },
+  {
+    "id": "important-update-terms-and-conditions-terms-of-service-march-march-14-2026",
+    "title": "Important Update: Terms and Conditions / Terms of Service (March 14,2026)",
+    "category": "Email & Comms",
+    "supersedes": "Delivered but Not Received: Response Flow (January 21,2026)",
+    "supersededBy": "Update: Macro Creation with Layered Response Options",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 14, 2026",
+    "status": "superseded",
+    "desc": "Please take a moment to read this carefully! Our Terms and Conditions across all brands have been updated, and we are revamping our shipping and delivery macros",
+    "tags": [
+      "Supersedes: Delivered but Not Received: Response Flow (January 21,2026)"
+    ],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "superseded",
+        "label": "SUPERSEDED",
+        "date": "March 14, 2026",
+        "by": "",
+        "title": "Important Update: Terms and Conditions / Terms of Service (March 14,2026)",
+        "body": "Please take a moment to read this carefully! Our Terms and Conditions across all brands have been updated, and we are revamping our shipping and delivery\n\nmacros to fully align with the new policies. This is critical to help us handle customer complaints efficiently and consistently.\n\nKey Changes Implemented So Far\n\nCR16 – No Movement > 7 Days\n\nA. Previously named as Lost in Transit\nB. Tagging will also be updated soon\n\nCR23, CR13, and General – Stuck in Transit but Not Lost\n\nA. These macros now have unified email content:\nB. We’ve opened an investigation with the carrier\nC. Customers should monitor tracking\nD. If no movement after 7 days, they should reach back so we can process a reshipment, after confirming the shipping address is correct\n\nNew Macros to Streamline Follow-Ups\n\nA.Tracking # Not Found Within 48 Hours\nB. If a customer follows up too soon, advise them to wait until tomorrow as the carrier may not have updated the tracking yet.\n\nC. Tracking # Not Found Beyond 3 Days\nD. If still no updates after 3 days, proceed with reshipment\n\nDelivered Issues – Policy Reinforcement\n\nUpdated macros for:\nA. Delivered But Not Received (Stolen Package) – Without Warranty\nB. Delivered but Not Received\nC. Delivered But Not Received – Without Warranty\nD. (Splash) - Delivered but not received (More than a week)\nE. General W1 – Sent to Wrong Address\n\nWhat we advise customer's to do:\nCustomers must file a report directly with the courier (links already included in the macros).\nOnly leave the carrier assigned to the customer’s order in your message.\nNo exceptions: If customers push back, file a claim, or request a refund (even threats of chargebacks or legal action), we do not issue refunds. Be\n\nfirm and consistent!\n\nReminder: Further updates will follow as we continue aligning the remaining macros."
+      }
+    ]
+  },
+  {
+    "id": "oha-returns-near-30-day-window-march-14-2026",
+    "title": "OHA RETURNS: NEAR 30-DAY WINDOW",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 14, 2026",
+    "status": "active",
+    "desc": "We’ve noticed some customers are approaching the end of their 30-day return window (just a few days remaining) before receiving the return portal. This can lead",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 14, 2026",
+        "by": "",
+        "title": "OHA RETURNS: NEAR 30-DAY WINDOW",
+        "body": "We’ve noticed some customers are approaching the end of their 30-day return window (just a few days remaining) before receiving the return portal. This can lead to complaints or back-and-forth communication if their returns are rejected due to the window expiring.\n\nIf the return portal will only be provided near the 30-day limit, or if less than a week remains, please clearly inform the customer about the 30-day return window:\n\nProvide the delivery date and explain that the return window is 30 days from that date.\nYou may include the exact 30th-day date to avoid confusion. (If you are unsure of the date, it’s safer not to add it.)\n\nPlease ensure the dates are accurate. A “OHA Return Portal Link (Near 30-Day Window)” macro is now available to support you in these cases.\n\nAlso ensure that the customer does not get confused between the 30-day return window and the 7-day return label validity.\n\nMacro:\n\nPlease note that the return process must be completed within 30 days from the delivery date, which was [Delivery Date]. Returns submitted beyond this 30-day window will no longer be eligible for a refund.\n\nThe portal will guide you through the return process. Once you complete the return, a return shipping label will be generated that you can print for easy shipping.\n\nOnce the return label is generated, your package must be shipped within 7 days from the label creation date. Returns sent after this 7-day period will be rejected. Please note that return processing fees will be deducted from the refunded amount, and the original shipping cost used to send the item(s) to you is non-refundable."
+      }
+    ]
+  },
+  {
+    "id": "dhl-re-shipment-claim-template-escalation-sheet-implementati-march-11-2026",
+    "title": "DHL Re-Shipment Claim Template Escalation Sheet Implementation",
+    "category": "Shipping & Fulfillment",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 11, 2026",
+    "status": "active",
+    "desc": "To help us streamline investigations and coordinate better with the warehouse, we are introducing a new Escalation Sheet (https://docs.google.com/spreadsheets/d",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 11, 2026",
+        "by": "",
+        "title": "DHL Re-Shipment Claim Template Escalation Sheet Implementation",
+        "body": "To help us streamline investigations and coordinate better with the warehouse, we are introducing a new Escalation Sheet (https://docs.google.com/spreadsheets/d/1Puj4kVn4hxKTCCKHU79wtPUc9kF879Z-/edit?pli=1&gid=1433765623#gid=1433765623) that should be used when specific tracking or packing issues are reported by customers.\n\nWhen should this sheet be used?\n\nTracking Issues\nPlease log the order in the escalation sheet if the customer reports:\n• Delivered to incorrect address\n• Lost in transit\n• Tracking stuck / no movement for more than 7 days\n• Order stuck in “Confirmed” status with no shipment progress\n• Damaged item upon delivery\n\nPacking Issues\nUse the sheet if the customer received:\n• Incomplete order\n• Incorrect item(s)\n\nImportant Reminder\nPlease make sure to fill out all required fields completely and accurately. Complete details help ensure everything is aligned between CS and the warehouse and allow them to efficiently investigate and resolve the issue.\n\nPurpose of the Escalation Sheet\n\nThis sheet will serve as a central tracker for orders encountering tracking or packing issues, enabling the warehouse team to quickly review, investigate, and take appropriate action."
+      }
+    ]
+  },
+  {
+    "id": "update-prioritizing-sending-bbb-review-requests-for-oricle-a-march-11-2026",
+    "title": "Update: Prioritizing sending BBB review requests for Oricle and X-ALL",
+    "category": "Email & Comms",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 11, 2026",
+    "status": "retired",
+    "desc": "Effective immediately, we are now prioritizing sending BBB review requests for Oricle and X-ALL customers with positive interactions . Important: • Use the new ",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "https://drive.google.com/file/d/1TbyX4sEdL3jEdCYG3s5llwdWIpvWqyRV/view?usp=sharing\nhttps://drive.google.com/file/d/12xHwEV08C7B1FOWlm5xOUQ2djugh5v3l/view?usp=sharing",
+    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1TbyX4sEdL3jEdCYG3s5llwdWIpvWqyRV",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "retired",
+        "label": "RETIRED",
+        "date": "March 11, 2026",
+        "by": "",
+        "title": "Update: Prioritizing sending BBB review requests for Oricle and X-ALL",
+        "body": "Effective immediately, we are now prioritizing sending BBB review requests for Oricle and X-ALL customers with positive interactions .\n\nImportant:\n• Use the new BBB macros only:\n\nBBB Oricle - Request to Review\nBBB X-ALL - Request to Review\nStop using the old macro Trustpilot - Request to Review macro.\n• Continue to log all details in the sheet — Trustpilot requests will be sent later.\n\n• No need to notify in the trustpilot channel channel at this time."
+      }
+    ]
+  },
+  {
+    "id": "reminder-ghost-call-handling-march-10-2026",
+    "title": "Reminder: Ghost Call Handling",
+    "category": "Email & Comms",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 10, 2026",
+    "status": "active",
+    "desc": "Reminder on the proper handling of ghost calls (calls where the customer is connected but not responding). To keep things efficient and consistent: • CSRs shoul",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 10, 2026",
+        "by": "",
+        "title": "Reminder: Ghost Call Handling",
+        "body": "Reminder on the proper handling of ghost calls (calls where the customer is connected but not responding).\n\nTo keep things efficient and consistent:\n• CSRs should only deliver 3 ghost spiels to attempt to get the caller’s attention.\n• Please ask the caller to check if they may have accidentally pressed mute.\n• Ghost calls should not exceed 1 minute.\n• If there is still no response after the 3rd attempt, you may properly wrap up the call and disconnect.\n\nSample Ghost Spiels:\n\n“Hello, thank you for calling. This is [Name] from Customer Support. I’m on the line — how may I assist you today? If you can hear me, you might want to check if your phone is accidentally on mute.”\n“Hello, this is [Name] again from Customer Support. I’m still on the line but I’m not hearing anything from your end. If you can hear me, please check if your phone might be on mute.”\n“Hello, this is [Name] again. I’m still not receiving any response from your end. If you can hear me, please check if your phone might be on mute.”\n\nWrap-Up Spiel (if still no response):\n\n“Since I’m still not receiving any response, I will now be disconnecting the call. If you still need assistance, please feel free to call us back and we’ll be happy to help. Thank you and have a great day.”\n\nAfter the 3rd attempt with no response, proceed with the wrap-up spiel and properly disconnect the call.\n\nThis helps us keep the queue moving and assist other customers waiting for support."
+      }
+    ]
+  },
+  {
+    "id": "new-handling-update-audiologist-consultation-invite-march-06-2026",
+    "title": "New Handling Update: Audiologist Consultation Invite",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 06, 2026",
+    "status": "retired",
+    "desc": "Hey team, let's hold off on sending consultation invites for now. Please revert to our refund pushback flow and try our best on saving the returns/refunds throu",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "retired",
+        "label": "RETIRED",
+        "date": "March 06, 2026",
+        "by": "",
+        "title": "New Handling Update: Audiologist Consultation Invite",
+        "body": "Hey team, let's hold off on sending consultation invites for now. Please revert to our refund pushback flow and try our best on saving the returns/refunds through troubleshooting and offering alternative solutions.\n\nOur OHA Issue Handling Guide will remain our main reference for the entire process but let's skip the step where we offer consultation as part of our resolution. This is effective immediately."
+      }
+    ]
+  },
+  {
+    "id": "reminder-reshipment-for-missing-oha-bte-tube-march-06-2026",
+    "title": "Reminder: Reshipment for Missing OHA BTE tube",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 06, 2026",
+    "status": "active",
+    "desc": "When processing a reshipment for customers who reported that the tube is missing from their order (with photos provided), please make sure to use SKU - MA-OEHOA",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 06, 2026",
+        "by": "",
+        "title": "Reminder: Reshipment for Missing OHA BTE tube",
+        "body": "When processing a reshipment for customers who reported that the tube is missing from their order (with photos provided), please make sure to use SKU - MA-OEHOABTETIPTUBES8.\n\nThis ensures that the customer will receive the tubes along with the tips."
+      }
+    ]
+  },
+  {
+    "id": "handling-update-refund-process-on-oricle-hearing-march-06-2026",
+    "title": "Handling Update: Refund Process on Oricle Hearing",
+    "category": "Returns & Refunds",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 06, 2026",
+    "status": "active",
+    "desc": "Still seeing some of you issue refunds via Sticky. so I'm bumping this cascade and quickly reminding everyone that all requests for refund (except international",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 06, 2026",
+        "by": "",
+        "title": "Handling Update: Refund Process on Oricle Hearing",
+        "body": "Still seeing some of you issue refunds via Sticky. so I'm bumping this cascade and quickly reminding everyone that all requests for refund (except international orders) shall go through the Redo Refund Portal.\n\nTo align everyone, this is our updated process flow:\n\n->CX raises an issue and requests for a refund.\n-> Acknowledge and apologize\n-> Probe and Troubleshoot\n-> Offer alternative solutions/fix for the issue\n-> Offer BTE\n-> If cx BTS and BTE offer didn't work, and CX still wants a refund, we educate them of our refund/return policy and then send them the Macro OHA Return Portal Link\n\nRemember, we will no longer offer refunds ourselves, instead, we let them go to the portal so they can choose what they want (Refund, Exchange, Store Credit).\n\nThank you for your attention to this update and for ensuring the corrected handling is applied moving forward."
+      }
+    ]
+  },
+  {
+    "id": "additional-reminder-50-immediate-refund-customer-dispute-march-06-2026",
+    "title": "Additional Reminder: 50% Immediate Refund – Customer Dispute",
+    "category": "Returns & Refunds",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 06, 2026",
+    "status": "active",
+    "desc": "Suggested macro for this scenario has been made available in Gorgias. Simply type the keyword “immediate” and you will see Redo – 50% Immediate Refund. Macro: R",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 06, 2026",
+        "by": "",
+        "title": "Additional Reminder: 50% Immediate Refund – Customer Dispute",
+        "body": "Suggested macro for this scenario has been made available in Gorgias. Simply type the keyword “immediate” and you will see Redo – 50% Immediate Refund.\n\nMacro: Redo – 50% Immediate Refund.\n\nHi ,\n\nThank you for your response.\n\nWe understand how frustrating this situation may feel, and we sincerely appreciate your patience as we clarify the details for full transparency.\n\nTo complete the return process, the Return Portal was made available, allowing customers to independently select their preferred resolution. Upon submission of the return request, the following details were recorded for your order:\n\nReturn reason:\n{{ }}\n\nWhen the return options were presented, the selections submitted were:\n\n• Store Credit plus $100 bonus – No, I do not want the $100 bonus.\n• Keep the item and receive 50% of your refund – Yes, I want an immediate refund.\n\nBased on the confirmation of the 50% refund option, our system processed a refund of {amount}, which reflects 50% of the original purchase price. This option is specifically designed for customers who choose to keep the hearing aids while receiving a partial refund. Once the selection is confirmed and processed, the return resolution for the order is considered finalized.\n\nWhile we understand that this may not have been your intended choice, the refund was issued in accordance with the selection recorded at the time of submission. As the resolution has already been completed through the Return Portal, we are unable to modify the outcome or convert the partial refund to a full refund.\n\nWe sincerely appreciate your understanding in this matter.\n\nBest,\nMary Hudson, Customer Service Representative\nOricle Hearing"
+      }
+    ]
+  },
+  {
+    "id": "update-consultation-booking-reminder-march-05-2026",
+    "title": "Update: Consultation Booking Reminder",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 05, 2026",
+    "status": "active",
+    "desc": "Once a booking is confirmed, the customer will receive a confirmation email containing the meeting link, appointment date, and time. Make sure to clearly instru",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "https://drive.google.com/file/d/1B25cBo00GWYSGJu_maLEJMBBwEaxDhsD/view\nhttps://drive.google.com/file/d/1gSkxjxScRRmNZmR66j-L40TqeGn07zXh/view\nhttps://drive.google.com/file/d/1AGhsNjIpZbrUatApTKkWdW66MZuk1J8F/view",
+    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1B25cBo00GWYSGJu_maLEJMBBwEaxDhsD",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 05, 2026",
+        "by": "",
+        "title": "Update: Consultation Booking Reminder",
+        "body": "Once a booking is confirmed, the customer will receive a confirmation email containing the meeting link, appointment date, and time. Make sure to clearly instruct them to check their email for these details.\n\nPlease note that customers will not receive a phone call for the consultation. The session will only be accessed through the meeting link provided in the confirmation email.\n\nEnsure this is properly communicated to avoid confusion or missed appointments when customer asks.\n\nMarch 05, 2026 - Update: Audiologist Consultation Booking Confirmation\n\nCustomers who booked appointments via the Consultation link will receive the following confirmations:\n\nSuccessful schedule booking notice (pops up right after submitting the booking)\n\nEmail Invite containing video conferencing details (date and time of appointment, Google Meet Conference link, Cancelation and Reschedule links and a few reminders) (Please refer to the sample image for visual guidance.)"
+      }
+    ]
+  },
+  {
+    "id": "update-50-immediate-refund-customer-dispute-reminder-march-03-2026",
+    "title": "Update: 50% Immediate Refund – Customer Dispute Reminder",
+    "category": "Returns & Refunds",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 03, 2026",
+    "status": "active",
+    "desc": "We recently encountered a case where a customer insisted that they did not select the 50% refund option. After reviewing the Redo portal, it clearly shows that ",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "https://drive.google.com/file/d/1xtzWl8mNVHza1paXBb4GNi340uQovrA1/view",
+    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1xtzWl8mNVHza1paXBb4GNi340uQovrA1",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 03, 2026",
+        "by": "",
+        "title": "Update: 50% Immediate Refund – Customer Dispute Reminder",
+        "body": "We recently encountered a case where a customer insisted that they did not select the 50% refund option.\n\nAfter reviewing the Redo portal, it clearly shows that the customer selected the Immediate Refund option. As we know, this option is equivalent to a 50% refund while the customer keeps the product.\n\nPlease be reminded:\n\n• Once the customer selects Immediate Refund (50%), the process is automatically completed in the system.\n\n• Unfortunately, we can no longer override the process.\n\n• We are unable to process the remaining 50% since this was the option selected and recorded in our portal.\n\nWhen explaining this to the customer, please clearly communicate:\n\n“Upon reviewing our system, it shows that the Immediate Refund option was selected. This option provides a 50% refund while keeping the product. Since this was the option chosen and recorded in our portal, we’re no longer able to process the remaining refund amount.”\n\nIf the customer threatens (chargeback, complaint, escalation, etc.):\n\n• Remain calm and professional.\n\n• Empathize, but firmly stick to our policy.\n\n• Reiterate that the selection was completed through the portal and is system-recorded.\n\n• Highlight that the Redo portal captures and documents the customer’s chosen resolution, which serves as our official record.\n\nWe must stand by the documented selection in the portal.\n\nTo verify what the customer selected:\n\nGo to the Redo portal\n\nSelect All Orders and Returns\nSearch for the specific order number\nReview the conversation and process details shown in the portal\n\nThe customer’s selected option will be clearly reflected there."
+      }
+    ]
+  },
+  {
+    "id": "update-how-to-access-and-share-ups-proof-of-delivery-photo-march-03-2026",
+    "title": "Update: How to Access and Share UPS Proof of Delivery (Photo)",
+    "category": "Shipping & Fulfillment",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "March 03, 2026",
+    "status": "active",
+    "desc": "Please note that orders shipped via UPS (United Parcel Service) often include a photo as proof of delivery . How to Access the UPS Delivery Photo: 1. Go to the ",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "https://drive.google.com/file/d/1kTQKddQCLeXk6CKkXgOVIOKyXNS8CE4z/view\nhttps://drive.google.com/file/d/1iu5844Wio9z_q05xrzdGsuklYXkkSlPi/view",
+    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1kTQKddQCLeXk6CKkXgOVIOKyXNS8CE4z",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "March 03, 2026",
+        "by": "",
+        "title": "Update: How to Access and Share UPS Proof of Delivery (Photo)",
+        "body": "Please note that orders shipped via UPS (United Parcel Service) often include a photo as proof of delivery .\n\nHow to Access the UPS Delivery Photo:\n\n1. Go to the order in **ShipHero**.\n\n2. Click on the **tracking number**.\n\n3. You will be redirected to the UPS tracking page.\n\n4. On the tracking page:\n\nConfirm the package status shows \"Delivered\".\nIf a photo is available, you will see a prompt to \"enter the destination ZIP code\".\nEnter the ZIP code in the designated field.\nClick \"Submit/View Proof of Delivery\" to access the photo.\n\n(Please refer to the sample image for visual guidance.)\n\nHow to Share with the Customer:\n\nIf a customer reports that they did not receive their package but the UPS tracking page shows it as delivered:\n\n1. Access the delivery photo using the steps above.\n\n2. Take a screenshot of the photo shown on the UPS website.\n\n3. Attach the screenshot in your response to the customer as additional proof of delivery .\n\nThis helps provide clear documentation and can often resolve delivery disputes quickly."
+      }
+    ]
+  },
+  {
+    "id": "update-escalation-requirements-amazon-walmart-ebay-sheet-february-27-2026",
+    "title": "Update: Escalation Requirements – Amazon / Walmart / eBay Sheet",
+    "category": "Marketplace Escalations",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 27, 2026",
+    "status": "active",
+    "desc": "Please carefully review the following guidelines when escalating concerns to the Amazon / Walmart / eBay Escalation Sheet. Required Information Before Escalatio",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 27, 2026",
+        "by": "",
+        "title": "Update: Escalation Requirements – Amazon / Walmart / eBay Sheet",
+        "body": "Please carefully review the following guidelines when escalating concerns to the Amazon / Walmart / eBay Escalation Sheet.\n\nRequired Information Before Escalation\n\nYou must secure the following details from the customer:\n\nOrder ID\nBuyer’s Email Address\n\nWithout the Order ID or buyer’s email, we cannot locate the order in Amazon.\n\nSome platforms (especially Amazon) do not allow searches using name or phone number.\n\nHow Customers Can Locate Their Email and Order ID Per Platform\n\nAmazon\n\nAsk the customer to:\n\nLog in to their Amazon account\n\nGo to Your Account\n\nClick Login & Security\nCheck the email address registered on the account\n\nFor the Order ID:\n\nGo to Returns & Orders\nSelect the order\nCopy the Order ID shown on top\n\nWalmart\n\nAsk the customer to:\n\nLog in to their Walmart Account\n\nClick Account\n\nGo to Account Settings\nCheck the email address listed\n\nFor the Order ID:\n\nGo to Purchase History\nSelect the order\nCopy the Order Number\n\neBay\n\nAsk the customer to:\n\nLog in to eBay\n\nClick My eBay\n\nGo to Account Settings\nCheck the registered email address\n\nFor the Order ID:\n\nGo to Purchase History\nSelect the item\nCopy the Order Number\n\nHow to Communicate This to Customers\n\nBe patient and professional.\n\nClearly explain that you need the correct Order ID and email address to properly locate and escalate the concern.\nLet them know this ensures faster and accurate assistance.\n\nImportant Reminder\n\nBefore escalating:\n\nMake sure all required fields in the sheet are completed.\nDouble-check that the Order ID and email are accurate."
+      }
+    ]
+  },
+  {
+    "id": "new-oha-issue-handling-guidenew-oha-issue-handling-guide-2-w-february-25-2026",
+    "title": "New OHA Issue Handling GuideNew OHA Issue Handling Guide (2 Weeks Free Replacement)",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 25, 2026",
+    "status": "active",
+    "desc": "We’re rolling out an updated OHA Issue Handling Guide designed to make troubleshooting smoother and more effective. This guide includes: Probing questions and s",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 25, 2026",
+        "by": "",
+        "title": "New OHA Issue Handling GuideNew OHA Issue Handling Guide (2 Weeks Free Replacement)",
+        "body": "We’re rolling out an updated OHA Issue Handling Guide designed to make troubleshooting smoother and more effective. This guide includes:\n\nProbing questions and solutions per model\nIssue categories: Technical, Sound Quality, Design & Fit\n\nKey Updates & Process Changes:\n\nDifferent approach for different issues:\n\n• Technical Issues:\n\nIf a customer reports a device problem within 2 weeks of delivery, we can offer free replacement even if the order doesn’t have a warranty.\nIf the customer reaches out after 2 weeks, replacement is only available with a valid warranty.\n\nThis offer only applies to technical issues.\n\nSound Quality Issues (BTE):\n\nAlways offer a BTE upgrade to customers experiencing sound quality issues.\nIf they decline, encourage them to give the product more time to adjust—they often get used to it with time.\nIf the customer calls back after troubleshooting, offer a free consultation with our audiologist.\nIf the customer is insistent on returning the device, explain the return process and send the portal link.\n\nCall Handling & Notes:\n\nTake your time probing and troubleshooting concerns. Thoughtful calls help reduce return requests and improve call control.\n\nBe thorough with your call notes: generic entries like “offered TS” are no longer acceptable and will affect QA. Notes should clearly reflect what troubleshooting steps were offered.\n\nAll of this information is in the Handling Guide: https://docs.google.com/spreadsheets/d/1Dr_BJ1hKZblUNMZIroy7WGdXbv8SabcP-bH2pp0t9tc/edit?pli=1&gid=1464178639#gid=1464178639"
+      }
+    ]
+  },
+  {
+    "id": "new-process-return-label-requests-customers-without-valid-em-february-24-2026",
+    "title": "NEW PROCESS: Return Label Requests – Customers Without Valid Email",
+    "category": "Returns & Refunds",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 24, 2026",
+    "status": "active",
+    "desc": "To support customers who cannot receive return labels via email, we are implementing a Return Label Request Sheet process across all teams. This process ensures",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 24, 2026",
+        "by": "",
+        "title": "NEW PROCESS: Return Label Requests – Customers Without Valid Email",
+        "body": "To support customers who cannot receive return labels via email, we are implementing a Return Label Request Sheet process across all teams.\nThis process ensures customers can still receive their return labels through Facebook Messenger when email delivery is not possible.\n\nWhen to Use This Process\nUse the Return Label Request Sheet ONLY for customers who:\n• Do not have a working email address\n• Cannot receive return label emails\n• Confirm they have a Facebook account\nIf the customer has a valid email address, continue using the standard return label process.\n\nCustomer Instructions (All Teams)\nIf a customer cannot receive emails, inform them to contact us via Facebook:\nOricle Hearing Page:\nfacebook.com/OricleOfficial\n\nLet the customer know they should message the page so we can send their return label directly.\n\nRequired Fields (Must Be Completed)\nBefore submitting a request, the following fields must be filled out completely through this Return Label Request for Customers without valid email - SocMed sheet:\nhttps://docs.google.com/spreadsheets/d/1_IKymCZEXIC9OMNJPvUUkPd5SYakB_z-YozLAXbQmEY/edit?gid=0#gid=0\n\n• Customer Email\n• Customer Name\n• FB Profile Name\n• Facebook Profile Link (Required if available)\n• Any Identifying Information (Profile photo description, alternate name, etc.)\n• Order Number\n• Already completed REDO steps?\n• Informed CX of where to reach out?\n• Assigned CSR\n\nRequests with missing information may be delayed.\n\nFacebook Verification Requirement\nIt is mandatory to collect enough information to identify the correct Facebook account if in any case they fail to reach out to us on Facebook.\nPlease make sure you obtain:\n• Facebook Profile Name\n• Facebook Profile Link (Preferred)\n• Any helpful identifying details\n\nThis helps prevent sending return labels to the wrong account.\n\nSocMed OHA CSR Review Process\nSocMed OHA CSRs will then review the request sheet every hour to:\n• Check new submissions\n• Verify information\n• Confirm customer contact via Facebook\n• Send the return label\n\nReminder\nThis process is STRICTLY for customers without valid email access.\nAll teams are responsible for:\n• Directing customers to the Oricle Hearing Facebook page\n• Collecting accurate Facebook details\n\n• Completing the request sheet properly"
+      }
+    ]
+  },
+  {
+    "id": "updated-macro-oha-return-portal-link-february-24-2026",
+    "title": "Updated Macro: OHA Return Portal Link",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 24, 2026",
+    "status": "active",
+    "desc": "The macro “OHA Return Portal Link” has been updated. It now clearly states that all returns must be processed through our Return Portal and that self-initiated ",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 24, 2026",
+        "by": "",
+        "title": "Updated Macro: OHA Return Portal Link",
+        "body": "The macro “OHA Return Portal Link” has been updated. It now clearly states that all returns must be processed through our Return Portal and that self-initiated returns will not be accepted.\n\nPlease make sure you are using the updated version effective immediately.\n\nFor Call CSRs, it is especially important to verbally reiterate this policy to customers to prevent unauthorized self-returns.\n\nFor your reference, here is the updated macro content:\n\nHello Customer first name,\n\nThank you for following up. We understand that you would like to proceed with a return. Let’s ensure your return process is smooth and easy.\nTo finalize the details of your return, you can visit our Return Portal here:\nhttps://www.google.com/url?q=https://www.oriclehearing.com/apps/redo/returns-portal/login?referralId%3D69711c1d46b8ce5302b345e7&sa=D&source=docs&ust=1787378362791675&usg=AOvVaw0WlyfXB0ro0PmvLzI8AmP1\n\nThe portal will guide you through the returns process and will generate a return shipping label that you can print for easy shipping.\n\nPlease note that your return package must be shipped within 7 days of the return label creation date. Returns sent after this 7-day period will be rejected and will not be eligible for a refund. Return processing fees will be deducted from the amount refunded. You will not be refunded the cost to ship the products to you.\n\nAll returns must be processed through our Return Portal. Returns sent back without using the portal unfortunately cannot be accepted. Completing your return through the portal allows us to properly track your package and ensures your refund is issued accurately and as quickly as possible.\n\nIf you have any questions about the return options or need any assistance, please don't hesitate to reach out!\n\nBest,\nMary Hudson, Customer Service Representative\nOricle Hearing"
+      }
+    ]
+  },
+  {
+    "id": "update-refund-process-on-oha-return-portal-february-23-2026",
+    "title": "Update: Refund Process on OHA Return Portal",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 23, 2026",
+    "status": "active",
+    "desc": "Before processing any refund in Sticky for returns submitted through our Redo portal, you must first check the order in ShipHero. What to Look For: If the order",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "https://drive.google.com/file/d/1J7SRr-3Sk0JGmaJRCrTIaz2g4m8bINie/view\nhttps://drive.google.com/file/d/16VDC_aB9IJhA6b30BkIydLKjTdEwaGP6/view\nhttps://drive.google.com/file/d/1q1wZuI7HdSjPpX8nXvCJVCkRHlB3N4wO/view",
+    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1J7SRr-3Sk0JGmaJRCrTIaz2g4m8bINie",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 23, 2026",
+        "by": "",
+        "title": "Update: Refund Process on OHA Return Portal",
+        "body": "Before processing any refund in Sticky for returns submitted through our Redo portal, you must first check the order in ShipHero.\n\nWhat to Look For:\n\nIf the order was already refunded through Shopify, it will:\nAppear in ShipHero as refunded via Shopify\nClearly display the refund amount processed in the ShipHero order history\n\nIf You See a Shopify Refund in ShipHero:\n\nDo NOT process the refund again in Sticky.\nThe refund has already been completed, and no further action is required.\nAdd a note in Sticky stating that the order was refunded via Shopify, then copy and paste the refund details shown in ShipHero into Sticky (see 3rd image below).\n\nPlease refer to the images below for a visual example of how this appears in ShipHero."
+      }
+    ]
+  },
+  {
+    "id": "update-warranty-claim-february-20-2026",
+    "title": "Update: Warranty Claim",
+    "category": "Marketplace Escalations",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 20, 2026",
+    "status": "retired",
+    "desc": "If a customer reaches out to submit a warranty claim but did not purchase a warranty for their Oricle 2.0 or Pro device (whether from Amazon or DTC/Shopify) and",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "retired",
+        "label": "RETIRED",
+        "date": "February 20, 2026",
+        "by": "",
+        "title": "Update: Warranty Claim",
+        "body": "If a customer reaches out to submit a warranty claim but did not purchase a warranty for their Oricle 2.0 or Pro device (whether from Amazon or DTC/Shopify) and claims the device is covered under a 1-year warranty, they may be referring to the old instruction manual (discontinued since March 2025).\nIn these cases, please do not honor the request and adhere strictly to the current Warranty Terms stated on our website.\n\nIf the customer continues to insist, kindly forward the complete details to me for further review."
+      }
+    ]
+  },
+  {
+    "id": "update-hearing-specialist-log-february-19-2026",
+    "title": "Update: Hearing Specialist Log",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 19, 2026",
+    "status": "active",
+    "desc": "For team members handling tickets that require consultation with our audiologist, please ensure the Return/Refund Eligibility column in the https://docs.google.",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "https://drive.google.com/file/d/1hSV_4XRYh4sjxZqTEl5_b-lK8y2e1qdD/view",
+    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1hSV_4XRYh4sjxZqTEl5_b-lK8y2e1qdD",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 19, 2026",
+        "by": "",
+        "title": "Update: Hearing Specialist Log",
+        "body": "For team members handling tickets that require consultation with our audiologist, please ensure the Return/Refund Eligibility column in the https://docs.google.com/spreadsheets/d/1n0qTvz6ejbce3C5dJsgrPMxlyhAfnO-pCHVmxjK3-i4/edit?pli=1&gid=0#gid=0  tracking sheet is completed. This allows the audiologist to clearly review the order’s eligibility status before providing recommendations.\n\nThis helps prevent refunds from being offered to customers who are already beyond the 30-day return window."
+      }
+    ]
+  },
+  {
+    "id": "update-refund-process-on-oha-return-portal-update-february-16-2026",
+    "title": "Update: Refund Process on OHA (Return Portal Update)",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 16, 2026",
+    "status": "active",
+    "desc": "Just a quick reminder that refund requests submitted through the Return Portal Link are now being tracked directly within the portal system. As part of this upd",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "https://drive.google.com/file/d/1NuOvIs03vwYy43ebQmfI1F1olTY8v_-F/view\nhttps://drive.google.com/file/d/1CT9JNHpQmOY3oPghV-Fz0SHRtFcQE7Wy/view\nhttps://drive.google.com/file/d/11kP-jcEJwA85UYZwuVhWGYzV0Rae8YWn/view\nhttps://drive.google.com/file/d/1QNsuiSZGP8w53tx-iX16PsRrRt0fK78h/view",
+    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1NuOvIs03vwYy43ebQmfI1F1olTY8v_-F",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 16, 2026",
+        "by": "",
+        "title": "Update: Refund Process on OHA (Return Portal Update)",
+        "body": "Just a quick reminder that refund requests submitted through the Return Portal Link are now being tracked directly within the portal system.\n\nAs part of this update, refunds will be processed automatically once the return tracking status updates to “in transit.”\n\nPlease keep an eye out for any returns that may have already been refunded automatically. Refunds will appear in Shopify as usual and will show in Sticky as “Refunded by Jimmy Dendrinos” (see image below).\n\nHow to Check Return Status\n\nYou can now easily verify the customer’s return status via the OHA Return Portal:\n\nhttps://www.oriclehearing.com/apps/redo/returns-portal/login\n\nSteps:\n\nEnter the customer’s email address\nEnter the order number\nClick Search\n\nReturn Status Guide (Based on Images)\n\nPending (1st image)\n\nReturn has been submitted but not yet processed.\nNo refund issued yet.\n\nCompleted (2nd image)\n\nReturn has been fully processed.\nRefund already issued.\nIn Sticky, this appears as “Refunded by Jimmy Dendrinos.”\n\nIn Transit / On the Way (3rd image)\n\nItem is currently being returned.\nRefund will auto-process once tracking updates to in transit (per new process).\n\nImportant Tip\nBy clicking “View return details,” you can confirm if the customer selected:\nRefund\nStore Credit\nExchange\nPlease use the portal as your primary reference when handling OHA return inquiries. Thanks everyone!"
+      }
+    ]
+  },
+  {
+    "id": "new-sp-order-prefix-for-splash-spray-february-15-2026",
+    "title": "New “SP” Order Prefix for Splash Spray",
+    "category": "Order Processing",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 15, 2026",
+    "status": "active",
+    "desc": "Please be informed that orders from Splash Foam Spray are currently being migrated to Splash Shopify. As part of this change, Splash Spray orders will now have ",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 15, 2026",
+        "by": "",
+        "title": "New “SP” Order Prefix for Splash Spray",
+        "body": "Please be informed that orders from Splash Foam Spray are currently being migrated to Splash Shopify.\n\nAs part of this change, Splash Spray orders will now have an Order ID starting with the prefix “SP.”\n\nImportant Reminders:\n\nAlways double-check the order in ShipHero to ensure you are handling the correct order.\nBe extra mindful when verifying order IDs to avoid confusion.\n\nFor Reshipment Orders:\n\nThis update does not apply to reshipments. For now, please continue following our existing process:\n\nTag Splash Spray reshipments under the Splash Foam Spray profile during manual creation.\n\nIf you encounter any unusual issues or discrepancies during this transition, please let me know right away.\n\nPlease note that we will still be able to see Splash Spray orders in Shiphero under \"FS\" prefix. These are coming from the DTC site (single product site) https://clean.buysplashspray.com/?lang=en&c=us\n\nOnly those orders that are placed in Shopify site (the collection site) will appear under \"SP\" prefix."
+      }
+    ]
+  },
+  {
+    "id": "update-return-policy-outside-the-30-day-window-february-13-2026",
+    "title": "Update: Return Policy Outside the 30-Day Window",
+    "category": "Returns & Refunds",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 13, 2026",
+    "status": "active",
+    "desc": "Quick heads-up on how we’re handling returns outside the 30-day window going forward. We’ve noticed a lot of rejected returns in Redo are still getting manually",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 13, 2026",
+        "by": "",
+        "title": "Update: Return Policy Outside the 30-Day Window",
+        "body": "Quick heads-up on how we’re handling returns outside the 30-day window going forward. We’ve noticed a lot of rejected returns in Redo are still getting manually refunded — and we need to tighten this up to keep refund rates under control.\n\nHere’s the simple version\nThe Policy\nNo full refunds for orders over 30 days\n50% one-time courtesy refund = only if the customer has a really valid reason for missing the deadline\nExamples: customer was hospitalized, return is being handled by family for a deceased customer\n\nEven if they threaten chargebacks, we still stand firm on the policy\nWhat matters most is when the customer FIRST contacted us about the return\n\nSpecial Timing Exceptions (Important!)\nWe can honor a full refund if:\nThe customer reached out before the 30-day window ended\nBut due to back-and-forth or refund pushback flow, they ended up a couple of days late using the return portal\nIn these cases, use judgment and honor the full refund.\n\nCustomer Communication: Call/Chat Spiels\n\nShort explanation (first response):\n“Thanks for reaching out. I’ve checked your order and it’s past our 30-day return window. Since the return period has ended, the order is no longer eligible for a return or full refund, as outlined in our return policy on our website.”\n\nPolite rebuttal if they push back:\n“I completely understand, and I’m sorry this is frustrating. Our policy is clearly stated and enforced by our system, so we aren’t able to offer a full refund. However, I’d be happy to set you up with a free online consultation to help you get the device working better.”\n\nPolite rebuttal if they threaten legal action / chargeback:\n“I understand your frustration, and I’m sorry this situation is upsetting. Our return policy is clearly outlined on our website and enforced by our system, so we cannot offer a full refund outside the 30-day window. I’m happy to assist with the options available, such as a free online consultation to help improve your experience. ”\n\nAlternative for Orders Beyond 30 Days\nAlways offer a free consultation with an audiologist first to help the customer use the device more effectively.\nOnly consider the 50% one-time courtesy refund if the customer has a valid reason for missing the deadline and asks for it.\n\nFor full details, email templates, possible spiel rebuttals, and call flow, check the doc here:\nhttps://docs.google.com/document/d/1_ztW3ZOMs8Sb1cBhFBYyj1Ak9VmD6cTYS-eCDrGGY0o/edit?tab=t.7i0zc29n5dj1#heading=h.kdzt97svkkby\n\nNote: This applies to all brands."
+      }
+    ]
+  },
+  {
+    "id": "missed-or-overlooked-consultation-invite-handling-february-12-2026",
+    "title": "Missed or Overlooked Consultation Invite Handling",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 12, 2026",
+    "status": "active",
+    "desc": "We’ve added a macro for replying to customers who appear to have missed or overlooked the consultation invite we previously sent. These customers often respond ",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "https://drive.google.com/file/d/1bs_nnC_-A28dkb6rnI0C0HkbY1j72Huy/view",
+    "sampleImageUrl": "https://lh3.googleusercontent.com/d/1bs_nnC_-A28dkb6rnI0C0HkbY1j72Huy",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 12, 2026",
+        "by": "",
+        "title": "Missed or Overlooked Consultation Invite Handling",
+        "body": "We’ve added a macro for replying to customers who appear to have missed or overlooked the consultation invite we previously sent. These customers often respond with the same issues.\n\nMacro Name: OHA Audiologist Consultation Invite – Overlooked/Ignored\n\nReminder: This macro is not for follow-ups. Use it only for customers who have responded but may have missed or overlooked the consultation invite."
+      }
+    ]
+  },
+  {
+    "id": "manual-trust-pilot-review-requests-x-all-february-12-2026",
+    "title": "Manual Trust Pilot Review Requests (X-ALL)",
+    "category": "Email & Comms",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 12, 2026",
+    "status": "retired",
+    "desc": "Update! We can now start sending the positive review request to our X-ALL customers. Note: When you send a notice to our trustpilot channel, please include the ",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "retired",
+        "label": "RETIRED",
+        "date": "February 12, 2026",
+        "by": "",
+        "title": "Manual Trust Pilot Review Requests (X-ALL)",
+        "body": "Update! We can now start sending the positive review request to our X-ALL customers.\n\nNote: When you send a notice to our trustpilot channel, please include the Brand for quicker processing!"
+      }
+    ]
+  },
+  {
+    "id": "refund-process-update-on-oricle-hearing-return-portal-implem-february-09-2026",
+    "title": "Refund Process Update on Oricle Hearing (Return Portal Implementation)",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 09, 2026",
+    "status": "active",
+    "desc": "Please take note of an important update to our OHA refund process. What’s new We will now send customers the Return Portal Link for refund requests. How the pro",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "c",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 09, 2026",
+        "by": "",
+        "title": "Refund Process Update on Oricle Hearing (Return Portal Implementation)",
+        "body": "Please take note of an important update to our OHA refund process.\n\nWhat’s new\n\nWe will now send customers the Return Portal Link for refund requests.\n\nHow the process works\nAfter completing troubleshooting and offering the BTE option, if the customer still insists on returning the product for a refund, simply send the Return Portal Link.\n\nNo need to send the return address\nNo need to process the refund manually\nUse the macro OHA Return Portal Link and you’re done\n\nTagging\nPlease ensure tickets are tagged as follows:\nComplaint > Order_Quality > Reason\n\nThe Resolution Detail must be manually updated from Resolved with Reply to Return Portal Link Shared until the tagging sheet is officially updated.\n\nImportant reminder\n\nThis process also applies to BOT-handled tickets escalated to CSR that qualify for return / refund.\n\nScope\n\nThis update currently applies to U.S. orders only. We will provide further updates once this process is extended to international orders.\nThis process also applies to calls and chats."
+      }
+    ]
+  },
+  {
+    "id": "reminder-ticket-uniformit-february-06-2026",
+    "title": "Reminder: Ticket Uniformit",
+    "category": "Email & Comms",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 06, 2026",
+    "status": "active",
+    "desc": "Just a quick reminder to please ensure all ticket URLs follow a consistent format before adding them to consolidated, pushback, or any sheets where we need to l",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 06, 2026",
+        "by": "",
+        "title": "Reminder: Ticket Uniformit",
+        "body": "Just a quick reminder to please ensure all ticket URLs follow a consistent format before adding them to consolidated, pushback, or any sheets where we need to log the URL. This helps keep everything accurate and allows for smoother filtering.\n\nPlease refer to the image below. The shorter URLs show the correct format to use."
+      }
+    ]
+  },
+  {
+    "id": "important-reminder-nova-escalated-tags-february-05-2026",
+    "title": "Important Reminder: NOVA & ESCALATED Tags",
+    "category": "Email & Comms",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 05, 2026",
+    "status": "active",
+    "desc": "We would like to remind everyone handling Email tickets not to remove or delete the “ESCALATED” or “NOVA” tags on any ticket you encounter. These tags are criti",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 05, 2026",
+        "by": "",
+        "title": "Important Reminder: NOVA & ESCALATED Tags",
+        "body": "We would like to remind everyone handling Email tickets not to remove or delete the “ESCALATED” or “NOVA” tags on any ticket you encounter.\n\nThese tags are critical for proper tracking and escalation. Removing them may result in process or escalation issues."
+      }
+    ]
+  },
+  {
+    "id": "update-test-splash-foam-spray-email-tickets-february-05-2026",
+    "title": "Update: TEST – Splash Foam Spray Email Tickets",
+    "category": "Email & Comms",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 05, 2026",
+    "status": "retired",
+    "desc": "We are currently running a test in Zendesk for Splashfoam Spray tickets only. At the moment, agent responses from Gorgias do not show up in Zendesk. To prevent ",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "retired",
+        "label": "RETIRED",
+        "date": "February 05, 2026",
+        "by": "",
+        "title": "Update: TEST – Splash Foam Spray Email Tickets",
+        "body": "We are currently running a test in Zendesk for Splashfoam Spray tickets only.\n\nAt the moment, agent responses from Gorgias do not show up in Zendesk. To prevent duplicate replies, all Splashfoam Spray tickets received from 9:29 AM onward have been auto-assigned to Ms. Liz. Please do not respond to these tickets while testing is in progress.\n\nImportant: If a Splashfoam Spray ticket is somehow assigned to you, do not respond until further notice.\n\nOnce we have enough tickets for testing, we will resume normal response procedures. You may also see a Gorgias bot message (like the one attached), but this will not affect regular replies. \nSample image\n\nQuick update: \nSplashfoam Spray tickets will now be auto-assigned back to the team, and you may respond to them as usual.\nIf a ticket includes a Gorgias bot message (like the photo above) and you’re unsure how to proceed, please reach out for clarification.\nSplashFoam Cleaner tickets (support@splashfoam.com) will now be assigned to Ms. Liz. Please do not respond to any Splashfoam Cleaner tickets until further notice."
+      }
+    ]
+  },
+  {
+    "id": "update-oricle-audiologist-consultation-february-05-2026",
+    "title": "Update: ORICLE Audiologist Consultation",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 05, 2026",
+    "status": "active",
+    "desc": "Following up on our update regarding the Audiologist Consultation, previously, only NOVA AI has been sending the consultation offer. Now: Our Oricle Hearing Tea",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 05, 2026",
+        "by": "",
+        "title": "Update: ORICLE Audiologist Consultation",
+        "body": "Following up on our update regarding the Audiologist Consultation, previously, only NOVA AI has been sending the consultation offer.\n\nNow:\n\nOur Oricle Hearing Team will also start sending the consultation invitation to customers who request returns due to comfort or sizing issues.\n\nWhen to send it:\n\nSend the appointment offer right before troubleshooting. The process will be:\n\nCustomer mentions sizing/comfort issue → send Audiologist Invite\nIf declined → proceed with troubleshooting\nIf issue persists → offer BTE Upgrade\nIf still declined → Return/Refund\n\nMacro to use:\n\nOHA Audiologist Consultation Invite\n\nAdditional step:\n\nOnce the consultation has been offered, ensure to add their details to the https://docs.google.com/spreadsheets/d/1n0qTvz6ejbce3C5dJsgrPMxlyhAfnO-pCHVmxjK3-i4/edit?pli=1&gid=0#gid=0 sheet (CS Details part only).\n\nIf the customer later declines, please update the sheet to note “declined invitation”."
+      }
+    ]
+  },
+  {
+    "id": "fulfillment-update-uv-sanitizers-hearing-aids-february-01-2026",
+    "title": "Fulfillment Update – UV Sanitizers & Hearing Aids",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "February 01, 2026",
+    "status": "active",
+    "desc": "Quick heads up on current fulfillment setup: UV Sanitizers are being fulfilled by LA Hearing Aids are being fulfilled by Lincoln Because these items ship from d",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "February 01, 2026",
+        "by": "",
+        "title": "Fulfillment Update – UV Sanitizers & Hearing Aids",
+        "body": "Quick heads up on current fulfillment setup:\n\nUV Sanitizers are being fulfilled by LA\nHearing Aids are being fulfilled by Lincoln\n\nBecause these items ship from different warehouses, the UV Sanitizer may be fulfilled and shipped first.\n\nThis will result in separate tracking links for the same order if both items were purchased together.\n\nPlease make sure to set the right expectation with customers\n\nLet them know they may receive multiple tracking numbers and deliveries for one order"
+      }
+    ]
+  },
+  {
+    "id": "new-program-to-implement-for-our-oricle-customers-audiologis-january-31-2026",
+    "title": "New program to implement for our Oricle customers (Audiologist Consultation)",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "January 31, 2026",
+    "status": "active",
+    "desc": "Refund Reduction Program – Video Consultation Program Goal - This program supports customers requesting refunds by offering a one on one video consultation with",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "January 31, 2026",
+        "by": "",
+        "title": "New program to implement for our Oricle customers (Audiologist Consultation)",
+        "body": "Refund Reduction Program – Video Consultation\n\nProgram Goal - This program supports customers requesting refunds by offering a one on one video consultation with a hearing specialist. The goal is to reduce refund dollars by:\n\nProviding customers with a one on one video consultation with a hearing specialist\nEducating, troubleshooting, and resolving concerns so customers keep their product\nOffering a replacement, exchange, or upgrade to a better suited model when appropriate\n\nWho Is Offered the Video Consultation\n\nThe video consultation is offered to:\nCustomers who email requesting a refund\nAfter asking for the reason, attempting troubleshooting, and the customer still wants to proceed with a refund\n\nAppointment Invites\n\nAll invites will be initiated through Nova\nTickets will be auto tagged as “Audiologist Consultation Invite Sent”\n\nIssues Eligible for Audiologist Consultation\n\nSizing or fit concerns\nFeedback or whistling\nSound quality issues\nDiscomfort or pain when wearing the device\n\nResponsibilities\n\nNova AI\n\nWill offer a complimentary video consultation before processing the refund\nWill share the booking link: https://calendly.com/cindy-oriclehearing/30min\n\nCSR\n\nUpdate the https://docs.google.com/spreadsheets/d/1n0qTvz6ejbce3C5dJsgrPMxlyhAfnO-pCHVmxjK3-i4/edit?pli=1&gid=0#gid=0sheet under \"CS Details\" (columns A to H)\n\nAdd internal notes in the ticket confirming the sheet update - use added to sheets for uniformity\n\nTicket Assignment\n\nA new folder named Oricle: Audiologist Consultation has been added in Gorgias\nAll CSRs handling OHA tickets will have access.\n\nFollow Up Process\n\nCustomer No Show\n\nSend a follow up email immediately once Cindy’s remarks show Meeting Attended marked as \"N\".\nUse the new macro → type in Appointment No Show Macro\n\nCustomer Did Not Schedule\n\nNo follow up is required. This will be considered a return drop. (save)\n\nImportant Note:\n\nThis is a test program. Not all OHA customers will be offered a video consultation."
+      }
+    ]
+  },
+  {
+    "id": "manual-trust-pilot-review-requests-january-28-2026",
+    "title": "Manual Trust Pilot Review Requests",
+    "category": "Email & Comms",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "January 28, 2026",
+    "status": "retired",
+    "desc": "We’re rolling out a new process for sending manual TrustPilot review requests to happy customers. This will help us capture more positive feedback while the int",
+    "tags": [
+      "Cascaded by Georgina"
+    ],
+    "cascadedBy": "Georgina",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "retired",
+        "label": "RETIRED",
+        "date": "January 28, 2026",
+        "by": "Georgina",
+        "title": "Manual Trust Pilot Review Requests",
+        "body": "We’re rolling out a new process for sending manual TrustPilot review requests to happy customers. This will help us capture more positive feedback while the interaction is still fresh.\n\nGoal: Ask happy customers for a TrustPilot review quickly.\n\nSteps:\n\n1. Pick the Customer\n\nOnly request reviews from customers who are clearly satisfied and happy with your help.\n\n2. Fill the Log (Manual TrustPilot Review Requests_CS)\n\nComplete the TrustPilot Review Log with:\nEntry Date\nCSR Name\nTicket Sign-Off Date\nCustomer Email\nBrand/Product used\n\n3. Notify Your TL\n\nSend a message in the channel #trustpilot-review-requests:\nHi [TL Name], new TrustPilot review entry added for [Customer Email]. Please process.\n\n4. Send Review ASAP\n\nTL will send the review request using the Trustpilot – Request to Review macro:\n\n• During the call, or\n\n• Immediately after the call/email\n\nReminder:\n\n• Only ask clearly happy customers\n\n• Double-check the email before logging\n\n• Faster request = higher chance of getting a review\n\nhttps://docs.google.com/spreadsheets/d/1vrYXoI5C0x4QZ3yrI6Wjmm3FsG9vDXScLGY5VW8WNXg/edit?pli=1&gid=0#gid=0\n\nNew Update:\n\nWe’re only doing this for OHA at the moment. Please send requests only for OHA calls/texts.\nCascaded by: Georgina"
+      }
+    ]
+  },
+  {
+    "id": "update-oricle-hearing-refund-flow-test-update-january-24-2026",
+    "title": "Update: Oricle Hearing | Refund Flow Test Update",
+    "category": "Returns & Refunds",
+    "supersedes": "Update: Refund Flow Test | Oricle Hearing | EMAIL ONLY",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "January 24, 2026",
+    "status": "retired",
+    "desc": "Effective immediately, please pause sending the refund request link. For now, let’s revert to our standard return process, which includes: Providing the return ",
+    "tags": [
+      "Supersedes: Update: Refund Flow Test | Oricle Hearing | EMAIL ONLY"
+    ],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "retired",
+        "label": "RETIRED",
+        "date": "January 24, 2026",
+        "by": "",
+        "title": "Update: Oricle Hearing | Refund Flow Test Update",
+        "body": "Effective immediately, please pause sending the refund request link.\n\nFor now, let’s revert to our standard return process, which includes:\n\nProviding the return address\nSharing a clear and accurate refund breakdown\nIssuing the refund directly\n\nAdditionally, please assign the ticket to me if a customer is:\n\nQuestioning or complaining about refunds already issued (based on the refund form)\nLooking for the mentioned return label\n\nAsking about the promised store credit"
+      }
+    ]
+  },
+  {
+    "id": "update-refund-flow-test-oricle-hearing-email-only-january-23-2026",
+    "title": "Update: Refund Flow Test | Oricle Hearing | EMAIL ONLY",
+    "category": "Returns & Refunds",
+    "supersedes": "Clarification on Refund Flow Test: Oricle Hearing Aid",
+    "supersededBy": "Update: Oricle Hearing | Refund Flow Test Update",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "January 23, 2026",
+    "status": "superseded",
+    "desc": "Here’s a quick update regarding the refund flow test: Do NOT send the refund request link to customers who purchased Oricle Hearing – Pro Version at $149.98. On",
+    "tags": [
+      "Supersedes: Clarification on Refund Flow Test: Oricle Hearing Aid"
+    ],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "superseded",
+        "label": "SUPERSEDED",
+        "date": "January 23, 2026",
+        "by": "",
+        "title": "Update: Refund Flow Test | Oricle Hearing | EMAIL ONLY",
+        "body": "Here’s a quick update regarding the refund flow test:\n\nDo NOT send the refund request link to customers who purchased Oricle Hearing – Pro Version at $149.98. Only those who purchased it at $189.99 are eligible for the test.\nDo NOT send the refund request link to customers with refundable add-on items (e.g., UV Sanitizer, Bonus Purchase), as these are not part of the offer yet.\nPlease follow these guidelines carefully to maintain consistency in handling."
+      }
+    ]
+  },
+  {
+    "id": "refund-flow-test-oricle-hearing-aid-january-21-2026-january-21-2026",
+    "title": "Refund Flow Test: Oricle Hearing Aid (January 21,2026)",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "",
+    "supersededBy": "Clarification on Refund Flow Test: Oricle Hearing Aid",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "January 21, 2026",
+    "status": "retired",
+    "desc": "We’re running a test for an additional refund pushback flow via our website. Here’s what you need to know: This applies only to customers who have been approved",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "retired",
+        "label": "RETIRED",
+        "date": "January 21, 2026",
+        "by": "",
+        "title": "Refund Flow Test: Oricle Hearing Aid (January 21,2026)",
+        "body": "We’re running a test for an additional refund pushback flow via our website. Here’s what you need to know:\n\nThis applies only to customers who have been approved for a refund after going through the refund pushback process (after troubleshooting, BTE offer declined, and still eligible for the return).\nOnly customers who ordered a single unit are included in this test.\nAfter usual pushback handling, send the customer this link to manage their refund: https://n8n.customaistudio.io/webhook/refund-start\nDo NOT process any refunds on our end.\nPaste all tickets into the OHA - Refund Pushback Tagging - Refund Requests (Test) Tab. Customer responses will be reviewed, and next steps will be shared.\n\nImportant Reminders: This applies to Email only and for US customers. International orders will be handled through the usual process.\n\nMacro to Use (modify as needed):\n\nHi Customer,\n\nWe completely understand if the upgrade isn't the right fit for you and you'd prefer to proceed with the return instead.\n\nTo manage and continue with your refund, please complete the form using the link below:\nhttps://n8n.customaistudio.io/webhook/refund-start\n\nOnce the form is submitted, our team will review the details and proceed accordingly.\n\nShould you need any further assistance or have questions along the way, please don't hesitate to reach out—we're happy to help.\n\nBest regards,\nMary Hudson, Customer Service Representative\n\nOricle Hearing LLC"
+      }
+    ]
+  },
+  {
+    "id": "reminder-failed-refund-escalation-sheet-avoid-duplicate-entr-january-21-2026",
+    "title": "Reminder: Failed Refund Escalation Sheet – Avoid Duplicate Entries",
+    "category": "Returns & Refunds",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "January 21, 2026",
+    "status": "active",
+    "desc": "Please note an issue identified with the Failed Refund Escalation sheet Important reminders : Do not re-enter information if it has already been logged on the s",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "January 21, 2026",
+        "by": "",
+        "title": "Reminder: Failed Refund Escalation Sheet – Avoid Duplicate Entries",
+        "body": "Please note an issue identified with the Failed Refund Escalation sheet\n\nImportant reminders :\n\nDo not re-enter information if it has already been logged on the sheet, as this creates duplicate entries.\nAny duplicate entry will automatically highlight in pink.\nUse the Follow-Up Dates column to clearly indicate whether the contact is the 1st, 2nd, or 3rd follow-up, and ensure the correct date is entered based on the customer’s follow-up. (See image below)\nStrictly follow the required format when adding entries to ensure consistency and accurate tracking.\n\nFollowing these steps will help keep the tracker accurate and avoid repeat escalations."
+      }
+    ]
+  },
+  {
+    "id": "clarification-on-refund-flow-test-oricle-hearing-aid-january-21-2026",
+    "title": "Clarification on Refund Flow Test: Oricle Hearing Aid",
+    "category": "OHA / Hearing Aids",
+    "supersedes": "Refund Flow Test: Oricle Hearing Aid (January 21,2026)",
+    "supersededBy": "Update: Refund Flow Test | Oricle Hearing | EMAIL ONLY",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "January 21, 2026",
+    "status": "superseded",
+    "desc": "Clarification on the statement: “Only customers who ordered a single unit are included in this test” Orders are eligible as long as there is only one hearing ai",
+    "tags": [
+      "Supersedes: Refund Flow Test: Oricle Hearing Aid (January 21,2026)"
+    ],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "superseded",
+        "label": "SUPERSEDED",
+        "date": "January 21, 2026",
+        "by": "",
+        "title": "Clarification on Refund Flow Test: Oricle Hearing Aid",
+        "body": "Clarification on the statement: “Only customers who ordered a single unit are included in this test”\n\nOrders are eligible as long as there is only one hearing aid in the order. The key requirement is that the order being returned for a refund includes a single hearing aid only.\nOrders with add-ons such as a UV Sanitizer may still be included. However, orders that include additional hearing aids, such as bonus purchases, are not eligible.\n\nAdditional Reminder:\n\nIf the customer does not respond after the link is sent, do not send any follow-up messages.\n\nAdditional Information:\n\nTechnical issues—such as “only one side works,” “won’t turn on even when charged,” and similar—are not included in this test. Only customers who have gone through the refund pushback process (i.e., declined the BTE offer) are part of the test."
+      }
+    ]
+  },
+  {
+    "id": "delivered-but-not-received-response-flow-january-21-2026-january-21-2026",
+    "title": "Delivered but Not Received: Response Flow (January 21,2026)",
+    "category": "Email & Comms",
+    "supersedes": "",
+    "supersededBy": "Important Update: Terms and Conditions / Terms of Service (March 14,2026)",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "January 21, 2026",
+    "status": "superseded",
+    "desc": "Please follow this 2-layer process for all Delivered but Not Received cases: First Layer (Always) Use the original Delivered but Not Received macro Ask customer",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "superseded",
+        "label": "SUPERSEDED",
+        "date": "January 21, 2026",
+        "by": "",
+        "title": "Delivered but Not Received: Response Flow (January 21,2026)",
+        "body": "Please follow this 2-layer process for all Delivered but Not Received cases:\n\nFirst Layer (Always)\n\nUse the original Delivered but Not Received macro\nAsk customer to check with household members, neighbors, and local post office\nDo not offer replacements or refunds yet\n\nSecond Layer (Only after customer confirms it’s missing)\n\nWith Warranty: Offer a one-time reshipment (confirm address) - use Delivered But Not Received - WITH Warranty Macro\nNo Warranty: Politely advise no replacement or refund after delivery - use Delivered But Not Received - WITHOUT Warranty Macro\n\nUpdate:\n\nThe macros have been updated to include the delivery confirmation outlined on the Terms and Conditions page of our websites (see sample image below). Please take a moment to review the updates and familiarize yourself with the changes.\nAlso, a new macro has been added for customers who claim their package was stolen. For these cases, please use the macro “Delivered But Not Received (Stolen Package) – WITHOUT Warranty."
+      }
+    ]
+  },
+  {
+    "id": "pee-buster-expiry-cases-refund-guidance-january-17-2026",
+    "title": "Pee Buster Expiry Cases: Refund Guidance",
+    "category": "Returns & Refunds",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "January 17, 2026",
+    "status": "retired",
+    "desc": "We have received complaints from customers regarding Pee Buster products arriving with expiration dates only a few months away, which limits their usage time. C",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "retired",
+        "label": "RETIRED",
+        "date": "January 17, 2026",
+        "by": "",
+        "title": "Pee Buster Expiry Cases: Refund Guidance",
+        "body": "We have received complaints from customers regarding Pee Buster products arriving with expiration dates only a few months away, which limits their usage time.\n\nCurrent Situation:\n\nNo new batch of Pee Buster is available in inventory.\nReplacement with another product or brand is not an option.\n\nResolution:\n\nDo NOT process reshipments for these cases.\nOffer a 50% refund without requiring a return. This is the ideal approach as it allows us to resolve the customer’s concern while minimizing loss. A partial refund is more practical than processing a full return.”\nPlease use the macro (modify as needed): PB – Early Expiry (50% Refund)\n\nEmail Template:\n\nThank you for reaching out and bringing this matter to our attention. We sincerely apologize for any concern caused regarding your Pee Buster product.\n\nWhile we understand the expiration date may seem sooner than expected, please be assured that the product remains safe and effective to use. Its performance is not compromised despite the date appearing closer. That said, we completely understand that this situation may not be ideal, and we truly appreciate your feedback.\n\nTo promptly resolve this matter, we would like to offer a 50% refund for the item without requiring a return. We understand that returning products can be inconvenient, so this option allows you to retain full use of the product while receiving a reasonable credit, avoiding any delays or additional costs associated with return shipping.\n\nShould this resolution be acceptable to you, kindly let us know at your earliest convenience, and we will promptly process the 50% refund.\n\nThank you for your patience and understanding. We value your trust and look forward to resolving this for you as smoothly as possible."
+      }
+    ]
+  },
+  {
+    "id": "important-reminder-nova-ai-ticket-handling-email-team-january-16-2026",
+    "title": "Important Reminder: Nova AI Ticket Handling (Email Team)",
+    "category": "Email & Comms",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "January 16, 2026",
+    "status": "active",
+    "desc": "Please take note of the following guidelines: Do NOT respond to tickets that have already been fully handled by Nova AI. Only respond if Nova escalates and hand",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "January 16, 2026",
+        "by": "",
+        "title": "Important Reminder: Nova AI Ticket Handling (Email Team)",
+        "body": "Please take note of the following guidelines:\n\nDo NOT respond to tickets that have already been fully handled by Nova AI.\n\nOnly respond if Nova escalates and hands off the ticket.\nEscalated tickets will include an internal note with clear instructions on what actions need to be taken.\nThese escalated tickets are handled by specific team members to ensure familiarity and proper resolution.\n\nPlease also note that Nova AI is active for both Oricle and Splashfoam brands, so both the Oricle Team and Other Brands Team should remain cautious.\n\nHow it looks:\n\nWhen Nova responds, the reply will appear as sent from Gorgias Bot (see sample image below).\n\nFollowing this process helps prevent duplicate responses and ensures a smooth, efficient workflow between Nova AI and the CS team."
+      }
+    ]
+  },
+  {
+    "id": "product-website-links-january-12-2026",
+    "title": "Product Website Links",
+    "category": "Shipping & Fulfillment",
+    "supersedes": "",
+    "supersededBy": "",
+    "channel": "",
+    "channelIcon": "👥",
+    "product": "",
+    "date": "January 12, 2026",
+    "status": "active",
+    "desc": "Sharing with everyone a consolidated list of our product websites for quick reference. These include both Sticky Order checkout URLs and Shopify storefront URLs",
+    "tags": [],
+    "cascadedBy": "",
+    "sampleImage": "N/A",
+    "sampleImageUrl": "",
+    "relatedResources": [],
+    "relatedProducts": [],
+    "versions": [
+      {
+        "status": "active",
+        "label": "ACTIVE",
+        "date": "January 12, 2026",
+        "by": "",
+        "title": "Product Website Links",
+        "body": "Sharing with everyone a consolidated list of our product websites for quick reference. These include both Sticky Order checkout URLs and Shopify storefront URLs (when available).\n\nPlease Note:\n\nShopify links are known internally as Collection Sites.\nSticky Order links are marked as Sticki/Sticky.\n\nIf there are updates or new products to add, just let us know!\n\nLink: https://docs.google.com/spreadsheets/d/11R-CosEoediUOVnUIHj2uI_2lKv9syOnNaBtLaIjr9Q/edit?gid=488693539#gid=488693539"
+      }
+    ]
+  },
+  {
     "id": "splash-x-all-refund-pushback-process-update-january-09-2026",
     "title": "Splash/X-All Refund Pushback Process Update",
     "category": "Returns & Refunds",
@@ -325,1224 +1555,6 @@ window.KB_RAW_CASCADES = [
         "by": "",
         "title": "Proper Return Tagging (All Returns with Refunds Issued)",
         "body": "Following the cascade on 07/02/25 (see image below), all returns with refunds issued — whether full refund less shipping, reprocessing fee, or even 50% for international orders — must be tagged as:\n\nReturn > Item Returned > Returned – {specific reason}\n\nDo NOT tag these under:\n\nComplaint > Order Quality > {reason}\n\nException: Only if the customer called via the Priority line (OHA) and was advised not to return the package. For other brands, only if customer ordered 1 pack (cleaning products) and was refunded 50%.\n\nFor all applicable tickets:\n\n1. Add notes in Column I\n\n2. In Column D, add: Oricle Priority Support Aircall Phone Call or simply Prio Line\n\nWe have also observed refunded orders tagged as Doesn’t Work – No specific reason mentioned. This is not acceptable. You must identify the specific issue the customer encountered. Check Gorgias for prior emails or gently probe the customer for details. If the customer refuses to provide a reason, clearly indicate this in the notes or in your Sticki notes.\n\nOther errors found:\n\n1. Incorrect country selected\n\n2. Incomplete tagging (refund details missing)\n\nAll entries must be accurate and complete. Strict adherence is expected."
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-12-",
-    "title": "Untitled cascade 12",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 12",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-13-",
-    "title": "Untitled cascade 13",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 13",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-14-",
-    "title": "Untitled cascade 14",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 14",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-15-",
-    "title": "Untitled cascade 15",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 15",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-16-",
-    "title": "Untitled cascade 16",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 16",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-17-",
-    "title": "Untitled cascade 17",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 17",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-18-",
-    "title": "Untitled cascade 18",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 18",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-19-",
-    "title": "Untitled cascade 19",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 19",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-20-",
-    "title": "Untitled cascade 20",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 20",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-21-",
-    "title": "Untitled cascade 21",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 21",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-22-",
-    "title": "Untitled cascade 22",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 22",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-23-",
-    "title": "Untitled cascade 23",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 23",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-24-",
-    "title": "Untitled cascade 24",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 24",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-25-",
-    "title": "Untitled cascade 25",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 25",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-26-",
-    "title": "Untitled cascade 26",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 26",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-27-",
-    "title": "Untitled cascade 27",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 27",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-28-",
-    "title": "Untitled cascade 28",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 28",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-29-",
-    "title": "Untitled cascade 29",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 29",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-30-",
-    "title": "Untitled cascade 30",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 30",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-31-",
-    "title": "Untitled cascade 31",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 31",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-32-",
-    "title": "Untitled cascade 32",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 32",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-33-",
-    "title": "Untitled cascade 33",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 33",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-34-",
-    "title": "Untitled cascade 34",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 34",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-35-",
-    "title": "Untitled cascade 35",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 35",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-36-",
-    "title": "Untitled cascade 36",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 36",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-37-",
-    "title": "Untitled cascade 37",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 37",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-38-",
-    "title": "Untitled cascade 38",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 38",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-39-",
-    "title": "Untitled cascade 39",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 39",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-40-",
-    "title": "Untitled cascade 40",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 40",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-41-",
-    "title": "Untitled cascade 41",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 41",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-42-",
-    "title": "Untitled cascade 42",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 42",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-43-",
-    "title": "Untitled cascade 43",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 43",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-44-",
-    "title": "Untitled cascade 44",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 44",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-45-",
-    "title": "Untitled cascade 45",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 45",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-46-",
-    "title": "Untitled cascade 46",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 46",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-47-",
-    "title": "Untitled cascade 47",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 47",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-48-",
-    "title": "Untitled cascade 48",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 48",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-49-",
-    "title": "Untitled cascade 49",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 49",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-50-",
-    "title": "Untitled cascade 50",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 50",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-51-",
-    "title": "Untitled cascade 51",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 51",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-52-",
-    "title": "Untitled cascade 52",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 52",
-        "body": ""
-      }
-    ]
-  },
-  {
-    "id": "untitled-cascade-53-",
-    "title": "Untitled cascade 53",
-    "category": "General CSR Handling",
-    "supersedes": "",
-    "supersededBy": "",
-    "channel": "",
-    "channelIcon": "👥",
-    "product": "",
-    "date": "",
-    "status": "active",
-    "desc": "",
-    "tags": [],
-    "cascadedBy": "",
-    "sampleImage": "",
-    "sampleImageUrl": "",
-    "relatedResources": [],
-    "relatedProducts": [],
-    "versions": [
-      {
-        "status": "active",
-        "label": "ACTIVE",
-        "date": "",
-        "by": "",
-        "title": "Untitled cascade 53",
-        "body": ""
       }
     ]
   },
