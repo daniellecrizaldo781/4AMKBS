@@ -20,28 +20,40 @@ jobs:
     runs-on: ubuntu-latest
     env:
       CASCADE_SHEET_ID: ${{ secrets.CASCADE_SHEET_ID }}
+      CASCADE_SHEET_ID_2: ${{ secrets.CASCADE_SHEET_ID_2 }}
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch live cascade tracking sheet (CSV export)
+      - name: Fetch live cascade tracking sheet(s) (CSV export)
         run: |
           set -euo pipefail
-          if [ -z "$CASCADE_SHEET_ID" ]; then
-            echo "CASCADE_SHEET_ID secret is not set — refusing to run."; exit 1
-          fi
           UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36"
-          curl -fsSL -A "$UA" "https://docs.google.com/spreadsheets/d/${CASCADE_SHEET_ID}/export?format=csv&gid=0" -o /tmp/sheet.csv
-          echo "sheet bytes: $(wc -c < /tmp/sheet.csv)"
-          # Sanity: export must contain at least one data row beyond the header.
+          SHEET_DIR=/tmp/sheets
+          mkdir -p "$SHEET_DIR"
+          idx=0
+          # Both sheets are merged (deduped by title+date). At least one must be set.
+          for SID in "$CASCADE_SHEET_ID" "$CASCADE_SHEET_ID_2"; do
+            if [ -n "$SID" ]; then
+              idx=$((idx+1))
+              curl -fsSL -A "$UA" "https://docs.google.com/spreadsheets/d/${SID}/export?format=csv&gid=0" -o "$SHEET_DIR/sheet_${idx}.csv"
+              echo "fetched sheet #$idx -> $(wc -c < "$SHEET_DIR/sheet_${idx}.csv") bytes"
+            fi
+          done
+          if [ "$idx" -eq 0 ]; then
+            echo "Neither CASCADE_SHEET_ID nor CASCADE_SHEET_ID_2 is set — refusing to run."; exit 1
+          fi
+          # Sanity: at least one sheet must contain a data row beyond the header.
           python3 - <<'PY'
-          import csv
-          rows=list(csv.DictReader(open("/tmp/sheet.csv",encoding="utf-8-sig")))
-          if len(rows)==0:
-            print("Sheet export looks empty/bad; aborting to protect data"); raise SystemExit(1)
-          print("sheet rows:", len(rows))
+          import csv, glob, os
+          total = 0
+          for f in sorted(glob.glob("/tmp/sheets/sheet_*.csv")):
+            total += len(list(csv.DictReader(open(f, encoding="utf-8-sig"))))
+          if total == 0:
+            print("All sheet exports look empty/bad; aborting to protect data"); raise SystemExit(1)
+          print("total sheet rows:", total)
           PY
 
-      - name: Parse sheet into cascades-data.js (status-tagged, one card per row)
+      - name: Parse sheet(s) into cascades-data.js (merged, status-tagged, one card per row)
         run: |
           python3 - <<'PY'
           import csv, re, json, datetime
@@ -84,7 +96,11 @@ jobs:
           def ts(d):
             try: return datetime.datetime.strptime((d or "").strip(),"%B %d, %Y").timestamp()
             except: return 0
-          rows=list(csv.DictReader(open("/tmp/sheet.csv",encoding="utf-8-sig")))
+          import glob as _glob
+          rows=[]
+          for _f in sorted(_glob.glob("/tmp/sheets/sheet_*.csv")):
+            rows += list(csv.DictReader(open(_f,encoding="utf-8-sig")))
+          # Merge: dedup by (title, date) so the two sheets never double a cascade.
           cascades=[]; used={}
           for i,r in enumerate(rows):
             date=(r.get("Date") or "").strip(); title=(r.get("Cascade Title") or "").strip()
