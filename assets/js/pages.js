@@ -309,7 +309,6 @@ window.KBPages = (function () {
         <div class="detail-intro">
           <div class="detail-intro__cat">${esc(p.category)}</div>
           <h1 class="detail-intro__name">${esc(p.name)}</h1>
-          <p class="detail-intro__desc">${esc(p.information || (p.name + " — product overview, information, and approved customer handling."))}</p>
         </div>
       </div>
 
