@@ -134,9 +134,37 @@ window.KBPages = (function () {
     const c = D.cascades.find(x => x.id === id);
     if (!c) return notFound("Cascade not found", "We couldn't find that cascade.", "#/cascades");
 
-    const related = D.cascades.filter(x => x.id !== c.id && x.category === c.category).slice(0, 4)
-      .map(x => C.relatedItem(x.title, `${x.category} · ${x.date}`, `#/cascades/${esc(x.id)}`)).join("") ||
-      `<p class="muted" style="font-size:13px;">No related cascades yet.</p>`;
+    // Related cascades render inline-collapsible: clicking a title expands that
+    // cascade's full context in place (no navigation to a separate page).
+    const related = (() => {
+      const list = D.cascades.filter(x => x.id !== c.id && x.category === c.category).slice(0, 4);
+      if (!list.length) return `<p class="muted" style="font-size:13px;">No related cascades yet.</p>`;
+      return list.map(x => `
+        <div class="card related-cascade" data-cid="${esc(x.id)}">
+          <button type="button" class="cascade-item__header" aria-expanded="false">
+            <span class="cascade-item__chevron" aria-hidden="true">&#9656;</span>
+            <span class="cascade-item__head-main">
+              <span class="cascade-item__title">${esc(x.title)}</span>
+              ${C.statusChip(x.status)}
+            </span>
+            <span class="cascade-item__meta">
+              <span><b>${esc(x.category)}</b></span>
+              ${x.product ? `<span>${esc(x.product)}</span>` : ""}
+              <span>Updated ${esc(x.date)}</span>
+            </span>
+          </button>
+          <div class="cascade-item__panel" hidden>
+            ${x.sampleImageUrl ? `<div class="detail-img zoomable-img" data-full="${esc(x.sampleImageUrl)}" data-alt="${esc(x.title)} — sample image" onclick="KBZoom.open(event,this)"><img src="${esc(x.sampleImageUrl)}" alt="${esc(x.title)} — sample image" loading="lazy" onerror="KBZoom.fail(this)" /></div>` : ""}
+            ${C.supersededInline(x, D.cascades)}
+            <section class="section">
+              <h2 class="section__title">Handling History</h2>
+              <p class="muted" style="font-size:13.5px;margin-top:-6px;">The newest handling is shown first and is always the one to follow. Older versions are kept for reference and are not to be applied.</p>
+              ${C.versionBlock(x.versions)}
+            </section>
+            <a class="cascade-item__more" href="#/cascades/${esc(x.id)}">Open full page &rarr;</a>
+          </div>
+        </div>`).join("");
+    })();
 
     const relRes = (c.relatedResources || []).map(r =>
       C.relatedItem(r, "Resource", "#/resources")).join("");

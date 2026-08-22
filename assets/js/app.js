@@ -275,7 +275,10 @@
     root.addEventListener("click", (e) => {
       const header = e.target.closest(".cascade-item__header");
       if (!header) return;
-      const card = header.closest(".cascade-item");
+      // The header is always a direct child of its card, so anchor on the
+      // parent rather than a class — covers both the list (.cascade-item) and
+      // the detail page's related cascades (.related-cascade).
+      const card = header.parentElement;
       const panel = card && card.querySelector(".cascade-item__panel");
       if (!panel) return;
       const open = panel.hasAttribute("hidden");
