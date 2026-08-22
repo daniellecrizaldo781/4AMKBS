@@ -208,19 +208,36 @@ window.KBComponents = (function () {
 
   // Inline superseded (older) cascade shown beneath the current one, so a CSR sees
   // the newer handling and the version it replaced in a single glance — no navigation.
+  // Rendered as a collapsible card: the older title shows first, click to expand its
+  // full handling inline.
   function supersededInline(c, cascades) {
     if (!c.supersededBy || !c.supersededBy.trim()) return "";
     const old = cascades.find(x => x.title === c.supersededBy.trim());
     if (!old) return "";
     return `<section class="section cascade-item__superseded">
       <h3 class="section__title">Superseded by this cascade</h3>
-      <div class="supersede-old">
-        <div class="supersede-old__head">
-          <span class="supersede-old__title">${esc(old.title)}</span>
-          ${statusChip(old.status)}
+      <div class="card related-cascade" data-cid="${esc(old.id)}">
+        <button type="button" class="cascade-item__header" aria-expanded="false">
+          <span class="cascade-item__chevron" aria-hidden="true">&#9656;</span>
+          <span class="cascade-item__head-main">
+            <span class="cascade-item__title">${esc(old.title)}</span>
+            ${statusChip(old.status)}
+          </span>
+          <span class="cascade-item__meta">
+            <span><b>${esc(old.category)}</b></span>
+            <span>Cascaded by ${esc(old.cascadedBy || "—")}</span>
+            <span>Updated ${esc(old.date)}</span>
+          </span>
+        </button>
+        <div class="cascade-item__panel" hidden>
+          ${old.sampleImageUrl ? `<div class="detail-img zoomable-img" data-full="${esc(old.sampleImageUrl)}" data-alt="${esc(old.title)} — sample image" onclick="KBZoom.open(event,this)"><img src="${esc(old.sampleImageUrl)}" alt="${esc(old.title)} — sample image" loading="lazy" onerror="KBZoom.fail(this)" /></div>` : ""}
+          <section class="section">
+            <h2 class="section__title">Handling History</h2>
+            <p class="muted" style="font-size:13.5px;margin-top:-6px;">The newest handling is shown first and is always the one to follow. Older versions are kept for reference and are not to be applied.</p>
+            ${versionBlock(old.versions)}
+          </section>
+          <a class="cascade-item__more" href="#/cascades/${esc(old.id)}">Open full page &rarr;</a>
         </div>
-        <div class="supersede-old__meta">${esc(old.category)} · Cascaded by ${esc(old.cascadedBy || "—")} · ${esc(old.date)}</div>
-        <div class="version-block">${versionBlock(old.versions)}</div>
       </div>
     </section>`;
   }
