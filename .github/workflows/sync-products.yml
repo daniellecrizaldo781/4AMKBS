@@ -86,6 +86,8 @@ jobs:
               dtc=(r.get("DTC Website") or "").strip()
               shop=(r.get("Shopify Website") or "").strip()
               ret=(r.get("Return Policy") or "").strip()
+              email=(r.get("Email Support") or "").strip()
+              hotline=(r.get("Hotline Number") or "").strip()
               image=(r.get("Image") or "").strip()
               c=cat(name); g=grp(c)
               base=slug(name); base=base if base else "product"
@@ -99,7 +101,8 @@ jobs:
                   "pricingDtc":site_url(pricing_dtc),"pricingDtcImg":img_url(pricing_dtc),
                   "pricingShopify":site_url(pricing_shop),"pricingShopifyImg":img_url(pricing_shop),
                   "dtcUrl":site_url(dtc),"shopifyUrl":site_url(shop),
-                  "returnPolicy":ret
+                  "returnPolicy":ret,
+                  "emailSupport":email,"hotline":hotline
               })
           products.sort(key=lambda p:p["name"].lower())
           js="/* Auto-generated from the live product sheet by sync-products.yml.\n"

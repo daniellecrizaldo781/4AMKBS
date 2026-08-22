@@ -10,12 +10,6 @@ window.KBPages = (function () {
   const C = window.KBComponents;
   const esc = C.esc;
 
-  // Customer support contacts (edit these once real values are set).
-  const SUPPORT = {
-    email: "support@4ammedia.com",
-    hotline: "+1 (800) 555-0199"
-  };
-
   /* =========================== DASHBOARD =========================== */
   function dashboard() {
     // Latest Updates: newest real cascades (highest number = most recent)
@@ -347,8 +341,8 @@ window.KBPages = (function () {
         <div>
           <div class="card aside-block">
             <div class="aside-block__title">Support</div>
-            ${C.relatedItem("Email Support", SUPPORT.email, "mailto:" + SUPPORT.email)}
-            ${C.relatedItem("Hotline", SUPPORT.hotline, "tel:" + SUPPORT.hotline.replace(/[^+\d]/g, ""))}
+            ${p.emailSupport ? C.relatedItem("Email Support", p.emailSupport, "mailto:" + p.emailSupport) : ""}
+            ${p.hotline ? C.relatedItem("Hotline", p.hotline, "tel:+" + p.hotline.replace(/[^\d]/g, "")) : ""}
           </div>
         </div>
       </div>
