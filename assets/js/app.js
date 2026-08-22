@@ -267,6 +267,25 @@
   };
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") window.KBZoom.close(); });
 
+  /* --------------------------- CASCADE COLLAPSE TOGGLE --------------------------- */
+  // Each cascade card on the list shows its title first; clicking the header expands
+  // the full context inline (and collapses it again). The delegate is on the persistent
+  // #app-content element so it survives SPA re-renders.
+  function initCascadeToggle(root) {
+    root.addEventListener("click", (e) => {
+      const header = e.target.closest(".cascade-item__header");
+      if (!header) return;
+      const card = header.closest(".cascade-item");
+      const panel = card && card.querySelector(".cascade-item__panel");
+      if (!panel) return;
+      const open = panel.hasAttribute("hidden");
+      if (open) { panel.removeAttribute("hidden"); header.setAttribute("aria-expanded", "true"); }
+      else { panel.setAttribute("hidden", ""); header.setAttribute("aria-expanded", "false"); }
+    });
+  }
+  const appContentEl = document.getElementById("app-content");
+  if (appContentEl) initCascadeToggle(appContentEl);
+
   /* --------------------------- BOOT --------------------------- */
   window.addEventListener("hashchange", render);
   if (!location.hash) location.hash = "#/dashboard";

@@ -110,24 +110,46 @@ window.KBComponents = (function () {
     </a>`;
   }
 
-  /* ---------- Cascade list item (compact: title + status + meta only) ---------- */
-  function cascadeItem(c) {
-    const tags = (c.tags || []).map(t => `<span class="pill pill--brand">${esc(t)}</span>`).join("");
+  /* ---------- Cascade sample image (zoomable) ---------- */
+  function cascadeImg(c) {
+    if (c.sampleImageUrl)
+      return `<div class="detail-img zoomable-img" data-full="${esc(c.sampleImageUrl)}" data-alt="${esc(c.title)} — sample image" onclick="KBZoom.open(event,this)"><img src="${esc(c.sampleImageUrl)}" alt="${esc(c.title)} — sample image" loading="lazy" onerror="KBZoom.fail(this)" /></div>`;
+    if (c.sampleImage)
+      return `<div class="detail-imgref">🖼️ Sample image: <code>${esc(c.sampleImage)}</code></div>`;
+    return "";
+  }
+
+  /* ---------- Cascade list item (collapsible: title first, click to expand) ---------- */
+  function cascadeItem(c, cascades) {
     const ch = c.channel ? `<span class="pill pill--channel">${esc(c.channelIcon || "")} ${esc(c.channel)}</span>` : "";
-    return `<a class="card card--link cascade-item" href="#/cascades/${esc(c.id)}">
-      <div class="cascade-item__top">
-        <span class="cascade-item__title">${esc(c.title)}</span>
-        ${statusChip(c.status)}
+    const full = `
+      ${cascadeImg(c)}
+      <section class="section">
+        <h2 class="section__title">Handling History</h2>
+        <p class="muted" style="font-size:13.5px;margin-top:-6px;">The newest handling is shown first and is always the one to follow. Older versions are kept for reference and are not to be applied.</p>
+        ${versionBlock(c.versions)}
+      </section>
+      ${supersededInline(c, cascades)}`;
+    return `<div class="card cascade-item" data-cid="${esc(c.id)}">
+      <button type="button" class="cascade-item__header" aria-expanded="false">
+        <span class="cascade-item__chevron" aria-hidden="true">&#9656;</span>
+        <span class="cascade-item__head-main">
+          <span class="cascade-item__title">${esc(c.title)}</span>
+          ${statusChip(c.status)}
+        </span>
+        <span class="cascade-item__meta">
+          <span><b>${esc(c.category)}</b></span>
+          ${ch}
+          ${c.product ? `<span>${esc(c.product)}</span>` : ""}
+          ${c.cascadedBy ? `<span>Cascaded by ${esc(c.cascadedBy)}</span>` : ""}
+          <span>Updated ${esc(c.date)}</span>
+        </span>
+      </button>
+      <div class="cascade-item__panel" hidden>
+        ${full}
+        <a class="cascade-item__more" href="#/cascades/${esc(c.id)}">Open full page &rarr;</a>
       </div>
-      <div class="cascade-item__meta">
-        <span><b>${esc(c.category)}</b></span>
-        ${ch}
-        ${c.product ? `<span>${esc(c.product)}</span>` : ""}
-        <span>Updated ${esc(c.date)}</span>
-      </div>
-      ${tags ? `<div class="cascade-item__tags">${tags}</div>` : ""}
-      <div class="cascade-item__more">View full handling history &rarr;</div>
-    </a>`;
+    </div>`;
   }
 
   /* ---------- Version history block (current vs previous) ---------- */
@@ -139,7 +161,7 @@ window.KBComponents = (function () {
     const toParas = (body) => {
       if (!body) return "";
       return body.split(/\n{2,}/).map(blk => blk.trim()).filter(Boolean)
-        .map(blk => `<p>${esc(blk).replace(/\n/g, "<br>")}</p>`).join("");
+        .map(blk => `<p>${linkify(blk).replace(/\n/g, "<br>")}</p>`).join("");
     };
     const rows = versions.map(v => `
       <div class="version-row version-row--${esc(v.status)}">
@@ -184,6 +206,25 @@ window.KBComponents = (function () {
     return parts.length ? `<div class="supersede-block">${parts.join("")}</div>` : "";
   }
 
+  // Inline superseded (older) cascade shown beneath the current one, so a CSR sees
+  // the newer handling and the version it replaced in a single glance — no navigation.
+  function supersededInline(c, cascades) {
+    if (!c.supersededBy || !c.supersededBy.trim()) return "";
+    const old = cascades.find(x => x.title === c.supersededBy.trim());
+    if (!old) return "";
+    return `<section class="section cascade-item__superseded">
+      <h3 class="section__title">Superseded by this cascade</h3>
+      <div class="supersede-old">
+        <div class="supersede-old__head">
+          <span class="supersede-old__title">${esc(old.title)}</span>
+          ${statusChip(old.status)}
+        </div>
+        <div class="supersede-old__meta">${esc(old.category)} · Cascaded by ${esc(old.cascadedBy || "—")} · ${esc(old.date)}</div>
+        <div class="version-block">${versionBlock(old.versions)}</div>
+      </div>
+    </section>`;
+  }
+
   /* ---------- Resource card ---------- */
   function resourceCard(r) {
     const btn = r.url
@@ -222,6 +263,14 @@ window.KBComponents = (function () {
     </div>`;
   }
 
+  // Escape text, then turn bare http(s):// URLs into clickable links (safe:
+  // text is escaped first, so only genuinely-safe URL chars become anchors).
+  function linkify(text) {
+    const safe = esc(text);
+    return safe.replace(/(https?:\/\/[^\s<>"']+)/g,
+      (u) => `<a href="${u}" target="_blank" rel="noopener">${u}</a>`);
+  }
+
   /* ---------- Related item (detail sidebars) ---------- */
   function relatedItem(title, meta, href) {
     return `<a class="related-item" href="${esc(href)}">
@@ -234,7 +283,7 @@ window.KBComponents = (function () {
     esc, brandMark, pageHead, notice, emptyState,
     statusChip, statusLegend, statusMeta, STATUS_META,
     navCard, catCard, productCard, productPlaceholder, cascadeItem,
-    versionBlock, supersedesBlock, cascadeLink,
+    versionBlock, supersedesBlock, cascadeLink, supersededInline, cascadeImg, linkify,
     resourceCard, handbookCard, teamCard, relatedItem
   };
 })();

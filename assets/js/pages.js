@@ -18,7 +18,7 @@ window.KBPages = (function () {
       <a class="card card--link cascade-item" href="#/cascades/${esc(c.id)}" style="padding:14px 18px;">
         <div class="cascade-item__top">
           <span class="cascade-item__title" style="font-size:15px;">${esc(c.title)}</span>
-          ${C.statusBadge(c.status)}
+          ${C.statusChip(c.status)}
         </div>
         <div class="cascade-item__meta"><span>${esc(c.category)}</span><span>Updated ${esc(c.date)}</span></div>
       </a>`).join("");
@@ -86,7 +86,7 @@ window.KBPages = (function () {
     }
 
     const items = list.length
-      ? list.map(C.cascadeItem).join("")
+      ? list.map(c => C.cascadeItem(c, D.cascades)).join("")
       : C.emptyState("🔍", "No cascades match", "Try a different search term or status filter.");
 
     // Status filter chips/tabs (All is default). Works with search + category.
@@ -165,6 +165,8 @@ window.KBPages = (function () {
       ${c.sampleImageUrl ? `<div class="detail-img zoomable-img" data-full="${esc(c.sampleImageUrl)}" data-alt="${esc(c.title)} — sample image" onclick="KBZoom.open(event,this)"><img src="${esc(c.sampleImageUrl)}" alt="${esc(c.title)} — sample image" loading="lazy" onerror="KBZoom.fail(this)" /></div>` : (c.sampleImage ? `<div class="detail-imgref">🖼️ Sample image: <code>${esc(c.sampleImage)}</code></div>` : "")}
 
       ${C.supersedesBlock(c, D.cascades)}
+
+      ${C.supersededInline(c, D.cascades)}
 
       <section class="section">
         <h2 class="section__title">Handling History</h2>
